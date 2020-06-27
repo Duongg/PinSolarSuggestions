@@ -174,7 +174,10 @@ public class XMLValidate {
         String cap = "";
         capacity = capacity.replace(" ","").toLowerCase().trim();
         try {
-            if (capacity.contains("suoer")) {
+            if(capacity.contains("wmono")){
+                int pos = capacity.indexOf("wmono");
+                cap = capacity.substring(0, pos);
+            } else if (capacity.contains("suoer")) {
                 int pos1 = capacity.indexOf("suoer") + 5;
                 int last1 = capacity.indexOf("w");
                 cap = capacity.substring(pos1, last1);

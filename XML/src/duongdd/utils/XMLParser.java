@@ -3,17 +3,17 @@ package duongdd.utils;
 import javax.xml.stream.XMLEventReader;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
-import javax.xml.stream.events.StartElement;
-import javax.xml.stream.events.XMLEvent;
+import javax.xml.stream.events.*;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
 public class XMLParser {
-    private LinkedList lEvents = new LinkedList<XMLEvent>();
+    private LinkedList<XMLEvent> lEvents = new LinkedList<XMLEvent>();
 
-    private String filePath;
+    private String filePath = "src/test/test1.xml";
     public static XMLEventReader parseFileToXMLEvent(String filePath) throws XMLStreamException, FileNotFoundException {
         XMLInputFactory factory = XMLInputFactory.newInstance();
 
@@ -54,7 +54,7 @@ public class XMLParser {
                         //vi tri cua the mo
                         StartElement element = (StartElement) lEvents.get(lStartTagPogs.getLast());
 
-                        /////////////////reader = ?
+
                         reader = remakeFile(filePath,
                                 element.getLocation().getLineNumber(),
                                 element.getLocation().getColumnNumber() -1, row, col - 3);
@@ -167,6 +167,37 @@ public class XMLParser {
         }
         line = line.substring(posClose +1);
         return line;
+
+    }
+    public static void printAllData(Iterator<XMLEvent> iterator){
+        String result= "";
+        while(iterator.hasNext()){
+            XMLEvent event = iterator.next();
+            if(event.isStartElement()){
+                StartElement se = (StartElement) event;
+                result += "<" +se.getName().toString();
+                Iterator childIter = se.getAttributes();
+                while(childIter.hasNext()){
+                    Attribute attr = (Attribute) childIter.next();
+                    String value = attr.getValue().replace("&", "&#38");
+                    result += " " + attr.getName().toString() + "\"" + value + "\"";
+                }
+                result += ">";
+            }
+            if(event.isCharacters()){
+                Characters chars = (Characters) event;
+                if(!chars.isWhiteSpace()){
+                    result += chars.getData().replace("&", "&#38").trim();
+                }
+            }
+            if(event.isEndElement()){
+                EndElement end = (EndElement) event;
+                result += end.toString();
+            }
+            System.out.println(result);
+            result = "";
+
+        }
 
     }
 }

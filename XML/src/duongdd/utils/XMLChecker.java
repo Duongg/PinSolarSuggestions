@@ -132,7 +132,7 @@ public class XMLChecker {
         }
 
 
-        return newContent;
+        return "<document>" + newContent + "</document>";
     }
     public static String encodeContent(String content){
         content = content.replace("&agrave;", "à")
@@ -155,10 +155,39 @@ public class XMLChecker {
                 .replace("&#8211;","-")
                 .replace("&amp;#244;","ô")
                 .replace("&amp;#200;","È")
-                .replace("&amp;#192;","À");
+                .replace("&amp;#192;","À")
+                .replace("&nbsp;","")
+                .replace("&ampamp;","" )
+                .replace("&amp;amp;", "")
+                .replace("", "")
+                .replace("&ampldquo;","")
+                .replace("&amprdquo;","")
+                .replace("&apostimes", "")
+                .replace("&amp;oacute;","ó")
+                .replace("gtCocirc","")
+                .replace("&apos","")
+                .replace("&amphellip;","")
+                .replace("&amp","")
+                .replace("&nbsp;","")
+                .replace("gtTủ","")
+                .replace("gtTốc","")
+                .replace("&gt;","")
+                .replace("$lt;p&","")
+                .replace("$lt;/p&gt","")
+                .replace("&amp;nbsp;","")
+                .replace("&gt","&gt;")
+                .replace("&", "&amp;");
         return content;
     }
-
+    public static String preProcessingHtml(String content){
+        content = content
+                .replace("<div class=\"value\"><","<div class=\"value\">")
+                .replace("onclick"," onclick")
+                .replace("alt"," alt")
+                .replace("\"style","\" style")
+                .replace("\"src","\" src");
+        return content;
+    }
     private static String convert(Map<String, String> mapAttr){
         if(mapAttr.isEmpty()){
             return "";
