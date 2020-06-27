@@ -17,7 +17,7 @@ public class MenuNTCrawlers {
     public String crawlerMenuNT() throws ParserConfigurationException, SAXException, IOException {
         String htmlContent = XMLCrawler.crawlData(XMLSign.NT_Domain, XMLSign.NT_beginSign, XMLSign.NT_endSign);
         htmlContent = XMLChecker.encodeContent(htmlContent);
-        htmlContent = XMLChecker.TagChecker(htmlContent);
+        htmlContent = XMLChecker.fixTagName(htmlContent);
         return htmlContent;
     }
     public void crawlDataProductNT() throws IOException, SAXException, ParserConfigurationException {
@@ -25,8 +25,10 @@ public class MenuNTCrawlers {
         NTProductXpaths ntProductXpaths = new NTProductXpaths();
         ProductDTO dto = new ProductDTO();
         ProductNTDienMayCrawlers productNTDienMayCrawlers = new ProductNTDienMayCrawlers();
+        // get url menu
         String htmlContent = crawlerMenuNT();
         List<String> listUrlMenu = menuDienMayXpaths.xpathUrlMenuNT(htmlContent);
+
         List<String> listUrlPage = new ArrayList<>();
         List<String> listDetailProducts = new ArrayList<>();
         List<ProductDTO> productDTOList = new ArrayList<>();
@@ -34,16 +36,17 @@ public class MenuNTCrawlers {
         String htmlProduct = "";
         String htmlContentPages = "";
         for(int i = 0; i < listUrlMenu.size(); i++){
-            urlMenu = listUrlMenu.get(i);
+            urlMenu = listUrlMenu.get(1);
             htmlProduct = XMLCrawler.crawlData(urlMenu, XMLSign.NT_Category_beginSign, XMLSign.NT_Category_endSign);
             htmlProduct = XMLChecker.encodeContent(htmlProduct);
-            htmlProduct = XMLChecker.TagChecker(htmlProduct);
+            htmlProduct = XMLChecker.fixTagName(htmlProduct);
+
             listUrlPage = ntProductXpaths.xpathUrlPageNT(htmlProduct);
             if(listUrlPage.size() == 0){
                 listUrlPage.add(urlMenu);
             }
             for(int j = 0; j < listUrlPage.size(); j++){
-                String urlPage = listUrlPage.get(j);
+                String urlPage = listUrlPage.get(1);
                 htmlContentPages = productNTDienMayCrawlers.crawlProductPagesNT(urlPage);
                 listDetailProducts = ntProductXpaths.xpathUrlDetailProduct(htmlContentPages);
                 for(int k = 0; k < listDetailProducts.size(); k++){
@@ -53,6 +56,6 @@ public class MenuNTCrawlers {
                 }
             }
         }
-        System.out.println("SIZE " + productDTOList.size());
+
     }
 }

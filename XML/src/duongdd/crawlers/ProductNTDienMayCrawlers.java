@@ -15,7 +15,7 @@ public class ProductNTDienMayCrawlers {
     public String crawlProductPagesNT(String url) throws ParserConfigurationException, SAXException, IOException {
         String contentDataPages = XMLCrawler.crawlData(url, XMLSign.NT_Product_Pages_beginSign, XMLSign.NT_Product_Pages_endSign);
         contentDataPages = XMLChecker.encodeContent(contentDataPages);
-        contentDataPages = XMLChecker.TagChecker(contentDataPages);
+        contentDataPages = XMLChecker.fixTagName(contentDataPages);
         return contentDataPages;
     }
     public ProductDTO crawlDetailProductNT(String urlDetail) throws ParserConfigurationException, SAXException, IOException {
@@ -25,8 +25,9 @@ public class ProductNTDienMayCrawlers {
         try {
             contentDetail = XMLCrawler.crawlData(urlDetail, XMLSign.NT_Detail_Product_beginSign, XMLSign.NT_Detail_Product_endSign);
             contentDetail = XMLChecker.encodeContent(contentDetail);
-            contentDetail = XMLChecker.TagChecker(contentDetail);
-            dto = ntProductXpaths.xpathProductNT(contentDetail);
+            contentDetail = XMLChecker.fixTagName(contentDetail);
+            System.out.println(contentDetail);
+           // dto = ntProductXpaths.xpathProductNT(contentDetail);
         }catch (FileNotFoundException e){
             e.printStackTrace();
         }catch (Exception e){
