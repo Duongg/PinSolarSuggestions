@@ -19,7 +19,7 @@ public class MenuDienMayCrawlers {
     public String crawlMenuDM() throws ParserConfigurationException, SAXException, IOException {
         String htmlContent = XMLCrawler.crawlData(XMLSign.DM_Domain, XMLSign.DM_beginSign, XMLSign.DM_endSign);
         htmlContent = XMLChecker.encodeContent(htmlContent);
-        htmlContent = XMLChecker.TagChecker(htmlContent);
+        htmlContent = XMLChecker.fixTagName(htmlContent);
         return htmlContent;
     }
 
@@ -53,17 +53,19 @@ public class MenuDienMayCrawlers {
 
             contentCategory = XMLCrawler.crawlData(urlCategory, XMLSign.DM_Category_beginSign, XMLSign.DM_Category_endSign);
             contentCategory = XMLChecker.encodeContent(contentCategory);
-            contentCategory = XMLChecker.TagChecker(contentCategory);
-
+            contentCategory = XMLChecker.fixTagName(contentCategory);
+            contentCategory = XMLChecker.preParseDM(contentCategory);
             //list url pages
             listUrlPages = xpaths.xpathUrlPage(contentCategory);
             if(listUrlPages.size() == 0){
                 listUrlPages.add(urlCategory);
+
             }
 
             for (int j = 0; j < listUrlPages.size(); j++) {
                 //url 1 page
                 String urlPages = listUrlPages.get(j);
+
                 contentDataPages = productDienMayCrawlers.crawlProductPages(urlPages);
 
                 //list url detail product
@@ -73,11 +75,11 @@ public class MenuDienMayCrawlers {
                     //url 1 detail product
                     String urlDetailProduct = listUrlDetailProduct.get(k);
                   dto = productDienMayCrawlers.crawlDetailProduct(urlDetailProduct);
-                  listDTO.add(dto);
+
                 }//end for crawl detail
             }// end for crawl pages
         }// end for category
-        System.out.println("Size " + listDTO.size());
+
     }
 
 }

@@ -15,7 +15,8 @@ public class ProductLightCrawlers {
         try {
             contentProduct = XMLCrawler.crawlData(urlProduct, XMLSign.Light_Product_beginSign, XMLSign.Light_Product_endSign);
             contentProduct = XMLChecker.encodeContent(contentProduct);
-            contentProduct = XMLChecker.TagChecker(contentProduct);
+            contentProduct = XMLChecker.fixTagName(contentProduct);
+            contentProduct = XMLChecker.preParseLedLight(contentProduct);
         } catch (SAXException e) {
             e.printStackTrace();
         } catch (ParserConfigurationException e) {

@@ -164,8 +164,6 @@ public class NTProductXpaths {
                     System.out.println(capacityProduct);
                 }
 
-
-
                 return dto;
             }
         } catch (ParserConfigurationException e) {
