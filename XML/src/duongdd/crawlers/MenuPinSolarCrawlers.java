@@ -2,15 +2,12 @@ package duongdd.crawlers;
 
 import duongdd.utils.XMLChecker;
 import duongdd.utils.XMLCrawler;
-import duongdd.utils.XMLParser;
 import duongdd.utils.XMLSign;
 import duongdd.xpaths.PinSolarXpaths;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.stream.XMLStreamException;
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;

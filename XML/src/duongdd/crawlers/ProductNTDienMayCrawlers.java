@@ -25,9 +25,9 @@ public class ProductNTDienMayCrawlers {
         try {
             contentDetail = XMLCrawler.crawlData(urlDetail, XMLSign.NT_Detail_Product_beginSign, XMLSign.NT_Detail_Product_endSign);
             contentDetail = XMLChecker.encodeContent(contentDetail);
+            contentDetail = XMLChecker.preParseNT(contentDetail);
             contentDetail = XMLChecker.fixTagName(contentDetail);
-            System.out.println(contentDetail);
-           // dto = ntProductXpaths.xpathProductNT(contentDetail);
+            dto = ntProductXpaths.xpathProductNT(contentDetail);
         }catch (FileNotFoundException e){
             e.printStackTrace();
         }catch (Exception e){

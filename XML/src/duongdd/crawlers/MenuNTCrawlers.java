@@ -36,7 +36,7 @@ public class MenuNTCrawlers {
         String htmlProduct = "";
         String htmlContentPages = "";
         for(int i = 0; i < listUrlMenu.size(); i++){
-            urlMenu = listUrlMenu.get(1);
+            urlMenu = listUrlMenu.get(i);
             htmlProduct = XMLCrawler.crawlData(urlMenu, XMLSign.NT_Category_beginSign, XMLSign.NT_Category_endSign);
             htmlProduct = XMLChecker.encodeContent(htmlProduct);
             htmlProduct = XMLChecker.fixTagName(htmlProduct);
@@ -46,7 +46,7 @@ public class MenuNTCrawlers {
                 listUrlPage.add(urlMenu);
             }
             for(int j = 0; j < listUrlPage.size(); j++){
-                String urlPage = listUrlPage.get(1);
+                String urlPage = listUrlPage.get(j);
                 htmlContentPages = productNTDienMayCrawlers.crawlProductPagesNT(urlPage);
                 listDetailProducts = ntProductXpaths.xpathUrlDetailProduct(htmlContentPages);
                 for(int k = 0; k < listDetailProducts.size(); k++){

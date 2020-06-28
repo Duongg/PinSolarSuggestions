@@ -16,7 +16,8 @@ public class MenuLedLightCrawlers {
     public String crawMenuLedLight() throws ParserConfigurationException, SAXException, IOException {
         String htmlContent = XMLCrawler.crawlData(XMLSign.Light_Domain, XMLSign.Light_Menu_beginSign,XMLSign.Light_Menu_endSign);
         htmlContent = XMLChecker.encodeContent(htmlContent);
-        htmlContent = XMLChecker.TagChecker(htmlContent);
+        htmlContent = XMLChecker.fixTagName(htmlContent);
+        htmlContent = XMLChecker.preParseLedLight(htmlContent);
         return htmlContent;
     }
     public void crawlDetailLightProduct() throws IOException, SAXException, ParserConfigurationException {
@@ -24,6 +25,7 @@ public class MenuLedLightCrawlers {
         ProductLightCrawlers productLightCrawlers = new ProductLightCrawlers();
         String contentDetailProduct = "";
         ProductDTO dto = new ProductDTO();
+
         List<ProductDTO> listProductLight = new ArrayList<>();
         String contentMenu = crawMenuLedLight();
         //get url menu
@@ -32,9 +34,9 @@ public class MenuLedLightCrawlers {
         for(int i = 0; i < listUrlLightMenu.size(); i++){
             // url 1 category product
             String urlCategoryProduct = listUrlLightMenu.get(i);
-           contentDetailProduct = productLightCrawlers.crawlLightProduct(urlCategoryProduct);
-            dto = menuLightXpaths.xpathDetailLightProduct(contentDetailProduct);
-            listProductLight.add(dto);
+                  contentDetailProduct = productLightCrawlers.crawlLightProduct(urlCategoryProduct);
+                  dto = menuLightXpaths.xpathDetailLightProduct(contentDetailProduct);
+
         }
 
     }

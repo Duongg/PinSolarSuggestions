@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class XMLCrawler {
     public static String crawlData(String uri, String begin, String end) throws IOException, ParserConfigurationException, SAXException {
-        String htmlString = "<document>";
+        String htmlString = "";
         BufferedReader br = null;
         boolean isStart = false;
         boolean isFound = true;
@@ -28,7 +28,7 @@ public class XMLCrawler {
                     }
                 }//end while
             }//end if br
-            htmlString = htmlString + "</document>";
+
 
         }
         return htmlString;

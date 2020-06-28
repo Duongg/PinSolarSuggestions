@@ -30,7 +30,7 @@ public class ProductDienMayXpaths {
             Document doc = XMLUtils.parseToDom(html.trim());
             if (doc != null) {
                 XPath xPath = XMLUtils.createXpath();
-                String expName = "//div[@class='col-sm-12']//h1//text()";
+                String expName = "//document/h1/text()";
                 String expCapacity_c1 = "//td[contains(text(),\"Công suất\")]//following-sibling::td//text()";
                 String expCapacity_c2 = "//span[contains(text(),\"Côngsuất\")]//text()";
                 String expCapacity_c3 = "//span[contains(text(),\"CôngSuất\")]//text()";

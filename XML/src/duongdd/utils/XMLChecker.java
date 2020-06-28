@@ -188,6 +188,32 @@ public class XMLChecker {
                 .replace("\"src","\" src");
         return content;
     }
+    public static String preParseNT(String content){
+        content = content.replace("<ul>","")
+                        .replace("</ul>","")
+        .replace("</p> --></div>","</p> -->")
+        .replace("type=hidden","type=\"hidden\"")
+        .replace("checked","")
+        .replace("data-numposts=\"5\"></div></div>","data-numposts=\"5\"></div>")
+        .replace("</div></div></div><div class=\"clearfix\"></div>","");
+
+        return content;
+    }
+    public static String preParseLedLight(String content){
+        content = content.replace("itemscope","")
+                .replace("required","")
+                .replace("</li></document>","</document>");
+        return content;
+    }
+    public static String preParseDM(String content){
+        content = content.replace("</div></div></div><script type=\"text/javascript\">","<script type=\"text/javascript\">")
+                .replace("</section>","")
+                .replace("</body></html>","")
+        .replace("<iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-PZWTS8Z\"height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe>","")
+        .replace("<a span","<a ")
+        .replace("data-tooltip=\"<p></span>","data-tooltip=\"\"><p>");
+        return content;
+    }
     private static String convert(Map<String, String> mapAttr){
         if(mapAttr.isEmpty()){
             return "";
