@@ -12,8 +12,7 @@ import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class MenuDienMayCrawlers {
     public String crawlMenuDM() throws ParserConfigurationException, SAXException, IOException {
@@ -26,8 +25,9 @@ public class MenuDienMayCrawlers {
     public void crawlDataProduct() throws ParserConfigurationException, SAXException, IOException {
         String contentCategory = "";
         String urlCategory = "";
+        String nameCategory = "";
         String contentDataPages = "";
-        String contentDetailProduct = "";
+        String contentBrand = "";
         String htmlContent = "";
 
         MenuDienMayXpaths menuDienMayXpaths = new MenuDienMayXpaths();
@@ -38,46 +38,58 @@ public class MenuDienMayCrawlers {
         List<String> listUrlPages = new ArrayList<>();
         List<String> listUrlDetailProduct = new ArrayList<>();
         List<String> listUrlMenu = new ArrayList<>();
+        List<String> listBrand = new ArrayList<>();
+        Map<String, List<String>> categoryMap = new HashMap<>();
 
         ProductDTO dto = new ProductDTO();
         List<ProductDTO> listDTO = new ArrayList<>();
         // content menu
         htmlContent = crawlMenuDM();
         //get url menu
-        listUrlMenu = menuDienMayXpaths.xpathUrlMenu(htmlContent);
+        categoryMap = menuDienMayXpaths.xpathUrlMenu(htmlContent);
 
 
-        for (int i = 0; i < listUrlMenu.size(); i++) {
+        for (Map.Entry<String, List<String>> entry : categoryMap.entrySet()) {
             //list url category
-            urlCategory = listUrlMenu.get(i);
-
-            contentCategory = XMLCrawler.crawlData(urlCategory, XMLSign.DM_Category_beginSign, XMLSign.DM_Category_endSign);
-            contentCategory = XMLChecker.encodeContent(contentCategory);
-            contentCategory = XMLChecker.fixTagName(contentCategory);
-            contentCategory = XMLChecker.preParseDM(contentCategory);
-            //list url pages
-            listUrlPages = xpaths.xpathUrlPage(contentCategory);
-            if(listUrlPages.size() == 0){
-                listUrlPages.add(urlCategory);
-
+            nameCategory = entry.getKey();
+            listUrlMenu = entry.getValue();
+            System.out.println("--------------------" + nameCategory + "--------------------------");
+            // get brand
+            for (int b = 0; b < listUrlMenu.size(); b++) {
+                String url = listUrlMenu.get(b);
+                contentBrand = productDienMayCrawlers.crawBrandDMProduct(url);
+                listBrand = productDienMayXpaths.xpathBrandProduct(contentBrand);
             }
 
-            for (int j = 0; j < listUrlPages.size(); j++) {
-                //url 1 page
-                String urlPages = listUrlPages.get(j);
+            // get product by category
+            for (int x = 0; x < listUrlMenu.size(); x++) {
+                // urlCategory
+                urlCategory = listUrlMenu.get(x);
+                // get brand
 
-                contentDataPages = productDienMayCrawlers.crawlProductPages(urlPages);
+                //get pages category
+                contentCategory = productDienMayCrawlers.crawlCategoryProduct(nameCategory, urlCategory);
+                //list url pages
+                listUrlPages = xpaths.xpathUrlPage(contentCategory);
+                if (listUrlPages.size() == 0) {
+                    listUrlPages.add(urlCategory);
+                }
 
-                //list url detail product
-                listUrlDetailProduct = productDienMayXpaths.xpathUrlDetailProduct(contentDataPages);
+                for (int j = 0; j < listUrlPages.size(); j++) {
+                    //url 1 page
+                    String urlPages = listUrlPages.get(j);
+                    contentDataPages = productDienMayCrawlers.crawlProductPages(nameCategory, urlPages);
 
-                for (int k = 0; k < listUrlDetailProduct.size(); k++) {
-                    //url 1 detail product
-                    String urlDetailProduct = listUrlDetailProduct.get(k);
-                  dto = productDienMayCrawlers.crawlDetailProduct(urlDetailProduct);
+                    //list url detail product
+                    listUrlDetailProduct = productDienMayXpaths.xpathUrlDetailProduct(nameCategory, contentDataPages);
 
-                }//end for crawl detail
-            }// end for crawl pages
+                    for (int k = 0; k < listUrlDetailProduct.size(); k++) {
+                        //url 1 detail product
+                        String urlDetailProduct = listUrlDetailProduct.get(k);
+                        dto = productDienMayCrawlers.crawlDetailProduct(nameCategory, urlDetailProduct);
+                    }//end for crawl detail
+                }// end for crawl pages
+            }
         }// end for category
 
     }

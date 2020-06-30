@@ -1,11 +1,11 @@
 package duongdd.xpaths;
 
 import duongdd.dtos.ProductDTO;
+import duongdd.utils.XMLChecker;
 import duongdd.utils.XMLSign;
 import duongdd.utils.XMLUtils;
 import duongdd.utils.XMLValidate;
 import org.w3c.dom.Document;
-import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
@@ -103,6 +103,35 @@ public class MenuLightXpaths {
 
             }
             return dto;
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SAXException e) {
+            e.printStackTrace();
+        } catch (XPathExpressionException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public List xpathBrand(String htmlContent){
+        List<String> listBrand = new ArrayList<>();
+        String nameBrand = "";
+        try {
+            Document doc = XMLUtils.parseToDom(htmlContent.trim());
+            if (doc != null) {
+                XPath xPath = XMLUtils.createXpath();
+                String exp = "//div[@class='container']//ul//li//a[position() < last()]";
+                NodeList nodeListUrl = (NodeList) xPath.evaluate(exp, doc, XPathConstants.NODESET);
+                if (nodeListUrl != null) {
+                    for (int i = 0; i < nodeListUrl.getLength(); i++) {
+                        nameBrand = nodeListUrl.item(i).getTextContent();
+                        listBrand.add(nameBrand);
+                    }
+                }
+                return listBrand;
+            }
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
         } catch (IOException e) {

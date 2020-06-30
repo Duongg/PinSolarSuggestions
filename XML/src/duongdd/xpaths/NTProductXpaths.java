@@ -88,7 +88,7 @@ public class NTProductXpaths {
         }
         return maxPage;
     }
-    public List xpathUrlDetailProduct(String content){
+    public List xpathUrlDetailProduct(String nameCate,String content){
         List<String> listUrlDetailProduct = new ArrayList<>();
         String urlDetail = "";
         String urlDetailFull = "";
@@ -154,15 +154,18 @@ public class NTProductXpaths {
                 if(capacity.equals("") && capacityNode_c4 != null){
                     capacity = capacityNode_c4.getTextContent();
                 }
-                strCapacity = validate.convertStringDetail(capacity.toLowerCase());
+                if(!capacity.equals("")){
+                    strCapacity = validate.convertStringDetail(capacity.toLowerCase());
 
-                capacityProduct = validate.convertKwhPerDayToWatt(strCapacity.trim());
-                if(capacityProduct != 0.0){
-                    dto.setProductName(nameProduct);
-                    dto.setProductCapacity(capacityProduct);
-                    System.out.println(nameProduct);
-                    System.out.println(capacityProduct);
+                    capacityProduct = validate.convertKwhPerDayToWatt(strCapacity.trim());
+                    if(capacityProduct != 0.0){
+                        dto.setProductName(nameProduct);
+                        dto.setProductCapacity(capacityProduct);
+                        System.out.println(nameProduct);
+                        System.out.println(capacityProduct);
+                    }
                 }
+
 
                 return dto;
             }

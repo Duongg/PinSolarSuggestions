@@ -20,6 +20,7 @@ public class XMLValidate {
                 .replace(" ", "")
                 .replace("csnóng:", "")
                 .replace(",", ".")
+                .replace("~","")
                 .toLowerCase();
         try {
             if (capacity.contains(":")) {

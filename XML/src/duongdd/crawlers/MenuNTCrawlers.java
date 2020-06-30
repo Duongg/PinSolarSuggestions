@@ -7,11 +7,12 @@ import duongdd.utils.XMLSign;
 import duongdd.xpaths.MenuDienMayXpaths;
 import duongdd.xpaths.NTProductXpaths;
 import org.xml.sax.SAXException;
-
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class MenuNTCrawlers {
     public String crawlerMenuNT() throws ParserConfigurationException, SAXException, IOException {
@@ -25,21 +26,27 @@ public class MenuNTCrawlers {
         NTProductXpaths ntProductXpaths = new NTProductXpaths();
         ProductDTO dto = new ProductDTO();
         ProductNTDienMayCrawlers productNTDienMayCrawlers = new ProductNTDienMayCrawlers();
+        Map<String, String> categoryMap = new HashMap<>();
         // get url menu
         String htmlContent = crawlerMenuNT();
-        List<String> listUrlMenu = menuDienMayXpaths.xpathUrlMenuNT(htmlContent);
-
         List<String> listUrlPage = new ArrayList<>();
         List<String> listDetailProducts = new ArrayList<>();
         List<ProductDTO> productDTOList = new ArrayList<>();
+
         String urlMenu = "";
         String htmlProduct = "";
         String htmlContentPages = "";
-        for(int i = 0; i < listUrlMenu.size(); i++){
-            urlMenu = listUrlMenu.get(i);
-            htmlProduct = XMLCrawler.crawlData(urlMenu, XMLSign.NT_Category_beginSign, XMLSign.NT_Category_endSign);
-            htmlProduct = XMLChecker.encodeContent(htmlProduct);
-            htmlProduct = XMLChecker.fixTagName(htmlProduct);
+        String nameCategory = "";
+        // map category
+        categoryMap = menuDienMayXpaths.xpathUrlMenuNT(htmlContent);
+
+
+        for(Map.Entry<String, String> entry : categoryMap.entrySet()){
+            nameCategory = entry.getKey();
+            urlMenu = entry.getValue();
+            // get pages product\
+            System.out.println("------------------" + nameCategory + "--------------------------");
+            htmlProduct = productNTDienMayCrawlers.crawlPageProductNT(nameCategory,urlMenu);
 
             listUrlPage = ntProductXpaths.xpathUrlPageNT(htmlProduct);
             if(listUrlPage.size() == 0){
@@ -47,11 +54,11 @@ public class MenuNTCrawlers {
             }
             for(int j = 0; j < listUrlPage.size(); j++){
                 String urlPage = listUrlPage.get(j);
-                htmlContentPages = productNTDienMayCrawlers.crawlProductPagesNT(urlPage);
-                listDetailProducts = ntProductXpaths.xpathUrlDetailProduct(htmlContentPages);
+                htmlContentPages = productNTDienMayCrawlers.crawlProductPagesNT(nameCategory,urlPage);
+                listDetailProducts = ntProductXpaths.xpathUrlDetailProduct(nameCategory,htmlContentPages);
                 for(int k = 0; k < listDetailProducts.size(); k++){
                     String urlDetail = listDetailProducts.get(k);
-                  dto = productNTDienMayCrawlers.crawlDetailProductNT(urlDetail);
+                  dto = productNTDienMayCrawlers.crawlDetailProductNT(nameCategory,urlDetail);
                   productDTOList.add(dto);
                 }
             }

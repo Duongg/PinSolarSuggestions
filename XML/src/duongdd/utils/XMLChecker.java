@@ -146,6 +146,7 @@ public class XMLChecker {
                 .replace("&Agrave;", "À")
                 .replace("&Aacute;", "Á")
                 .replace("&Ocirc;", "Ô")
+                .replace("&ograve;","o")
                 .replace("&laquo;", "")
                 .replace("&raquo;", "")
                 .replace("&amp;amp;", "")
@@ -211,9 +212,16 @@ public class XMLChecker {
                 .replace("</body></html>","")
         .replace("<iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-PZWTS8Z\"height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe>","")
         .replace("<a span","<a ")
-        .replace("data-tooltip=\"<p></span>","data-tooltip=\"\"><p>");
+        .replace("data-tooltip=\"<p></span>","data-tooltip=\"\"><p>")
+        .replace("trực tiếp</span></li><li","trực tiếp</span><li")
+        .replace("bằng Nhôm</span></li></ul></div>","bằng Nhôm</span></li>")
+        .replace("<br></br></div></div></div></document>","<br></br></div></div></document>")
+        .replace("Hệ thống làm lạnh kép</span></span></span></li>","Hệ thống làm lạnh kép</span></span>")
+        .replace("2014</span></span></li></ul></div></document>","2014</span></span></li></document>")
+        .replace("</div><div><br></br></div></div><div><br></br></div></div></document>","</div><div><br></br></div></div><div><br></br></div></div></div></document>");
         return content;
     }
+
     private static String convert(Map<String, String> mapAttr){
         if(mapAttr.isEmpty()){
             return "";
@@ -492,44 +500,4 @@ public class XMLChecker {
         return writer.toString();
     }
 
-
-    public static String toRawString(String content){
-        content = content.toLowerCase();
-        HashMap<Character, Character> hm = new HashMap<Character, Character>();
-
-        char sa[] ={'á','à','ả','ạ','ã','ắ','ằ','ẳ','ẵ','ặ','ấ','ầ','ẩ','ậ','ă','â'};
-        char su[] ={'ú','ụ','ù','ủ','ũ'};
-        char suu[]={'ư','ừ','ứ','ự','ữ','ử'};
-        char soo[]={'ơ','ờ','ớ','ở','ợ','ỡ'};
-        char so[]={'ó','ò','ỏ','õ','ọ','ô','ố','ồ','ổ','ỗ','ộ'};
-        char si[]={'í','ỉ','ì','ĩ','ị'};
-        char sy[]={'ý','ỳ','ỷ','ỹ','ỹ'};
-        char se[]={'ẽ','ẹ','é','è','ẻ'};
-        char see[]={'ê','ế','ể','ề','ễ','ệ'};
-        char sd[] ={'đ'};
-
-        for(char x:sa) hm.put(x, 'a');
-        for(char x:su) hm.put(x, 'u');
-        for(char x:suu) hm.put(x, 'u');
-        for(char x:soo) hm.put(x, 'o');
-        for(char x:so) hm.put(x, 'o');
-        for(char x:si) hm.put(x, 'i');
-        for(char x:sy) hm.put(x, 'y');
-        for(char x:se) hm.put(x, 'e');
-        for(char x:see) hm.put(x, 'e');
-        for(char x:sd) hm.put(x, 'd');
-
-        content = content.toLowerCase();
-
-        String rs = "";
-
-        for (int i = 0; i < content.length(); i++) {
-            if(hm.containsKey(content.charAt(i))){
-                rs = rs + hm.get(content.charAt(i));
-            }else{
-                rs = rs + content.charAt(i);
-            }
-        }
-        return rs;
-    }
 }

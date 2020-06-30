@@ -31,6 +31,10 @@ public class MenuLedLightCrawlers {
         //get url menu
         List<String> listUrlLightMenu = new ArrayList<>();
         listUrlLightMenu = menuLightXpaths.xpathUrlLightMenu(contentMenu);
+        //get brand name
+        List<String> listBrand = new ArrayList<>();
+        listBrand = menuLightXpaths.xpathBrand(contentMenu);
+
         for(int i = 0; i < listUrlLightMenu.size(); i++){
             // url 1 category product
             String urlCategoryProduct = listUrlLightMenu.get(i);
