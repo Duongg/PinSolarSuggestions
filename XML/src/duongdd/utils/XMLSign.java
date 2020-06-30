@@ -10,6 +10,8 @@ public class XMLSign {
     public static String DM_Pages_endSign = "<div class=\"row my-3 p-3 mb-2\">";
     public static String DM_Detail_Product_beginSign ="<div id=\"content\" class=\"col-sm-12\">";
     public static String DM_Detail_Product_endSign = "<div class=\"tab-pane fade p-2\" id=\"contact\" role=\"tabpanel\" aria-labelledby=\"contact-tab\">";
+    public static String DM_Brand_beginSign = "<div class=\"panel panel-default\">";
+    public static String DM_Brand_endSign ="<div class=\"panel-footer text-right\">";
 
     public static String Light_Domain = "https://kingled.vn";
     public static String Light_Menu_beginSign ="<li class=\"product \">";

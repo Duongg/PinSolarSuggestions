@@ -8,6 +8,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+import javax.print.Doc;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
@@ -40,6 +41,7 @@ public class ProductDienMayXpaths {
                 String expCapacity_c7 = "//li[contains(text(),\"W\")]//text()";
                 String expCapacity_c8 = "//span[contains(text(),\"Công suất\")]//text()";
                 String expCapacity_c9 = "//span[contains(text(),\"Công suất\")]//following-sibling::span";
+                String expCapacity_c10 = "//tr[2]//td[2]//span[contains(text(),\"W\")]//text()";
 
                 Node nameNode = (Node) xPath.evaluate(expName, doc, XPathConstants.NODE);
                 String nameProduct = nameNode.getTextContent().trim();
@@ -53,50 +55,52 @@ public class ProductDienMayXpaths {
                 Node capacityNode_c7 = (Node) xPath.evaluate(expCapacity_c7, doc, XPathConstants.NODE);
                 Node capacityNode_c8 = (Node) xPath.evaluate(expCapacity_c8, doc, XPathConstants.NODE);
                 Node capacityNode_c9 = (Node) xPath.evaluate(expCapacity_c9, doc, XPathConstants.NODE);
+                Node capacityNode_c10 = (Node) xPath.evaluate(expCapacity_c10, doc, XPathConstants.NODE);
 
-
-                if(capacityNode_c1 != null){
-                    for (int i = 0; i <capacityNode_c1.getLength();i++){
+                if (capacityNode_c1 != null) {
+                    for (int i = 0; i < capacityNode_c1.getLength(); i++) {
                         strCapa = capacityNode_c1.item(i).getTextContent();
                     }
                     capacity = capacity + strCapa;
                 }
 
-                if(capacity.equals("") && capacityNode_c2 != null){
+                if (capacity.equals("") && capacityNode_c2 != null) {
                     capacity = capacityNode_c2.getTextContent();
                 }
-                if(capacity.equals("") && capacityNode_c3 != null){
+                if (capacity.equals("") && capacityNode_c3 != null) {
                     capacity = capacityNode_c3.getTextContent();
                 }
-                if(capacity.equals("") && capacityNode_c4 != null){
+                if (capacity.equals("") && capacityNode_c4 != null) {
                     capacity = capacityNode_c4.getTextContent();
                 }
-                if(capacity.equals("") && capacityNode_c5 != null){
+                if (capacity.equals("") && capacityNode_c5 != null) {
                     capacity = capacityNode_c5.getTextContent();
                 }
-                if(capacity.equals("") && capacityNode_c6 != null){
+                if (capacity.equals("") && capacityNode_c6 != null) {
                     capacity = capacityNode_c6.getTextContent();
                 }
-                if(capacity.equals("") && capacityNode_c7 != null){
+                if (capacity.equals("") && capacityNode_c7 != null) {
                     capacity = capacityNode_c7.getTextContent();
                 }
-                if(capacity.equals("") && capacityNode_c8 != null){
+                if (capacity.equals("") && capacityNode_c8 != null) {
                     capacity = capacityNode_c8.getTextContent();
                 }
-                if(capacity.equals("") && capacityNode_c9 != null){
+                if (capacity.equals("") && capacityNode_c9 != null) {
                     capacity = capacityNode_c9.getTextContent();
                 }
-                XMLValidate validate = new XMLValidate();
-//                capa = validate.convertStringDetail(capacity.toLowerCase());
-               capa = validate.convertStringCapacity(capacity);
-               capacityProduct = validate.parseStrCapaToFloat(capa);
-                if(capacityProduct != 0.0) {
-                    dto.setProductName(nameProduct);
-                    dto.setProductCapacity(capacityProduct);
-                    System.out.println(dto.getProductName());
-                    System.out.println(dto.getProductCapacity());
+                if (capacity.equals("") && capacityNode_c10 != null) {
+                    capacity = capacityNode_c10.getTextContent();
                 }
-                return dto;
+                XMLValidate validate = new XMLValidate();
+                if (!capacity.equals("")) {
+                    capa = validate.convertStringCapacity(capacity);
+                    capacityProduct = validate.parseStrCapaToFloat(capa);
+                    if (capacityProduct != 0.0) {
+                        dto.setProductName(nameProduct);
+                        dto.setProductCapacity(capacityProduct);
+                        return dto;
+                    }
+                }
             }
 
         } catch (ParserConfigurationException e) {
@@ -112,8 +116,9 @@ public class ProductDienMayXpaths {
         }
         return null;
     }
+
     // xpath get url detail product
-    public List xpathUrlDetailProduct(String content) {
+    public List xpathUrlDetailProduct(String nameCategory,String content) {
         List<String> listUrlDetail = new ArrayList<>();
         String urlDetail = "";
         try {
@@ -125,12 +130,43 @@ public class ProductDienMayXpaths {
                 if (nodeListLink != null) {
                     for (int i = 0; i < nodeListLink.getLength(); i++) {
                         urlDetail = nodeListLink.item(i).getAttributes().getNamedItem("href").getNodeValue();
-                        if (!urlDetail.contains("index.php?route=product")) {
+                        if (!urlDetail.contains("index.php?route=product")
+                                && !urlDetail.contains("am-thanh")
+                                && !urlDetail.contains("bep-")){
                             listUrlDetail.add(urlDetail);
                         }
                     }//end for
                 }// end if
                 return listUrlDetail;
+            }
+        } catch (ParserConfigurationException e) {
+            System.out.println(e.getMessage());
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        } catch (SAXException e) {
+            System.out.println(e.getMessage());
+        } catch (XPathExpressionException e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
+
+    public List xpathBrandProduct(String content){
+        List<String> listBrand = new ArrayList<>();
+        String nameBrand = "";
+        try{
+            Document doc = XMLUtils.parseToDom(content.trim());
+            if(doc != null){
+                XPath xPath = XMLUtils.createXpath();
+                String exp = "//div[@class='radio' and position() >1]//text()";
+                NodeList nodeList = (NodeList) xPath.evaluate(exp, doc, XPathConstants.NODESET);
+                if(nodeList != null){
+                    for (int i = 0; i < nodeList.getLength(); i++){
+                        nameBrand = nodeList.item(i).getTextContent();
+                        listBrand.add(nameBrand);
+                    }
+                }
+                return listBrand;
             }
         } catch (ParserConfigurationException e) {
             e.printStackTrace();

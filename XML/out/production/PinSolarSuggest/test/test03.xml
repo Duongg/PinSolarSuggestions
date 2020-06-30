@@ -1,212 +1,524 @@
 <document>
-    <h1>Tủ lạnh Beko 90 lít RS9050P</h1>
-    <div class="row"></div>
-    <div class="col-sm-8 border-right"></div>
-    <ul class="thumbnails my-3">
-        <li>
-            <a class="thumbnail"
-               href="https://phuhungthinhbd.com/image/cache/catalog/tu_lanh/BEKO/tu-lan-hbeko-rs9050p-2-1-700x467-900x600.jpg"
-               title="Tủ lạnh Beko 90 lít RS9050P">
-                <img class="img-fluid mx-auto d-block"
-                     src="https://phuhungthinhbd.com/image/cache/catalog/tu_lanh/BEKO/tu-lan-hbeko-rs9050p-2-1-700x467-600x400.jpg"
-                     title="Tủ lạnh Beko 90 lít RS9050P" alt="Tủ lạnh Beko 90 lít RS9050P"/>
-            </a>
-        </li>
-    </ul>
-    <ul class="nav nav-tabs mt-3" id="myTab" role="tablist">
-        <li class="nav-item" role="presentation">
-            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
-               aria-selected="true">Mô tả
-            </a>
-        </li>
-        <li class="nav-item" role="presentation">
-            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-               aria-selected="false">Nhận xét (7)
-            </a>
-        </li>
-    </ul>
-    <div class="tab-content" id="myTabContent"></div>
-    <div class="tab-pane fade show active p-2" id="home" role="tabpanel" aria-labelledby="home-tab"></div>
-    <div class="imgnote"
-         style="margin: 10px 0px; padding: 0px; border: 0px; vertical-align: baseline; overflow: hidden; color: rgb(51, 51, 51); font-family: Arial, Helvetica, sans-serif; font-size: 14px;"></div>
-    <h3 style="margin: 15px 0px 0px; padding: 0px; border: 0px; vertical-align: baseline; font-variant-numeric: normal; font-variant-east-asian: normal; font-weight: 600; font-stretch: normal; font-size: 18px; line-height: 1.3em; font-family: Arial, Helvetica, sans-serif; color: rgb(102, 102, 102); outline: none; zoom: 1;">
-        Thông số kỹ thuật chi tiết Tủ lạnh Beko 90 lít RS9050P
-    </h3>
-    <ul class="specs"
-        style="margin-right: auto; margin-bottom: 0px; margin-left: auto; padding: 10px 30px; border: 0px; vertical-align: baseline; -webkit-margin-before: 0px; -webkit-margin-after: 0px; -webkit-padding-start: 0px; list-style: none; position: relative; overflow: hidden; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; width: 600px;"></ul>
-    <li class="grp"
-        style="margin: 0px; padding: 10px; border: 0px; vertical-align: baseline; background: rgb(244, 244, 244); font-size: 20px; color: rgb(153, 153, 153); display: block !important;">
-        Đặc điểm sản phẩm
-    </li>
-    <li style="margin: 0px; padding: 10px; border: 0px; vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; font-size: 20px; color: rgb(153, 153, 153); display: block !important;">
-        <span class="specname"
-              style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; font-size: 14px; color: rgb(51, 51, 51); font-weight: 600;">
-            Dung tích tổng:
-        </span>
-        <span class="specval prop-7459" data-val="90"
-              style="margin: 0px 0px 0px 5px; padding: 0px; border: 0px; vertical-align: baseline; font-size: 14px; color: rgb(51, 51, 51);">
-            90 lít
-        </span>
-    </li>
-    <li style="margin: 0px; padding: 10px; border: 0px; vertical-align: baseline; background: rgb(244, 244, 244); font-size: 20px; color: rgb(153, 153, 153); display: block !important;">
-        <span class="specname"
-              style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; font-size: 14px; color: rgb(51, 51, 51); font-weight: 600;">
-            Số người sử dụng:
-        </span>
-        <span class="specval prop-7993" data-val="1"
-              style="margin: 0px 0px 0px 5px; padding: 0px; border: 0px; vertical-align: baseline; font-size: 14px; color: rgb(51, 51, 51);">
-            1 - 3 người
-        </span>
-    </li>
-    <li style="margin: 0px; padding: 10px; border: 0px; vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; font-size: 20px; color: rgb(153, 153, 153); display: block !important;">
-        <span class="specname"
-              style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; font-size: 14px; color: rgb(51, 51, 51); font-weight: 600;">
-            Điện năng tiêu thụ:
-        </span>
-        <span class="specval prop-7640" data-val="929"
-              style="margin: 0px 0px 0px 5px; padding: 0px; border: 0px; vertical-align: baseline; font-size: 14px; color: rgb(51, 51, 51);">
-            ~ 0.71 kW/ngày
-        </span>
-    </li>
-    <li style="margin: 0px; padding: 10px; border: 0px; vertical-align: baseline; background: rgb(244, 244, 244); font-size: 20px; color: rgb(153, 153, 153); display: block !important;"></li>
-    <span class="specname"
-          data-tooltip=""><p>C;ocirc;ng nghệ l;agrave;m lạnh được chia l;agrave;m nhiều loại với những ưu nhược điểm kh;aacute;c nhau, từ c;ocirc;ng nghệ l;agrave;m lạnh k;eacute;p đến c;ocirc;ng nghệ l;agrave;m lạnh đa chiều, Minus Zero...</p>"
-          data-tooltip-stickto="right" data-tooltip-maxwidth="400"
-          style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; font-size: 14px; color: rgb(51, 51, 51); font-weight: 600;">
-        Công nghệ làm lạnh:
-    </span>
-    <span class="specname"
-          data-tooltip=""></span><p>C;ocirc;ng nghệ l;agrave;m lạnh được chia l;agrave;m nhiều loại với những ưu nhược điểm kh;aacute;c nhau, từ c;ocirc;ng nghệ l;agrave;m lạnh k;eacute;p đến c;ocirc;ng nghệ l;agrave;m lạnh đa chiều, Minus Zero...</p>"
-          data-tooltip-stickto="right" data-tooltip-maxwidth="400"
-          style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; font-size: 14px; color: rgb(51, 51, 51);">
-        trực tiếp
-    </span>
-</li><li
-style="margin: 0px; padding: 10px; border: 0px; vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; font-size: 20px; color: rgb(153, 153, 153); display: block !important;">
-<span class="specname"
-      style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; font-size: 14px; color: rgb(51, 51, 51); font-weight: 600;">
-    Tiện ích:
-</span>
-<span class="specval prop-8982" data-val="2"
-      style="margin: 0px 0px 0px 5px; padding: 0px; border: 0px; vertical-align: baseline; font-size: 14px; color: rgb(51, 51, 51);">
-    Làm đá nhanh
-</span>
-</li><li
-style="margin: 0px; padding: 10px; border: 0px; vertical-align: baseline; background: rgb(244, 244, 244); font-size: 20px; color: rgb(153, 153, 153); display: block !important;">
-<span class="specname"
-      style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; font-size: 14px; color: rgb(51, 51, 51); font-weight: 600;">
-    Kiểu tủ:
-</span>
-<span class="specval prop-6569" data-val="0"
-      style="margin: 0px 0px 0px 5px; padding: 0px; border: 0px; vertical-align: baseline; font-size: 14px; color: rgb(51, 51, 51);">
-    Mini
-</span>
-</li><li
-style="margin: 0px; padding: 10px; border: 0px; vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; font-size: 20px; color: rgb(153, 153, 153); display: block !important;">
-<span class="specname"
-      style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; font-size: 14px; color: rgb(51, 51, 51); font-weight: 600;">
-    Số cửa:
-</span>
-<span class="specval prop-6570" data-val="0"
-      style="margin: 0px 0px 0px 5px; padding: 0px; border: 0px; vertical-align: baseline; font-size: 14px; color: rgb(51, 51, 51);">
-    1 cửa
-</span>
-</li><li
-style="margin: 0px; padding: 10px; border: 0px; vertical-align: baseline; background: rgb(244, 244, 244); font-size: 20px; color: rgb(153, 153, 153); display: block !important;">
-<span class="specname"
-      style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; font-size: 14px; color: rgb(51, 51, 51); font-weight: 600;">
-    Chất liệu cửa tủ lạnh:
-</span>
-<span class="specval prop-7659" data-val="2"
-      style="margin: 0px 0px 0px 5px; padding: 0px; border: 0px; vertical-align: baseline; font-size: 14px; color: rgb(51, 51, 51);">
-    Thép không gỉ
-</span>
-</li><li
-style="margin: 0px; padding: 10px; border: 0px; vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; font-size: 20px; color: rgb(153, 153, 153); display: block !important;">
-<span class="specname"
-      style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; font-size: 14px; color: rgb(51, 51, 51); font-weight: 600;">
-    Chất liệu khay ngăn:
-</span>
-<span class="specval prop-7139" data-val="2"
-      style="margin: 0px 0px 0px 5px; padding: 0px; border: 0px; vertical-align: baseline; font-size: 14px; color: rgb(51, 51, 51);">
-    Kính chịu lực
-</span>
-</li><li
-style="margin: 0px; padding: 10px; border: 0px; vertical-align: baseline; background: rgb(244, 244, 244); font-size: 20px; color: rgb(153, 153, 153); display: block !important;">
-<span class="specname"
-      style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; font-size: 14px; color: rgb(51, 51, 51); font-weight: 600;">
-    Kích thước - Khối lượng:
-</span>
-<span class="specval prop-6584" data-val="-1"
-      style="margin: 0px 0px 0px 5px; padding: 0px; border: 0px; vertical-align: baseline; font-size: 14px; color: rgb(51, 51, 51);">
-    Ngang 48 cm - Sâu 52 cm - Cao 85 cm - Nặng 21 kg
-</span>
-</li><li
-style="margin: 0px; padding: 10px; border: 0px; vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; font-size: 20px; color: rgb(153, 153, 153); display: block !important;">
-<span class="specname"
-      style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; font-size: 14px; color: rgb(51, 51, 51); font-weight: 600;">
-    Đèn chiếu sáng:
-</span>
-<span class="specval prop-8383" data-val="1"
-      style="margin: 0px 0px 0px 5px; padding: 0px; border: 0px; vertical-align: baseline; font-size: 14px; color: rgb(51, 51, 51);">
-    Đèn sợi tóc
-</span>
-</li><li
-style="margin: 0px; padding: 10px; border: 0px; vertical-align: baseline; background: rgb(244, 244, 244); font-size: 20px; color: rgb(153, 153, 153); display: block !important;">
-<span class="specname"
-      style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; font-size: 14px; color: rgb(51, 51, 51); font-weight: 600;">
-    Chất liệu dàn trao đổi nhiệt:
-</span>
-<span class="specval prop-15483" data-val="1"
-      style="margin: 0px 0px 0px 5px; padding: 0px; border: 0px; vertical-align: baseline; font-size: 14px; color: rgb(51, 51, 51);">
-    Ống dẫn bằng Đồng - Lá tản nhiệt bằng Nhôm
-</span>
-</li></ul></div><div class="imgnote"
-                     style="margin: 10px 0px; padding: 0px; border: 0px; vertical-align: baseline; overflow: hidden; color: rgb(51, 51, 51); font-family: Arial, Helvetica, sans-serif; font-size: 14px;">
-<img width="780" height="585"
-     data-src="https://cdn.tgdd.vn/Products/Images/1943/103245/Kit/tu-lanh-beko-rs9050p-note-01-1.jpg"
-     alt="Thông số kỹ thuật Tủ lạnh Beko 90 lít RS9050P" class="lazy"
-     src="https://cdn.tgdd.vn/Products/Images/1943/103245/Kit/tu-lanh-beko-rs9050p-note-01-1.jpg"
-     style="margin: 0px; padding: 0px; vertical-align: baseline; opacity: 1; transition: opacity 0.3s ease-in; display: block; width: 780px; height: auto;"></img>
-</div><div class="box-article " style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline;">
-<article id="tinh-nang" class="area_article"
-         style="margin: 0px; padding: 0px 0px 10px; border: 0px; vertical-align: baseline; overflow: hidden; line-height: 22px;">
-    <p style="color: rgb(51, 51, 51); font-family: Arial, Helvetica, sans-serif; font-size: 16px; margin-bottom: 10px; padding: 0px; border: 0px; vertical-align: baseline; -webkit-margin-before: 0px; -webkit-margin-after: 0px; -webkit-padding-start: 0px; text-rendering: geometricPrecision;">
-        Beko RS9050P chẳng những không tiêu tốn nhiều điện năng mà còn vận hành êm ái. Ra mắt vào năm 2017 nên được
-        trang bị nhiều công nghệ mới giúp tủ hoạt động bền bỉ.
-    </p>
-    <span style="color: rgb(51, 51, 51); font-family: Arial, Helvetica, sans-serif; font-size: 15px; margin-right: auto; margin-left: auto; transition-delay: initial; transition-property: opacity; height: auto;">
-        <img alt="Tủ lạnh Beko 90 lít RS9050P" title="Tủ lạnh Beko 90 lít RS9050P"
-             data-src="https://cdn.tgdd.vn/Products/Images/1943/103245/beko-rs9050p-4.jpg" class="lazy"
-             src="https://cdn.tgdd.vn/Products/Images/1943/103245/beko-rs9050p-4.jpg"
-             style="margin: 15px auto 5px; padding: 0px; vertical-align: baseline; opacity: 1; transition: opacity 0.3s ease-in; display: block; width: 780px; max-width: 100%; height: auto;"></img>
-    </span>
-    <h3 style="color: rgb(51, 51, 51); font-family: Arial, Helvetica, sans-serif; font-size: 22px; margin: 1.5em auto 0.3em; padding: 0px; border: 0px; vertical-align: baseline; font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; line-height: 1.4em; outline: none; zoom: 1;">
-        Khay kính chịu lực an toàn và bền
-    </h3>
-    <h4 style="margin-bottom: 10px; padding: 0px; border: 0px; vertical-align: baseline; -webkit-margin-before: 0px; -webkit-margin-after: 0px; -webkit-padding-start: 0px; text-rendering: geometricPrecision;">
-        <span style="border-style: initial; border-color: initial; border-image: initial;">Tủ lạnh Beko 90 lít</span>
-        <span style="color: rgb(51, 51, 51); font-family: Arial, Helvetica, sans-serif; font-size: 16px;">RS9050P có thể
-            chứa nhiều thực phẩm nhờ
-        </span>
-        <span style="border-style: initial; border-color: initial; border-image: initial;">khay kính chịu lực</span>
-        <span style="color: rgb(51, 51, 51); font-family: Arial, Helvetica, sans-serif; font-size: 16px;">khó gãy, khá
-            an toàn cho người sử dụng. Một công dụng khác của khay kính chịu lực là dễ dàng vệ sinh, bạn có thể tác động
-            lực mạnh để tẩy rửa mà không lo khay vỡ.
-        </span>
-    </h4>
-    <span style="color: rgb(51, 51, 51); font-family: Arial, Helvetica, sans-serif; font-size: 15px; margin-right: auto; margin-left: auto; transition-delay: initial; transition-property: opacity; height: auto;">
-        <img alt="Tủ lạnh Beko 90 lít RS9050P" title="Tủ lạnh Beko 90 lít RS9050P"
-             data-src="https://cdn.tgdd.vn/Products/Images/1943/103245/beko-rs9050p-1.jpg" class="lazy"
-             src="https://cdn.tgdd.vn/Products/Images/1943/103245/beko-rs9050p-1.jpg"
-             style="margin: 15px auto 5px; padding: 0px; vertical-align: baseline; opacity: 1; transition: opacity 0.3s ease-in; display: block; width: 780px; max-width: 100%; height: auto;"></img>
-        <img alt="Tủ lạnh Beko 90 lít RS9050P" title="Tủ lạnh Beko 90 lít RS9050P"
-             data-src="https://cdn.tgdd.vn/Products/Images/1943/103245/beko-rs9050p-2.jpg" class="lazy"
-             src="https://cdn.tgdd.vn/Products/Images/1943/103245/beko-rs9050p-2.jpg"
-             style="margin: 15px auto 5px; padding: 0px; vertical-align: baseline; opacity: 1; transition: opacity 0.3s ease-in; display: block; width: 780px; max-width: 100%; height: auto;"></img>
-    </span>
-</article>
-<div style="color: rgb(51, 51, 51); font-family: Arial, Helvetica, sans-serif; font-size: 14px;">
-    <br></br>
-</div>
-</div></div></document>
+    <a href="#">Sản phẩm</a>
+    <div>
+        <div class="container">
+            <div>
+                <div class="title">Danh mục sản phẩm</div>
+                <ul>
+                    <li>
+                        <a href="/am-tran-downlight"
+                           data-image="https://images.kingled.vn/data/ProductGroup/83A147E8-2778-42DE-BBAB-B0E0FDD46052/downlight-am-tran.jpg">
+                            &amp;#194;m Trần T&amp;#225;n Quang
+                        </a>
+                        <div itemtype="http://schema.org/SomeProducts" class="schema">
+                            <meta itemprop="name" content="&amp;#194;m Trần T&amp;#225;n Quang"></meta>
+                            <meta itemprop="sku" content="DL"></meta>
+                            <meta itemprop="image"
+                                  content="https://images.kingled.vn/data/ProductGroup/83A147E8-2778-42DE-BBAB-B0E0FDD46052/downlight-am-tran.jpg"></meta>
+                            <meta itemprop="description"
+                                  content="Đ&amp;#232;n LED &amp;#226;m trần (đ&amp;#232;n downlight) Kingled c&amp;#243; khả năng tiết kiệm 85% điện năng, Tuổi thọ l&amp;#234;n tới 50.000 giờ cao gấp 2-3 lần đ&amp;#232;n chiếu s&amp;#225;ng th&amp;#244;ng thường, Kingled bảo h&amp;#224;nh - đổi trả trong v&amp;#242;ng 2 năm"></meta>
+                            <meta itemprop="gtin" content="no"></meta>
+                            <meta itemprop="mpn" content="Kingled"></meta>
+                            <div itemprop="brand" itemtype="http://schema.org/Brand">
+                                <meta itemprop="name" content="Kingled"></meta>
+                                <meta itemprop="image"
+                                      content="/data/Site/2A2B7E24-CC23-49E4-B646-E1B03ECF7922/Logo.png"></meta>
+                                <meta itemprop="url" content="http://kingled.vn"></meta>
+                            </div>
+                            <div itemprop="offers" itemtype="http://schema.org/Offer">
+                                <meta itemprop="url" content="/am-tran-downlight"></meta>
+                                <meta itemprop="price" content="0"></meta>
+                                <meta itemprop="priceCurrency" content="VND"></meta>
+                                <meta itemprop="priceValidUntil" content="2021-06-30"></meta>
+                                <link itemprop="availability" href="http://schema.org/InStock"/>
+                            </div>
+                            <div itemprop="aggregateRating" itemtype="http://schema.org/aggregateRating">
+                                <meta itemprop="ratingValue" content="5"></meta>
+                                <meta itemprop="bestRating" content="5"></meta>
+                                <meta itemprop="reviewCount" content="5000"></meta>
+                            </div>
+                        </div>
+                        <a href="/den-spotlight"
+                           data-image="https://images.kingled.vn/data/ProductGroup/779135DD-78E1-413D-9263-D61E1198DFDD/den-spotlight-am-tran.jpg">
+                            Spotlight &amp;#194;m Trần
+                        </a>
+                        <div itemtype="http://schema.org/SomeProducts" class="schema">
+                            <meta itemprop="name" content="Spotlight &amp;#194;m Trần"></meta>
+                            <meta itemprop="sku" content="DLR"></meta>
+                            <meta itemprop="image"
+                                  content="https://images.kingled.vn/data/ProductGroup/779135DD-78E1-413D-9263-D61E1198DFDD/den-spotlight-am-tran.jpg"></meta>
+                            <meta itemprop="description"
+                                  content="Đ&amp;#232;n &amp;#226;m trần chiếu rọi hay c&amp;#242;n gọi l&amp;#224; đ&amp;#232;n&amp;#160;Led&amp;#160;Spotlight&amp;#160;của KINGLED l&amp;#224; loại đ&amp;#232;n c&amp;#243; g&amp;#243;c chiếu hẹp gi&amp;#250;p tập trung &amp;#225;nh s&amp;#225;ng v&amp;#224;o 1 v&amp;#249;ng nhất định thường được sử dụng để tạo điểm nhấn cho kh&amp;#244;ng gian. "></meta>
+                            <meta itemprop="gtin" content="no"></meta>
+                            <meta itemprop="mpn" content="Kingled"></meta>
+                            <div itemprop="brand" itemtype="http://schema.org/Brand">
+                                <meta itemprop="name" content="Kingled"></meta>
+                                <meta itemprop="image"
+                                      content="/data/Site/2A2B7E24-CC23-49E4-B646-E1B03ECF7922/Logo.png"></meta>
+                                <meta itemprop="url" content="http://kingled.vn"></meta>
+                            </div>
+                            <div itemprop="offers" itemtype="http://schema.org/Offer">
+                                <meta itemprop="url" content="/den-spotlight"></meta>
+                                <meta itemprop="price" content="0"></meta>
+                                <meta itemprop="priceCurrency" content="VND"></meta>
+                                <meta itemprop="priceValidUntil" content="2021-06-30"></meta>
+                                <link itemprop="availability" href="http://schema.org/InStock"/>
+                            </div>
+                            <div itemprop="aggregateRating" itemtype="http://schema.org/aggregateRating">
+                                <meta itemprop="ratingValue" content="5"></meta>
+                                <meta itemprop="bestRating" content="5"></meta>
+                                <meta itemprop="reviewCount" content="5000"></meta>
+                            </div>
+                        </div>
+                        <a href="/den-led-panel"
+                           data-image="https://images.kingled.vn/data/ProductGroup/16DDE13C-3648-4E0B-A97B-F10686F7E93E/den-panel-tam-4.jpg">
+                            Đ&amp;#232;n Led Panel
+                        </a>
+                        <div itemtype="http://schema.org/SomeProducts" class="schema">
+                            <meta itemprop="name" content="Đ&amp;#232;n Led Panel"></meta>
+                            <meta itemprop="sku" content=""></meta>
+                            <meta itemprop="image"
+                                  content="https://images.kingled.vn/data/ProductGroup/16DDE13C-3648-4E0B-A97B-F10686F7E93E/den-panel-tam-4.jpg"></meta>
+                            <meta itemprop="description"
+                                  content="Đ&amp;#232;n led Panel&amp;#160;KINGLED&amp;#160;bao gồm 2 series: Panel tấm lớn v&amp;#224; &amp;#194;m trần si&amp;#234;u mỏng&amp;#160;l&amp;#224; loại đ&amp;#232;n d&amp;#249;ng trong những m&amp;#244;i trường&amp;#160;c&amp;#243; nhu cầu sử dụng &amp;#225;nh s&amp;#225;ng cao như:&amp;#160;&amp;#160;Văn ph&amp;#242;ng, c&amp;#225;c dự &amp;#225;n thương mại, c&amp;#225;c khu chung cư..."></meta>
+                            <meta itemprop="gtin" content="no"></meta>
+                            <meta itemprop="mpn" content="Kingled"></meta>
+                            <div itemprop="brand" itemtype="http://schema.org/Brand">
+                                <meta itemprop="name" content="Kingled"></meta>
+                                <meta itemprop="image"
+                                      content="/data/Site/2A2B7E24-CC23-49E4-B646-E1B03ECF7922/Logo.png"></meta>
+                                <meta itemprop="url" content="http://kingled.vn"></meta>
+                            </div>
+                            <div itemprop="offers" itemtype="http://schema.org/Offer">
+                                <meta itemprop="url" content="/den-led-panel"></meta>
+                                <meta itemprop="price" content="0"></meta>
+                                <meta itemprop="priceCurrency" content="VND"></meta>
+                                <meta itemprop="priceValidUntil" content="2021-06-30"></meta>
+                                <link itemprop="availability" href="http://schema.org/InStock"/>
+                            </div>
+                            <div itemprop="aggregateRating" itemtype="http://schema.org/aggregateRating">
+                                <meta itemprop="ratingValue" content="5"></meta>
+                                <meta itemprop="bestRating" content="5"></meta>
+                                <meta itemprop="reviewCount" content="5000"></meta>
+                            </div>
+                        </div>
+                        <a href="/den-roi-ray"
+                           data-image="https://images.kingled.vn/data/ProductGroup/142805FA-6723-4E9E-ABD3-EF75FEA83A3D/den-roi-ray.jpg">
+                            Đ&amp;#232;n rọi ray
+                        </a>
+                        <div itemtype="http://schema.org/SomeProducts" class="schema">
+                            <meta itemprop="name" content="Đ&amp;#232;n rọi ray"></meta>
+                            <meta itemprop="sku" content=""></meta>
+                            <meta itemprop="image"
+                                  content="https://images.kingled.vn/data/ProductGroup/142805FA-6723-4E9E-ABD3-EF75FEA83A3D/den-roi-ray.jpg"></meta>
+                            <meta itemprop="description" content=""></meta>
+                            <meta itemprop="gtin" content="no"></meta>
+                            <meta itemprop="mpn" content="Kingled"></meta>
+                            <div itemprop="brand" itemtype="http://schema.org/Brand">
+                                <meta itemprop="name" content="Kingled"></meta>
+                                <meta itemprop="image"
+                                      content="/data/Site/2A2B7E24-CC23-49E4-B646-E1B03ECF7922/Logo.png"></meta>
+                                <meta itemprop="url" content="http://kingled.vn"></meta>
+                            </div>
+                            <div itemprop="offers" itemtype="http://schema.org/Offer">
+                                <meta itemprop="url" content="/den-roi-ray"></meta>
+                                <meta itemprop="price" content="0"></meta>
+                                <meta itemprop="priceCurrency" content="VND"></meta>
+                                <meta itemprop="priceValidUntil" content="2021-06-30"></meta>
+                                <link itemprop="availability" href="http://schema.org/InStock"/>
+                            </div>
+                            <div itemprop="aggregateRating" itemtype="http://schema.org/aggregateRating">
+                                <meta itemprop="ratingValue" content="5"></meta>
+                                <meta itemprop="bestRating" content="5"></meta>
+                                <meta itemprop="reviewCount" content="5000"></meta>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="/den-tuong"
+                           data-image="https://images.kingled.vn/data/ProductGroup/5DC6B60D-FC82-4A4A-98E8-B3043F2EEE99/den-tuong-led.jpg">
+                            Đ&amp;#232;n tường Led
+                        </a>
+                        <div itemtype="http://schema.org/SomeProducts" class="schema">
+                            <meta itemprop="name" content="Đ&amp;#232;n tường Led"></meta>
+                            <meta itemprop="sku" content=""></meta>
+                            <meta itemprop="image"
+                                  content="https://images.kingled.vn/data/ProductGroup/5DC6B60D-FC82-4A4A-98E8-B3043F2EEE99/den-tuong-led.jpg"></meta>
+                            <meta itemprop="description" content=""></meta>
+                            <meta itemprop="gtin" content="no"></meta>
+                            <meta itemprop="mpn" content="Kingled"></meta>
+                            <div itemprop="brand" itemtype="http://schema.org/Brand">
+                                <meta itemprop="name" content="Kingled"></meta>
+                                <meta itemprop="image"
+                                      content="/data/Site/2A2B7E24-CC23-49E4-B646-E1B03ECF7922/Logo.png"></meta>
+                                <meta itemprop="url" content="http://kingled.vn"></meta>
+                            </div>
+                            <div itemprop="offers" itemtype="http://schema.org/Offer">
+                                <meta itemprop="url" content="/den-tuong"></meta>
+                                <meta itemprop="price" content="0"></meta>
+                                <meta itemprop="priceCurrency" content="VND"></meta>
+                                <meta itemprop="priceValidUntil" content="2021-06-30"></meta>
+                                <link itemprop="availability" href="http://schema.org/InStock"/>
+                            </div>
+                            <div itemprop="aggregateRating" itemtype="http://schema.org/aggregateRating">
+                                <meta itemprop="ratingValue" content="5"></meta>
+                                <meta itemprop="bestRating" content="5"></meta>
+                                <meta itemprop="reviewCount" content="5000"></meta>
+                            </div>
+                        </div>
+                        <a href="/den-roi-tranh-roi-guong"
+                           data-image="https://images.kingled.vn/data/ProductGroup/1693033F-B73A-4A42-987D-E3D529A7215A/den-soi-tranh-kingled.jpg">
+                            Đ&amp;#232;n rọi tranh
+                        </a>
+                        <div itemtype="http://schema.org/SomeProducts" class="schema">
+                            <meta itemprop="name" content="Đ&amp;#232;n rọi tranh"></meta>
+                            <meta itemprop="sku" content=""></meta>
+                            <meta itemprop="image"
+                                  content="https://images.kingled.vn/data/ProductGroup/1693033F-B73A-4A42-987D-E3D529A7215A/den-soi-tranh-kingled.jpg"></meta>
+                            <meta itemprop="description" content=""></meta>
+                            <meta itemprop="gtin" content="no"></meta>
+                            <meta itemprop="mpn" content="Kingled"></meta>
+                            <div itemprop="brand" itemtype="http://schema.org/Brand">
+                                <meta itemprop="name" content="Kingled"></meta>
+                                <meta itemprop="image"
+                                      content="/data/Site/2A2B7E24-CC23-49E4-B646-E1B03ECF7922/Logo.png"></meta>
+                                <meta itemprop="url" content="http://kingled.vn"></meta>
+                            </div>
+                            <div itemprop="offers" itemtype="http://schema.org/Offer">
+                                <meta itemprop="url" content="/den-roi-tranh-roi-guong"></meta>
+                                <meta itemprop="price" content="0"></meta>
+                                <meta itemprop="priceCurrency" content="VND"></meta>
+                                <meta itemprop="priceValidUntil" content="2021-06-30"></meta>
+                                <link itemprop="availability" href="http://schema.org/InStock"/>
+                            </div>
+                            <div itemprop="aggregateRating" itemtype="http://schema.org/aggregateRating">
+                                <meta itemprop="ratingValue" content="5"></meta>
+                                <meta itemprop="bestRating" content="5"></meta>
+                                <meta itemprop="reviewCount" content="5000"></meta>
+                            </div>
+                        </div>
+                        <a href="/den-led-day"
+                           data-image="https://images.kingled.vn/data/ProductGroup/73D7CCED-DD8E-46B0-8ABA-2811345C5354/led-day.jpg">
+                            Đ&amp;#232;n Led D&amp;#226;y
+                        </a>
+                        <div itemtype="http://schema.org/SomeProducts" class="schema">
+                            <meta itemprop="name" content="Đ&amp;#232;n Led D&amp;#226;y"></meta>
+                            <meta itemprop="sku" content=""></meta>
+                            <meta itemprop="image"
+                                  content="https://images.kingled.vn/data/ProductGroup/73D7CCED-DD8E-46B0-8ABA-2811345C5354/led-day.jpg"></meta>
+                            <meta itemprop="description" content=""></meta>
+                            <meta itemprop="gtin" content="no"></meta>
+                            <meta itemprop="mpn" content="Kingled"></meta>
+                            <div itemprop="brand" itemtype="http://schema.org/Brand">
+                                <meta itemprop="name" content="Kingled"></meta>
+                                <meta itemprop="image"
+                                      content="/data/Site/2A2B7E24-CC23-49E4-B646-E1B03ECF7922/Logo.png"></meta>
+                                <meta itemprop="url" content="http://kingled.vn"></meta>
+                            </div>
+                            <div itemprop="offers" itemtype="http://schema.org/Offer">
+                                <meta itemprop="url" content="/den-led-day"></meta>
+                                <meta itemprop="price" content="0"></meta>
+                                <meta itemprop="priceCurrency" content="VND"></meta>
+                                <meta itemprop="priceValidUntil" content="2021-06-30"></meta>
+                                <link itemprop="availability" href="http://schema.org/InStock"/>
+                            </div>
+                            <div itemprop="aggregateRating" itemtype="http://schema.org/aggregateRating">
+                                <meta itemprop="ratingValue" content="5"></meta>
+                                <meta itemprop="bestRating" content="5"></meta>
+                                <meta itemprop="reviewCount" content="5000"></meta>
+                            </div>
+                        </div>
+                        <a href="/den-led-op-tran"
+                           data-image="https://images.kingled.vn/data/ProductGroup/A4ED953E-B632-49D1-8042-BB5FEF004798/den-led-op-tran-tran-vien-otv.jpg">
+                            Đ&amp;#232;n Led Ốp Trần
+                        </a>
+                        <div itemtype="http://schema.org/SomeProducts" class="schema">
+                            <meta itemprop="name" content="Đ&amp;#232;n Led Ốp Trần"></meta>
+                            <meta itemprop="sku" content=""></meta>
+                            <meta itemprop="image"
+                                  content="https://images.kingled.vn/data/ProductGroup/A4ED953E-B632-49D1-8042-BB5FEF004798/den-led-op-tran-tran-vien-otv.jpg"></meta>
+                            <meta itemprop="description" content=""></meta>
+                            <meta itemprop="gtin" content="no"></meta>
+                            <meta itemprop="mpn" content="Kingled"></meta>
+                            <div itemprop="brand" itemtype="http://schema.org/Brand">
+                                <meta itemprop="name" content="Kingled"></meta>
+                                <meta itemprop="image"
+                                      content="/data/Site/2A2B7E24-CC23-49E4-B646-E1B03ECF7922/Logo.png"></meta>
+                                <meta itemprop="url" content="http://kingled.vn"></meta>
+                            </div>
+                            <div itemprop="offers" itemtype="http://schema.org/Offer">
+                                <meta itemprop="url" content="/den-led-op-tran"></meta>
+                                <meta itemprop="price" content="0"></meta>
+                                <meta itemprop="priceCurrency" content="VND"></meta>
+                                <meta itemprop="priceValidUntil" content="2021-06-30"></meta>
+                                <link itemprop="availability" href="http://schema.org/InStock"/>
+                            </div>
+                            <div itemprop="aggregateRating" itemtype="http://schema.org/aggregateRating">
+                                <meta itemprop="ratingValue" content="5"></meta>
+                                <meta itemprop="bestRating" content="5"></meta>
+                                <meta itemprop="reviewCount" content="5000"></meta>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="/den-led-bulb"
+                           data-image="https://images.kingled.vn/data/ProductGroup/CAEDA5E5-3FC5-4F3B-8E63-C5D106588569/den-led-bulb-kingled.jpg">
+                            Đ&amp;#232;n Led Bulb
+                        </a>
+                        <div itemtype="http://schema.org/SomeProducts" class="schema">
+                            <meta itemprop="name" content="Đ&amp;#232;n Led Bulb"></meta>
+                            <meta itemprop="sku" content=""></meta>
+                            <meta itemprop="image"
+                                  content="https://images.kingled.vn/data/ProductGroup/CAEDA5E5-3FC5-4F3B-8E63-C5D106588569/den-led-bulb-kingled.jpg"></meta>
+                            <meta itemprop="description" content=""></meta>
+                            <meta itemprop="gtin" content="no"></meta>
+                            <meta itemprop="mpn" content="Kingled"></meta>
+                            <div itemprop="brand" itemtype="http://schema.org/Brand">
+                                <meta itemprop="name" content="Kingled"></meta>
+                                <meta itemprop="image"
+                                      content="/data/Site/2A2B7E24-CC23-49E4-B646-E1B03ECF7922/Logo.png"></meta>
+                                <meta itemprop="url" content="http://kingled.vn"></meta>
+                            </div>
+                            <div itemprop="offers" itemtype="http://schema.org/Offer">
+                                <meta itemprop="url" content="/den-led-bulb"></meta>
+                                <meta itemprop="price" content="0"></meta>
+                                <meta itemprop="priceCurrency" content="VND"></meta>
+                                <meta itemprop="priceValidUntil" content="2021-06-30"></meta>
+                                <link itemprop="availability" href="http://schema.org/InStock"/>
+                            </div>
+                            <div itemprop="aggregateRating" itemtype="http://schema.org/aggregateRating">
+                                <meta itemprop="ratingValue" content="5"></meta>
+                                <meta itemprop="bestRating" content="5"></meta>
+                                <meta itemprop="reviewCount" content="5000"></meta>
+                            </div>
+                        </div>
+                        <a href="/den-ong-bo"
+                           data-image="https://images.kingled.vn/data/ProductGroup/CBB405D1-0AE7-4E21-8217-116595738213/ong-bo-obr15.jpg">
+                            Đ&amp;#232;n ống bơ
+                        </a>
+                        <div itemtype="http://schema.org/SomeProducts" class="schema">
+                            <meta itemprop="name" content="Đ&amp;#232;n ống bơ"></meta>
+                            <meta itemprop="sku" content=""></meta>
+                            <meta itemprop="image"
+                                  content="https://images.kingled.vn/data/ProductGroup/CBB405D1-0AE7-4E21-8217-116595738213/ong-bo-obr15.jpg"></meta>
+                            <meta itemprop="description" content=""></meta>
+                            <meta itemprop="gtin" content="no"></meta>
+                            <meta itemprop="mpn" content="Kingled"></meta>
+                            <div itemprop="brand" itemtype="http://schema.org/Brand">
+                                <meta itemprop="name" content="Kingled"></meta>
+                                <meta itemprop="image"
+                                      content="/data/Site/2A2B7E24-CC23-49E4-B646-E1B03ECF7922/Logo.png"></meta>
+                                <meta itemprop="url" content="http://kingled.vn"></meta>
+                            </div>
+                            <div itemprop="offers" itemtype="http://schema.org/Offer">
+                                <meta itemprop="url" content="/den-ong-bo"></meta>
+                                <meta itemprop="price" content="0"></meta>
+                                <meta itemprop="priceCurrency" content="VND"></meta>
+                                <meta itemprop="priceValidUntil" content="2021-06-30"></meta>
+                                <link itemprop="availability" href="http://schema.org/InStock"/>
+                            </div>
+                            <div itemprop="aggregateRating" itemtype="http://schema.org/aggregateRating">
+                                <meta itemprop="ratingValue" content="5"></meta>
+                                <meta itemprop="bestRating" content="5"></meta>
+                                <meta itemprop="reviewCount" content="5000"></meta>
+                            </div>
+                        </div>
+                        <a href="/den-tha-led"
+                           data-image="https://images.kingled.vn/data/ProductGroup/1AB8B518-ACF6-4928-B211-C5B593F85950/den-tha-trang-tri-kingled-1.jpg">
+                            Đ&amp;#232;n Thả Led
+                        </a>
+                        <div itemtype="http://schema.org/SomeProducts" class="schema">
+                            <meta itemprop="name" content="Đ&amp;#232;n Thả Led"></meta>
+                            <meta itemprop="sku" content=""></meta>
+                            <meta itemprop="image"
+                                  content="https://images.kingled.vn/data/ProductGroup/1AB8B518-ACF6-4928-B211-C5B593F85950/den-tha-trang-tri-kingled-1.jpg"></meta>
+                            <meta itemprop="description" content=""></meta>
+                            <meta itemprop="gtin" content="no"></meta>
+                            <meta itemprop="mpn" content="Kingled"></meta>
+                            <div itemprop="brand" itemtype="http://schema.org/Brand">
+                                <meta itemprop="name" content="Kingled"></meta>
+                                <meta itemprop="image"
+                                      content="/data/Site/2A2B7E24-CC23-49E4-B646-E1B03ECF7922/Logo.png"></meta>
+                                <meta itemprop="url" content="http://kingled.vn"></meta>
+                            </div>
+                            <div itemprop="offers" itemtype="http://schema.org/Offer">
+                                <meta itemprop="url" content="/den-tha-led"></meta>
+                                <meta itemprop="price" content="0"></meta>
+                                <meta itemprop="priceCurrency" content="VND"></meta>
+                                <meta itemprop="priceValidUntil" content="2021-06-30"></meta>
+                                <link itemprop="availability" href="http://schema.org/InStock"/>
+                            </div>
+                            <div itemprop="aggregateRating" itemtype="http://schema.org/aggregateRating">
+                                <meta itemprop="ratingValue" content="5"></meta>
+                                <meta itemprop="bestRating" content="5"></meta>
+                                <meta itemprop="reviewCount" content="5000"></meta>
+                            </div>
+                        </div>
+                        <a href="/den-led-tube"
+                           data-image="https://images.kingled.vn/data/ProductGroup/F82ACFE0-466B-4F3F-8F31-A0AC624BA66F/den-tuyp-kingled.jpg">
+                            Đ&amp;#232;n Led Tube
+                        </a>
+                        <div itemtype="http://schema.org/SomeProducts" class="schema">
+                            <meta itemprop="name" content="Đ&amp;#232;n Led Tube"></meta>
+                            <meta itemprop="sku" content=""></meta>
+                            <meta itemprop="image"
+                                  content="https://images.kingled.vn/data/ProductGroup/F82ACFE0-466B-4F3F-8F31-A0AC624BA66F/den-tuyp-kingled.jpg"></meta>
+                            <meta itemprop="description" content=""></meta>
+                            <meta itemprop="gtin" content="no"></meta>
+                            <meta itemprop="mpn" content="Kingled"></meta>
+                            <div itemprop="brand" itemtype="http://schema.org/Brand">
+                                <meta itemprop="name" content="Kingled"></meta>
+                                <meta itemprop="image"
+                                      content="/data/Site/2A2B7E24-CC23-49E4-B646-E1B03ECF7922/Logo.png"></meta>
+                                <meta itemprop="url" content="http://kingled.vn"></meta>
+                            </div>
+                            <div itemprop="offers" itemtype="http://schema.org/Offer">
+                                <meta itemprop="url" content="/den-led-tube"></meta>
+                                <meta itemprop="price" content="0"></meta>
+                                <meta itemprop="priceCurrency" content="VND"></meta>
+                                <meta itemprop="priceValidUntil" content="2021-06-30"></meta>
+                                <link itemprop="availability" href="http://schema.org/InStock"/>
+                            </div>
+                            <div itemprop="aggregateRating" itemtype="http://schema.org/aggregateRating">
+                                <meta itemprop="ratingValue" content="5"></meta>
+                                <meta itemprop="bestRating" content="5"></meta>
+                                <meta itemprop="reviewCount" content="5000"></meta>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="/den-san-vuon"
+                           data-image="https://images.kingled.vn/data/ProductGroup/8FE79464-176C-45A1-AB11-241632A82CB5/Untitled-5-1.png">
+                            Đ&amp;#232;n s&amp;#226;n vườn
+                        </a>
+                        <div itemtype="http://schema.org/SomeProducts" class="schema">
+                            <meta itemprop="name" content="Đ&amp;#232;n s&amp;#226;n vườn"></meta>
+                            <meta itemprop="sku" content=""></meta>
+                            <meta itemprop="image"
+                                  content="https://images.kingled.vn/data/ProductGroup/8FE79464-176C-45A1-AB11-241632A82CB5/Untitled-5-1.png"></meta>
+                            <meta itemprop="description" content=""></meta>
+                            <meta itemprop="gtin" content="no"></meta>
+                            <meta itemprop="mpn" content="Kingled"></meta>
+                            <div itemprop="brand" itemtype="http://schema.org/Brand">
+                                <meta itemprop="name" content="Kingled"></meta>
+                                <meta itemprop="image"
+                                      content="/data/Site/2A2B7E24-CC23-49E4-B646-E1B03ECF7922/Logo.png"></meta>
+                                <meta itemprop="url" content="http://kingled.vn"></meta>
+                            </div>
+                            <div itemprop="offers" itemtype="http://schema.org/Offer">
+                                <meta itemprop="url" content="/den-san-vuon"></meta>
+                                <meta itemprop="price" content="0"></meta>
+                                <meta itemprop="priceCurrency" content="VND"></meta>
+                                <meta itemprop="priceValidUntil" content="2021-06-30"></meta>
+                                <link itemprop="availability" href="http://schema.org/InStock"/>
+                            </div>
+                            <div itemprop="aggregateRating" itemtype="http://schema.org/aggregateRating">
+                                <meta itemprop="ratingValue" content="5"></meta>
+                                <meta itemprop="bestRating" content="5"></meta>
+                                <meta itemprop="reviewCount" content="5000"></meta>
+                            </div>
+                        </div>
+                        <a href="/den-pha-led"
+                           data-image="https://images.kingled.vn/data/ProductGroup/ACF3DF56-AB3A-4840-BDDE-D0AF4DEAE299/Pha-Led.png">
+                            Đ&amp;#232;n pha LED
+                        </a>
+                        <div itemtype="http://schema.org/SomeProducts" class="schema">
+                            <meta itemprop="name" content="Đ&amp;#232;n pha LED"></meta>
+                            <meta itemprop="sku" content=""></meta>
+                            <meta itemprop="image"
+                                  content="https://images.kingled.vn/data/ProductGroup/ACF3DF56-AB3A-4840-BDDE-D0AF4DEAE299/Pha-Led.png"></meta>
+                            <meta itemprop="description" content=""></meta>
+                            <meta itemprop="gtin" content="no"></meta>
+                            <meta itemprop="mpn" content="Kingled"></meta>
+                            <div itemprop="brand" itemtype="http://schema.org/Brand">
+                                <meta itemprop="name" content="Kingled"></meta>
+                                <meta itemprop="image"
+                                      content="/data/Site/2A2B7E24-CC23-49E4-B646-E1B03ECF7922/Logo.png"></meta>
+                                <meta itemprop="url" content="http://kingled.vn"></meta>
+                            </div>
+                            <div itemprop="offers" itemtype="http://schema.org/Offer">
+                                <meta itemprop="url" content="/den-pha-led"></meta>
+                                <meta itemprop="price" content="0"></meta>
+                                <meta itemprop="priceCurrency" content="VND"></meta>
+                                <meta itemprop="priceValidUntil" content="2021-06-30"></meta>
+                                <link itemprop="availability" href="http://schema.org/InStock"/>
+                            </div>
+                            <div itemprop="aggregateRating" itemtype="http://schema.org/aggregateRating">
+                                <meta itemprop="ratingValue" content="5"></meta>
+                                <meta itemprop="bestRating" content="5"></meta>
+                                <meta itemprop="reviewCount" content="5000"></meta>
+                            </div>
+                        </div>
+                        <a href="/den-ban-led"
+                           data-image="https://images.kingled.vn/data/ProductGroup/DF6C0424-0234-4AD9-A957-95555AD70A04/OppleToronto012.jpg">
+                            Đ&amp;#232;n B&amp;#224;n Led
+                        </a>
+                        <div itemtype="http://schema.org/SomeProducts" class="schema">
+                            <meta itemprop="name" content="Đ&amp;#232;n B&amp;#224;n Led"></meta>
+                            <meta itemprop="sku" content=""></meta>
+                            <meta itemprop="image"
+                                  content="https://images.kingled.vn/data/ProductGroup/DF6C0424-0234-4AD9-A957-95555AD70A04/OppleToronto012.jpg"></meta>
+                            <meta itemprop="description" content=""></meta>
+                            <meta itemprop="gtin" content="no"></meta>
+                            <meta itemprop="mpn" content="Kingled"></meta>
+                            <div itemprop="brand" itemtype="http://schema.org/Brand">
+                                <meta itemprop="name" content="Kingled"></meta>
+                                <meta itemprop="image"
+                                      content="/data/Site/2A2B7E24-CC23-49E4-B646-E1B03ECF7922/Logo.png"></meta>
+                                <meta itemprop="url" content="http://kingled.vn"></meta>
+                            </div>
+                            <div itemprop="offers" itemtype="http://schema.org/Offer">
+                                <meta itemprop="url" content="/den-ban-led"></meta>
+                                <meta itemprop="price" content="0"></meta>
+                                <meta itemprop="priceCurrency" content="VND"></meta>
+                                <meta itemprop="priceValidUntil" content="2021-06-30"></meta>
+                                <link itemprop="availability" href="http://schema.org/InStock"/>
+                            </div>
+                            <div itemprop="aggregateRating" itemtype="http://schema.org/aggregateRating">
+                                <meta itemprop="ratingValue" content="5"></meta>
+                                <meta itemprop="bestRating" content="5"></meta>
+                                <meta itemprop="reviewCount" content="5000"></meta>
+                            </div>
+                        </div>
+                        <a href="/den-nha-xuong"
+                           data-image="https://images.kingled.vn/data/ProductGroup/A36C4970-892F-4F9C-A533-A008C673D724/den-led-nha-xuong-hightbay-ufo.jpg">
+                            Đ&amp;#200;N HIGHBAY UFO
+                        </a>
+                        <div itemtype="http://schema.org/SomeProducts" class="schema">
+                            <meta itemprop="name" content="Đ&amp;#200;N HIGHBAY UFO"></meta>
+                            <meta itemprop="sku" content=""></meta>
+                            <meta itemprop="image"
+                                  content="https://images.kingled.vn/data/ProductGroup/A36C4970-892F-4F9C-A533-A008C673D724/den-led-nha-xuong-hightbay-ufo.jpg"></meta>
+                            <meta itemprop="description"
+                                  content="Đ&amp;#232;n nh&amp;#224; xưởng highbay ufo l&amp;#224; sản phẩm mới đột ph&amp;#225; về c&amp;#244;ng nghệ của Kingled trong năm 2019. Thiết kế nhỏ gọn, nhẹ, si&amp;#234;u s&amp;#225;ng v&amp;#224; tiết kiệm điện"></meta>
+                            <meta itemprop="gtin" content="no"></meta>
+                            <meta itemprop="mpn" content="Kingled"></meta>
+                            <div itemprop="brand" itemtype="http://schema.org/Brand">
+                                <meta itemprop="name" content="Kingled"></meta>
+                                <meta itemprop="image"
+                                      content="/data/Site/2A2B7E24-CC23-49E4-B646-E1B03ECF7922/Logo.png"></meta>
+                                <meta itemprop="url" content="http://kingled.vn"></meta>
+                            </div>
+                            <div itemprop="offers" itemtype="http://schema.org/Offer">
+                                <meta itemprop="url" content="/den-nha-xuong"></meta>
+                                <meta itemprop="price" content="0"></meta>
+                                <meta itemprop="priceCurrency" content="VND"></meta>
+                                <meta itemprop="priceValidUntil" content="2021-06-30"></meta>
+                                <link itemprop="availability" href="http://schema.org/InStock"/>
+                            </div>
+                            <div itemprop="aggregateRating" itemtype="http://schema.org/aggregateRating">
+                                <meta itemprop="ratingValue" content="5"></meta>
+                                <meta itemprop="bestRating" content="5"></meta>
+                                <meta itemprop="reviewCount" content="5000"></meta>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="image">
+                    <img data-src="https://images.kingled.vn/data/ProductGroup/83A147E8-2778-42DE-BBAB-B0E0FDD46052/downlight-am-tran.jpg?h=200"
+                         alt="&amp;#194;m Trần T&amp;#225;n Quang"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</document>
