@@ -13,6 +13,7 @@ public class PinSolarProductEntity {
     private String imagePinSolar;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idPinSolar", nullable = false)
     public int getIdPinSolar() {
         return idPinSolar;

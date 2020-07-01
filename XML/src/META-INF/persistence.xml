@@ -10,7 +10,7 @@
         <class>duongdd.entity.PinSolarProductEntity</class>
 
         <properties>
-            <property name="eclipselink.jdbc.url" value="jdbc:sqlserver://localhost:1433;databaseName=PinSolarSuggestions"/>
+            <property name="eclipselink.jdbc.url" value="jdbc:sqlserver://localhost:1433;database=PinSolarSuggestions"/>
             <property name="eclipselink.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
             <property name="eclipselink.jdbc.user" value="sa"/>
             <property name="eclipselink.jdbc.password" value="22011998"/>

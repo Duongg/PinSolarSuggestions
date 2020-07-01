@@ -12,14 +12,14 @@ public class MainCrawlers {
         MenuDienMayCrawlers menuDienMayCrawlers = new MenuDienMayCrawlers();
         menuDienMayCrawlers.crawlDataProduct();
 
-        MenuLedLightCrawlers menuLedLightCrawlers = new MenuLedLightCrawlers();
-        menuLedLightCrawlers.crawlDetailLightProduct();
+//        MenuLedLightCrawlers menuLedLightCrawlers = new MenuLedLightCrawlers();
+//        menuLedLightCrawlers.crawlDetailLightProduct();
 
-        MenuNTCrawlers menuNTCrawlers = new MenuNTCrawlers();
-        menuNTCrawlers.crawlDataProductNT();
-
-        System.out.println("----------------------Pin Solar---------------------");
-        MenuPinSolarCrawlers menuPinSolarCrawlers = new MenuPinSolarCrawlers();
-        menuPinSolarCrawlers.crawlProductPinSolar();
+//        MenuNTCrawlers menuNTCrawlers = new MenuNTCrawlers();
+//        menuNTCrawlers.crawlDataProductNT();
+//
+//        System.out.println("----------------------Pin Solar---------------------");
+//        MenuPinSolarCrawlers menuPinSolarCrawlers = new MenuPinSolarCrawlers();
+//        menuPinSolarCrawlers.crawlProductPinSolar();
     }
 }

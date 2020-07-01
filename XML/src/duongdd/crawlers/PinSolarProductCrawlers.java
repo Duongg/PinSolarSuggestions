@@ -1,18 +1,15 @@
 package duongdd.crawlers;
 
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
+
 import duongdd.dtos.PinSolarDTO;
 import duongdd.utils.XMLChecker;
 import duongdd.utils.XMLCrawler;
 import duongdd.utils.XMLSign;
-
 import duongdd.xpaths.PinSolarXpaths;
 import org.xml.sax.SAXException;
-
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class PinSolarProductCrawlers {
     public String crawlPageNumberSolar(String url) throws ParserConfigurationException, SAXException, IOException {

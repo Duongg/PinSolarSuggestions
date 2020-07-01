@@ -1,18 +1,25 @@
 package duongdd.entity;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.Objects;
 
 @Entity
 @Table(name = "ElectricProduct", schema = "dbo", catalog = "PinSolarSuggestions")
+@NamedQueries({
+        @NamedQuery(name="ElectricProductEntity.findByName", query = "SELECT P FROM ElectricProductEntity P WHERE P.productName = :productName")
+})
 public class ElectricProductEntity {
     private int idProduct;
     private String productName;
     private double productCapacity;
     private int idCategory;
+    private Collection<BrandProductEntity> brandProductsByIdProduct;
     private CategoryProductEntity categoryProductByIdCategory;
+    private BrandProductEntity brandProductByIdBrand;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idProduct", nullable = false)
     public int getIdProduct() {
         return idProduct;
@@ -68,13 +75,27 @@ public class ElectricProductEntity {
         return Objects.hash(idProduct, productName, productCapacity, idCategory);
     }
 
+    public void setBrandProductsByIdProduct(Collection<BrandProductEntity> brandProductsByIdProduct) {
+        this.brandProductsByIdProduct = brandProductsByIdProduct;
+    }
+
     @ManyToOne
-    @JoinColumn(name = "idCategory", referencedColumnName = "idCategory", nullable = false)
+    @JoinColumn(name = "idCategory", referencedColumnName = "idCategory", nullable = false, insertable = false, updatable = false)
     public CategoryProductEntity getCategoryProductByIdCategory() {
         return categoryProductByIdCategory;
     }
 
     public void setCategoryProductByIdCategory(CategoryProductEntity categoryProductByIdCategory) {
         this.categoryProductByIdCategory = categoryProductByIdCategory;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "idBrand", referencedColumnName = "idBrandProduct", nullable = false, insertable = false, updatable = false)
+    public BrandProductEntity getBrandProductByIdBrand() {
+        return brandProductByIdBrand;
+    }
+
+    public void setBrandProductByIdBrand(BrandProductEntity brandProductByIdBrand) {
+        this.brandProductByIdBrand = brandProductByIdBrand;
     }
 }

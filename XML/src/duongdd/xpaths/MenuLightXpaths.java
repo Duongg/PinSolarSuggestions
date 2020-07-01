@@ -117,7 +117,8 @@ public class MenuLightXpaths {
 
     public List xpathBrand(String htmlContent){
         List<String> listBrand = new ArrayList<>();
-        String nameBrand = "";
+        String name= "";
+        String nameBrand;
         try {
             Document doc = XMLUtils.parseToDom(htmlContent.trim());
             if (doc != null) {
@@ -126,7 +127,9 @@ public class MenuLightXpaths {
                 NodeList nodeListUrl = (NodeList) xPath.evaluate(exp, doc, XPathConstants.NODESET);
                 if (nodeListUrl != null) {
                     for (int i = 0; i < nodeListUrl.getLength(); i++) {
-                        nameBrand = nodeListUrl.item(i).getTextContent();
+                        name = nodeListUrl.item(i).getTextContent();
+                        nameBrand = XMLChecker.parseBrandName(name);
+                        System.out.println(nameBrand);
                         listBrand.add(nameBrand);
                     }
                 }

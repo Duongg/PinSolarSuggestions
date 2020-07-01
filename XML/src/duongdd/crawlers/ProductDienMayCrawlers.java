@@ -1,6 +1,7 @@
 package duongdd.crawlers;
 
 import duongdd.dtos.ProductDTO;
+import duongdd.entity.ElectricProductEntity;
 import duongdd.utils.XMLChecker;
 import duongdd.utils.XMLCrawler;
 import duongdd.utils.XMLSign;
@@ -20,8 +21,8 @@ public class ProductDienMayCrawlers {
         return contentDataPages;
     }
 
-    public ProductDTO crawlDetailProduct(String namecate, String urlDetail) throws ParserConfigurationException, SAXException, IOException {
-        ProductDTO dto = new ProductDTO();
+    public ElectricProductEntity crawlDetailProduct(String namecate, String urlDetail) throws ParserConfigurationException, SAXException, IOException {
+        ElectricProductEntity electricProductEntity = new ElectricProductEntity();
         String contentDetail = "";
         ProductDienMayXpaths productDienMayXpaths = new ProductDienMayXpaths();
         try {
@@ -29,13 +30,13 @@ public class ProductDienMayCrawlers {
             contentDetail = XMLChecker.encodeContent(contentDetail);
             contentDetail = XMLChecker.fixTagName(contentDetail);
             contentDetail = XMLChecker.preParseDM(contentDetail);
-            dto = productDienMayXpaths.xpathProduct(contentDetail);
+            electricProductEntity = productDienMayXpaths.xpathProduct(contentDetail);
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        return dto;
+        return electricProductEntity;
     }
 
     public String crawlCategoryProduct(String nameCate, String url) throws ParserConfigurationException, SAXException, IOException {
