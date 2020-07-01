@@ -1,0 +1,47 @@
+package duongdd.dao;
+
+import duongdd.dbutils.DBUtils;
+import duongdd.entity.CategoryProductEntity;
+
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+import java.io.Serializable;
+
+
+public class CategoryProductDAO implements Serializable {
+
+    public boolean checkCategoryExist(String nameCategory){
+        EntityManager em = DBUtils.getEntityManager();
+        String jpql = "CategoryProductEntity.findByName";
+        Query query = em.createNamedQuery(jpql);
+        query.setParameter("nameCategory", nameCategory.toUpperCase());
+        try{
+            query.getSingleResult();
+            return true;
+        }catch (Exception e){
+            return false;
+        }finally {
+            if(em != null){
+                em.close();
+            }
+        }
+    }
+    public void insertCategory(String nameCategory){
+        EntityManager em = DBUtils.getEntityManager();
+        try{
+            if(!checkCategoryExist(nameCategory)){
+                CategoryProductEntity category = new CategoryProductEntity();
+                category.setNameCategory(nameCategory.toUpperCase());
+                em.getTransaction().begin();
+                em.persist(category);
+                em.getTransaction().commit();
+            }
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }finally {
+            if(em != null){
+                em.close();
+            }
+        }
+    }
+}

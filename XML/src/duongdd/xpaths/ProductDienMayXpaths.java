@@ -1,6 +1,7 @@
 package duongdd.xpaths;
 
 import duongdd.dtos.ProductDTO;
+import duongdd.entity.ElectricProductEntity;
 import duongdd.utils.XMLUtils;
 import duongdd.utils.XMLValidate;
 import org.w3c.dom.Document;
@@ -19,9 +20,9 @@ import java.util.List;
 
 public class ProductDienMayXpaths {
     //xpath detail product
-    public ProductDTO xpathProduct(String html) {
+    public ElectricProductEntity xpathProduct(String html) {
 
-        ProductDTO dto = new ProductDTO();
+        ElectricProductEntity electricProductEntity = new ElectricProductEntity();
         String strCapa = "";
         String strCutted = "";
         String capacity = "";
@@ -96,9 +97,11 @@ public class ProductDienMayXpaths {
                     capa = validate.convertStringCapacity(capacity);
                     capacityProduct = validate.parseStrCapaToFloat(capa);
                     if (capacityProduct != 0.0) {
-                        dto.setProductName(nameProduct);
-                        dto.setProductCapacity(capacityProduct);
-                        return dto;
+                        electricProductEntity.setProductName(nameProduct);
+                        electricProductEntity.setProductCapacity(capacityProduct);
+                        System.out.println(electricProductEntity.getProductName());
+                        System.out.println(electricProductEntity.getProductCapacity());
+                        return electricProductEntity;
                     }
                 }
             }
@@ -151,6 +154,7 @@ public class ProductDienMayXpaths {
         return null;
     }
 
+    //xpath brand
     public List xpathBrandProduct(String content){
         List<String> listBrand = new ArrayList<>();
         String nameBrand = "";

@@ -6,12 +6,16 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "CategoryProduct", schema = "dbo", catalog = "PinSolarSuggestions")
+@NamedQueries({
+        @NamedQuery(name="CategoryProductEntity.findByName",query = "SELECT C FROM CategoryProductEntity C WHERE C.nameCategory = :nameCategory")
+})
 public class CategoryProductEntity {
     private int idCategory;
     private String nameCategory;
     private Collection<ElectricProductEntity> electricProductsByIdCategory;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idCategory", nullable = false)
     public int getIdCategory() {
         return idCategory;

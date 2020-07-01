@@ -16,10 +16,10 @@
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="EclipseLink" />
         <datasource-mapping>
-          <factory-entry name="PinSolarSuggest" value="43b07e22-4b0e-4456-becf-c0d527cc8313" />
+          <factory-entry name="NewPersistenceUnit" value="43b07e22-4b0e-4456-becf-c0d527cc8313" />
         </datasource-mapping>
         <naming-strategy-map />
-        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/META-INF/persistence.xml" />
+        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/META-INF/persistence.xml" />
       </configuration>
     </facet>
   </component>
@@ -31,9 +31,9 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="Tomcat 8.0.27" level="application_server_libraries" />
-    <orderEntry type="library" name="eclipselink-2.5.0" level="project" />
     <orderEntry type="library" name="sqljdbc4" level="project" />
     <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
     <orderEntry type="library" name="org.eclipse.persistence:javax.persistence:2.0.0" level="project" />
+    <orderEntry type="library" name="eclipselink-2.7.6" level="project" />
   </component>
 </module>

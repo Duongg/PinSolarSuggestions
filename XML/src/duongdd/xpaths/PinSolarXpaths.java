@@ -109,7 +109,7 @@ public class PinSolarXpaths {
                 String pinName = nodeName.getTextContent();
                 String pinPrice = nodePrice.getTextContent();
                 String pinImage = nodeImage.getAttributes().getNamedItem("href").getNodeValue();
-                System.out.println(pinName);
+
                 if(capacity.equals("") && nodeCap != null){
                     capacity = nodeCap.getTextContent();
                 }else if(capacity.equals("")&& nodeCap_02 != null){
@@ -123,11 +123,16 @@ public class PinSolarXpaths {
                 }else if(capacity.equals("")){
                     capacity = validate.cutStringCapacityPinSolar(pinName);
                 }
+                    if(!capacity.equals("")){
+                        capacityProduct = validate.parseToFloat(capacity);
+                        dto.setPinName(pinName);
+                        dto.setPinImage(pinImage);
+                        dto.setPinCapacity(capacityProduct);
+                        dto.setPinPrice(pinPrice);
+                        System.out.println(dto.getPinName());
+                        System.out.println(dto.getPinCapacity());
+                    }
 
-//                System.out.println(pinPrice);
-//                System.out.println(pinImage);
-                capacityProduct = validate.parseToFloat(capacity);
-                System.out.println(capacityProduct);
 
 
                 return dto;

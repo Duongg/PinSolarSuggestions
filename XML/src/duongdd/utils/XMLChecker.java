@@ -221,7 +221,14 @@ public class XMLChecker {
         .replace("</div><div><br></br></div></div><div><br></br></div></div></document>","</div><div><br></br></div></div><div><br></br></div></div></div></document>");
         return content;
     }
-
+    public static String parseBrandName(String name){
+        String nameBrand = name.replace("&#194;","Â")
+                .replace("&#225;","á")
+                .replace("&#232;","è")
+                .replace("&#226;","â")
+                .replace("&#224;","à");
+        return nameBrand;
+    }
     private static String convert(Map<String, String> mapAttr){
         if(mapAttr.isEmpty()){
             return "";
