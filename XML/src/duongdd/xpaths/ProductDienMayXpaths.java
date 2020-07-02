@@ -20,14 +20,13 @@ import java.util.List;
 
 public class ProductDienMayXpaths {
     //xpath detail product
-    public ElectricProductEntity xpathProduct(String html) {
+    public ProductDTO xpathProduct(String nameCategory,String html) {
 
-        ElectricProductEntity electricProductEntity = new ElectricProductEntity();
+        ProductDTO dto = new ProductDTO();
         String strCapa = "";
-        String strCutted = "";
         String capacity = "";
         String capa = "";
-        float capacityProduct = 0;
+        double capacityProduct = 0;
         try {
             Document doc = XMLUtils.parseToDom(html.trim());
             if (doc != null) {
@@ -95,13 +94,12 @@ public class ProductDienMayXpaths {
                 XMLValidate validate = new XMLValidate();
                 if (!capacity.equals("")) {
                     capa = validate.convertStringCapacity(capacity);
-                    capacityProduct = validate.parseStrCapaToFloat(capa);
+                    capacityProduct = validate.parseStrCapaToDouble(capa);
                     if (capacityProduct != 0.0) {
-                        electricProductEntity.setProductName(nameProduct);
-                        electricProductEntity.setProductCapacity(capacityProduct);
-                        System.out.println(electricProductEntity.getProductName());
-                        System.out.println(electricProductEntity.getProductCapacity());
-                        return electricProductEntity;
+                        dto.setProductName(nameProduct);
+                        dto.setProductCapacity(capacityProduct);
+                        dto.setProductCategory(nameCategory);
+                        return dto;
                     }
                 }
             }

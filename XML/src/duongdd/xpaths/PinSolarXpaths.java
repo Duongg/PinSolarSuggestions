@@ -1,6 +1,7 @@
 package duongdd.xpaths;
 
 import duongdd.dtos.PinSolarDTO;
+import duongdd.entity.PinSolarProductEntity;
 import duongdd.utils.XMLSign;
 import duongdd.utils.XMLUtils;
 import duongdd.utils.XMLValidate;
@@ -79,8 +80,8 @@ public class PinSolarXpaths {
         return null;
     }
 
-    public PinSolarDTO xpathDetailPinSolar(String content) {
-        PinSolarDTO dto = new PinSolarDTO();
+    public PinSolarProductEntity xpathDetailPinSolar(String content) {
+        PinSolarProductEntity pinSolarProductEntity = new PinSolarProductEntity();
         XMLValidate validate = new XMLValidate();
         String capacity ="";
         float capacityProduct = 0;
@@ -125,17 +126,17 @@ public class PinSolarXpaths {
                 }
                     if(!capacity.equals("")){
                         capacityProduct = validate.parseToFloat(capacity);
-                        dto.setPinName(pinName);
-                        dto.setPinImage(pinImage);
-                        dto.setPinCapacity(capacityProduct);
-                        dto.setPinPrice(pinPrice);
-                        System.out.println(dto.getPinName());
-                        System.out.println(dto.getPinCapacity());
+                        if(capacityProduct != 0.0) {
+                            pinSolarProductEntity.setNamePinSolar(pinName);
+                            pinSolarProductEntity.setCapacityPinSolar(capacityProduct);
+                            pinSolarProductEntity.setPricePinSolar(pinPrice);
+                            pinSolarProductEntity.setImagePinSolar(pinImage);
+                        }
                     }
 
 
 
-                return dto;
+                return pinSolarProductEntity;
             }
 
         } catch (ParserConfigurationException e) {

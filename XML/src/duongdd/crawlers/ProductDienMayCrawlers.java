@@ -21,8 +21,8 @@ public class ProductDienMayCrawlers {
         return contentDataPages;
     }
 
-    public ElectricProductEntity crawlDetailProduct(String namecate, String urlDetail) throws ParserConfigurationException, SAXException, IOException {
-        ElectricProductEntity electricProductEntity = new ElectricProductEntity();
+    public ProductDTO crawlDetailProduct(String namecate, String urlDetail) throws ParserConfigurationException, SAXException, IOException {
+        ProductDTO dto = new ProductDTO();
         String contentDetail = "";
         ProductDienMayXpaths productDienMayXpaths = new ProductDienMayXpaths();
         try {
@@ -30,13 +30,13 @@ public class ProductDienMayCrawlers {
             contentDetail = XMLChecker.encodeContent(contentDetail);
             contentDetail = XMLChecker.fixTagName(contentDetail);
             contentDetail = XMLChecker.preParseDM(contentDetail);
-            electricProductEntity = productDienMayXpaths.xpathProduct(contentDetail);
+            dto = productDienMayXpaths.xpathProduct(namecate,contentDetail);
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        return electricProductEntity;
+        return dto;
     }
 
     public String crawlCategoryProduct(String nameCate, String url) throws ParserConfigurationException, SAXException, IOException {

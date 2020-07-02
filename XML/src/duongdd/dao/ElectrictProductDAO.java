@@ -29,22 +29,7 @@ public class ElectrictProductDAO implements Serializable {
             }
         }
     }
-    public void updateProduct(ElectricProductEntity productEntity){
-        EntityManager em = DBUtils.getEntityManager();
-        try {
-            EntityTransaction transaction = em.getTransaction();
-            transaction.begin();
-            em.merge(productEntity);
-            transaction.commit();
-        }catch (Exception e){
-            System.out.println(e.getMessage());
-        }finally {
-            if(em != null){
-                em.close();
-            }
-        }
-    }
-    // bug in here
+
     public void insertProduct(ElectricProductEntity productEntity){
         EntityManager em = DBUtils.getEntityManager();
         if(!checkProductExist(productEntity)){
@@ -52,8 +37,8 @@ public class ElectrictProductDAO implements Serializable {
                 ElectricProductEntity electricProductEntity = new ElectricProductEntity();
                 electricProductEntity.setProductName(productEntity.getProductName());
                 electricProductEntity.setProductCapacity(productEntity.getProductCapacity());
-                electricProductEntity.setCategoryProductByIdCategory(productEntity.getCategoryProductByIdCategory());
-                electricProductEntity.setBrandProductsByIdProduct((Collection<BrandProductEntity>) productEntity.getBrandProductByIdBrand());
+                electricProductEntity.setIdBrand(productEntity.getIdBrand());
+                electricProductEntity.setIdCategory(productEntity.getIdCategory());
                 em.getTransaction().begin();
                 em.persist(electricProductEntity);
                 em.getTransaction().commit();

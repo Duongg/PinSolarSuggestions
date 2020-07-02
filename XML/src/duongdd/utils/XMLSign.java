@@ -41,4 +41,6 @@ public class XMLSign {
 
     public static String Pin_Solar_Detail_Product_beginSign = "<div class=\"ProductDetailContainer DetailItem DefaultModule\">";
     public static String Pin_Solar_Detail_Product_endSign = "<script type=\"text/javascript\">";
+
+    public static String FILE_PATH_ELECTRIC_PRODUCT = "web/WEB-INF/electricproduct.xsd";
 }

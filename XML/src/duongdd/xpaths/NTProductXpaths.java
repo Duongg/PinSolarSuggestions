@@ -119,20 +119,20 @@ public class NTProductXpaths {
         }
         return null;
     }
-    public ProductDTO xpathProductNT(String content){
+    public ProductDTO xpathProductNT(String nameCate,String content){
         ProductDTO dto = new ProductDTO();
         XMLValidate validate = new XMLValidate();
         String nameProduct = "";
         String capacity = "";
         String strCapacity = "";
-        float capacityProduct = 0;
+        double capacityProduct = 0;
         try{
             Document doc = XMLUtils.parseToDom(content.trim());
             if(doc != null){
                 XPath xPath = XMLUtils.createXpath();
                 String expName ="//h1";
                 Node nameNode = (Node) xPath.evaluate(expName,doc,XPathConstants.NODE);
-                nameProduct = nameNode.getTextContent();
+                nameProduct = nameNode.getTextContent().trim();
 
                 String expCapacity_01 = "//tr[8]/td/span[normalize-space(text())][contains(text(),'W')]/text()";
                 String expCapacity_02 = "//tr[4]/td/span[normalize-space(text())][contains(text(),'W')]/text()";
@@ -161,8 +161,7 @@ public class NTProductXpaths {
                     if(capacityProduct != 0.0){
                         dto.setProductName(nameProduct);
                         dto.setProductCapacity(capacityProduct);
-                        System.out.println(nameProduct);
-                        System.out.println(capacityProduct);
+                        dto.setProductCategory(nameCate);
                     }
                 }
 

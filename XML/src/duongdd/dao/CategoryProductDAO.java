@@ -6,6 +6,7 @@ import duongdd.entity.CategoryProductEntity;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import java.io.Serializable;
+import java.util.List;
 
 
 public class CategoryProductDAO implements Serializable {
@@ -38,6 +39,21 @@ public class CategoryProductDAO implements Serializable {
             }
         }catch (Exception e){
             System.out.println(e.getMessage());
+        }finally {
+            if(em != null){
+                em.close();
+            }
+        }
+    }
+    public List<CategoryProductEntity> getAllCategory(){
+        EntityManager em = DBUtils.getEntityManager();
+        try{
+            String nameQueryString = "CategoryProductEntity.findAll";
+            Query query = em.createNamedQuery(nameQueryString);
+            List<CategoryProductEntity> result = query.getResultList();
+            return result;
+        }catch (Exception e){
+            return null;
         }finally {
             if(em != null){
                 em.close();

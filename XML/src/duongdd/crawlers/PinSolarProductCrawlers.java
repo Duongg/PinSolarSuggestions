@@ -2,6 +2,7 @@ package duongdd.crawlers;
 
 
 import duongdd.dtos.PinSolarDTO;
+import duongdd.entity.PinSolarProductEntity;
 import duongdd.utils.XMLChecker;
 import duongdd.utils.XMLCrawler;
 import duongdd.utils.XMLSign;
@@ -24,15 +25,16 @@ public class PinSolarProductCrawlers {
         content = XMLChecker.fixTagName(content);
         return content;
     }
-    public void crawlDetailProduct(String urlDetail) throws ParserConfigurationException, SAXException, IOException {
+    public PinSolarProductEntity crawlDetailProduct(String urlDetail) throws ParserConfigurationException, SAXException, IOException {
 
-        PinSolarDTO pinSolarDTO = new PinSolarDTO();
+       PinSolarProductEntity productEntity = new PinSolarProductEntity();
         PinSolarXpaths xpaths = new PinSolarXpaths();
         String contentDetail = "";
         contentDetail = XMLCrawler.crawlData(urlDetail, XMLSign.Pin_Solar_Detail_Product_beginSign, XMLSign.Pin_Solar_Detail_Product_endSign);
         contentDetail = XMLChecker.encodeContent(contentDetail);
         contentDetail = XMLChecker.fixTagName(contentDetail);
         contentDetail = XMLChecker.preProcessingHtml(contentDetail);
-       pinSolarDTO = xpaths.xpathDetailPinSolar(contentDetail);
+        productEntity = xpaths.xpathDetailPinSolar(contentDetail);
+       return productEntity;
     }
 }
