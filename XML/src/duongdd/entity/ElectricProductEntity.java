@@ -17,6 +17,7 @@ public class ElectricProductEntity {
     private Collection<BrandProductEntity> brandProductsByIdProduct;
     private CategoryProductEntity categoryProductByIdCategory;
     private BrandProductEntity brandProductByIdBrand;
+    private int idBrand;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -80,7 +81,7 @@ public class ElectricProductEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "idCategory", referencedColumnName = "idCategory", nullable = false, insertable = false, updatable = false)
+    @JoinColumns({@JoinColumn(name = "idCategory", referencedColumnName = "idCategory", nullable = false, insertable = false, updatable = false)})
     public CategoryProductEntity getCategoryProductByIdCategory() {
         return categoryProductByIdCategory;
     }
@@ -90,12 +91,22 @@ public class ElectricProductEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "idBrand", referencedColumnName = "idBrandProduct", nullable = false, insertable = false, updatable = false)
+    @JoinColumns({@JoinColumn(name = "idBrand", referencedColumnName = "idBrandProduct", nullable = false, insertable = false, updatable = false)})
     public BrandProductEntity getBrandProductByIdBrand() {
         return brandProductByIdBrand;
     }
 
     public void setBrandProductByIdBrand(BrandProductEntity brandProductByIdBrand) {
         this.brandProductByIdBrand = brandProductByIdBrand;
+    }
+
+    @Basic
+    @Column(name = "idBrand", nullable = false)
+    public int getIdBrand() {
+        return idBrand;
+    }
+
+    public void setIdBrand(int idBrand) {
+        this.idBrand = idBrand;
     }
 }

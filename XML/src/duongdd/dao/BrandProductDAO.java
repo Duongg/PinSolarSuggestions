@@ -5,6 +5,7 @@ import duongdd.entity.BrandProductEntity;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+import java.util.List;
 
 public class BrandProductDAO {
     public boolean checkBrandExist(String nameBrand) {
@@ -33,6 +34,22 @@ public class BrandProductDAO {
                 em.persist(brand);
                 em.getTransaction().commit();
             }
+        }finally {
+            if(em != null){
+                em.close();
+            }
+        }
+    }
+    public List<BrandProductEntity> getAllBrand(){
+        EntityManager em = DBUtils.getEntityManager();
+        try{
+            String  nameQueryString = "BrandProductEntity.findAll";
+            Query query = em.createNamedQuery(nameQueryString);
+            List<BrandProductEntity> result = query.getResultList();
+            return result;
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+            return null;
         }finally {
             if(em != null){
                 em.close();

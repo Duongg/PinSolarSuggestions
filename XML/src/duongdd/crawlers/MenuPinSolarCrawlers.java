@@ -1,5 +1,8 @@
 package duongdd.crawlers;
 
+import duongdd.dao.PinsolarProductDAO;
+import duongdd.dtos.PinSolarDTO;
+import duongdd.entity.PinSolarProductEntity;
 import duongdd.utils.XMLChecker;
 import duongdd.utils.XMLCrawler;
 import duongdd.utils.XMLSign;
@@ -23,7 +26,7 @@ public class MenuPinSolarCrawlers {
     public void crawlProductPinSolar() throws IOException, SAXException, ParserConfigurationException, XMLStreamException {
         //get html content menu
         String contentMenu = crawlPinSolarMenu();
-
+        PinsolarProductDAO dao = new PinsolarProductDAO();
         List<String> listUrlMenu = new ArrayList<>();
         List<String> listUrlProduct = new ArrayList<>();
         List<String> listUrlPage = new ArrayList<>();
@@ -32,9 +35,9 @@ public class MenuPinSolarCrawlers {
         String urlPage = "";
         String htmlContentCategory = "";
         String htmlContentPage = "";
-        String htmlContentDetailProduct = "";
         PinSolarXpaths xpaths = new PinSolarXpaths();
         PinSolarProductCrawlers pinSolarProductCrawlers = new PinSolarProductCrawlers();
+        PinSolarProductEntity pinSolar = new PinSolarProductEntity();
         //list url menu
         listUrlMenu = xpaths.xpathMenuPinSolar(contentMenu);
 
@@ -52,7 +55,8 @@ public class MenuPinSolarCrawlers {
                 for (int j = 0; j < listUrlProduct.size(); j++) {
                     //url product
                     urlProduct = listUrlProduct.get(j);
-                    pinSolarProductCrawlers.crawlDetailProduct(urlProduct);
+                   pinSolar = pinSolarProductCrawlers.crawlDetailProduct(urlProduct);
+                    dao.insertPinSolar(pinSolar);
                 }
             }
 

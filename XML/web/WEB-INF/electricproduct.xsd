@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<xsd:schema version="1.0"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            elementFormDefault="qualified">
+    <xsd:element name="electricproductentity">
+        <xsd:complexType>
+            <xsd:all>
+                <xsd:element type="xsd:string" name="productName"/>
+                <xsd:element type="xsd:double" name="productCapacity"/>
+                <xsd:element name="idCategory">
+                    <xsd:complexType>
+                        <xsd:all>
+                            <xsd:element type="xsd:int" name="idCategory"/>
+                            <xsd:element type="xsd:string" name="nameCategory"/>
+                        </xsd:all>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="idBrand">
+                    <xsd:complexType>
+                        <xsd:all>
+                            <xsd:element type="xsd:int" name="idBrandProduct"/>
+                            <xsd:element type="xsd:string" name="nameBrand"/>
+                        </xsd:all>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:all>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:simpleType name="NonNullString">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

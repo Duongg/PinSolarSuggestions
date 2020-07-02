@@ -75,9 +75,9 @@ public class XMLValidate {
         return capacity;
     }
 
-    public float parseStrCapaToFloat(String capacity) {
+    public double parseStrCapaToDouble(String capacity) {
         String strCap = "";
-        float capacityProduct = 0;
+        double capacityProduct = 0;
         int pos_k = capacity.indexOf("k");
         int pos_h = capacity.indexOf("h");
         int pos_tu = capacity.indexOf("tu");
@@ -89,24 +89,24 @@ public class XMLValidate {
 
             if (capacity.charAt(capacity.length() - 1) == 'k') {
                 strCap = capacity.substring(0, pos_k);
-                capacityProduct = Float.parseFloat(strCap);
+                capacityProduct = Double.parseDouble(strCap);
                 capacityProduct = capacityProduct * 1000;
             } else if (capacity.charAt(capacity.length() - 1) == 'h') {
                 strCap = capacity.substring(0, pos_h);
-                capacityProduct = Float.parseFloat(strCap);
+                capacityProduct = Double.parseDouble(strCap);
                 capacityProduct = capacityProduct * 745;
             } else if (capacity.charAt(capacity.length() - 1) == 'b') {
                 strCap = capacity.substring(0, pos_tu);
-                capacityProduct = Float.parseFloat(strCap);
+                capacityProduct = Double.parseDouble(strCap);
                 capacityProduct = (float) (capacityProduct * 0.293);
             } else if (capacity.charAt(capacity.length() - 1) == 'đ') {
                 strCap = capacity.substring(0, pos_d);
-                capacityProduct = Float.parseFloat(strCap);
+                capacityProduct = Double.parseDouble(strCap);
             } else if (capacity.charAt(capacity.length() - 1) == 'c') {
                 strCap = capacity.substring(0, pos_c);
-                capacityProduct = Float.parseFloat(strCap);
+                capacityProduct = Double.parseDouble(strCap);
             } else {
-                capacityProduct = Float.parseFloat(capacity);
+                capacityProduct = Double.parseDouble(capacity);
             }
 
         } catch (Exception e) {
@@ -131,14 +131,14 @@ public class XMLValidate {
         return nameProduct;
     }
 
-    public float convertKwhPerDayToWatt(String strCapacity) {
+    public Double convertKwhPerDayToWatt(String strCapacity) {
         String strConvert = "";
         String cap1 = "";
         String cap2 = "";
         String capacity = "";
-        float capacity1 = 0;
-        float time = 0;
-        float capacityProduct = 0;
+        double capacity1 = 0;
+        double time = 0;
+        double capacityProduct = 0;
         strConvert = strCapacity.replaceAll("\\s+", "");
         try {
             if (strConvert.contains("kw/ngày")) {
@@ -148,22 +148,22 @@ public class XMLValidate {
 
                 cap1 = strConvert.substring(0, pos);
                 cap2 = strConvert.substring(pos + 3, last);
-                capacity1 = Float.parseFloat(cap1.trim());
-                time = Float.parseFloat(cap2);
+                capacity1 = Double.parseDouble(cap1.trim());
+                time = Double.parseDouble(cap2);
                 capacityProduct = capacity1 * 1000 * time;
             } else if (strConvert.charAt(strCapacity.length() - 1) == 'w') {
                 int lastIndexCap = strConvert.indexOf("w");
                 capacity = strConvert.substring(0, lastIndexCap);
-                capacityProduct = Float.parseFloat(capacity.trim());
+                capacityProduct = Double.parseDouble(capacity.trim());
             } else if (strConvert.contains("kw/h")) {
                 int pos = strConvert.indexOf("kw/h");
                 capacity = strConvert.substring(0, pos);
-                float capPro = Float.parseFloat(capacity);
+                double capPro = Double.parseDouble(capacity);
                 capacityProduct = capPro * 1000;
             } else if (strConvert.contains("w/h")) {
                 int posi = strConvert.indexOf("w/h");
                 capacity = strConvert.substring(0, posi);
-                capacityProduct = Float.parseFloat(capacity.trim());
+                capacityProduct = Double.parseDouble(capacity.trim());
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
