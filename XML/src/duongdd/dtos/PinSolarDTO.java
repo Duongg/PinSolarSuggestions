@@ -6,15 +6,17 @@ public class PinSolarDTO implements Serializable {
     private String pinName;
     private String pinPrice;
     private String pinImage;
-    private float pinCapacity;
+    private double pinCapacity;
+    private String pinCategory;
     public PinSolarDTO() {
     }
 
-    public PinSolarDTO(String pinName, String pinPrice, String pinImage, float pinCapacity) {
+    public PinSolarDTO(String pinName, String pinPrice, String pinImage, double pinCapacity, String pinCategory) {
         this.pinName = pinName;
         this.pinPrice = pinPrice;
         this.pinImage = pinImage;
         this.pinCapacity = pinCapacity;
+        this.pinCategory = pinCategory;
     }
 
     public String getPinName() {
@@ -41,11 +43,19 @@ public class PinSolarDTO implements Serializable {
         this.pinImage = pinImage;
     }
 
-    public float getPinCapacity() {
+    public double getPinCapacity() {
         return pinCapacity;
     }
 
-    public void setPinCapacity(float pinCapacity) {
+    public void setPinCapacity(double pinCapacity) {
         this.pinCapacity = pinCapacity;
+    }
+
+    public String getPinCategory() {
+        return pinCategory;
+    }
+
+    public void setPinCategory(String pinCategory) {
+        this.pinCategory = pinCategory;
     }
 }

@@ -1,8 +1,12 @@
 package duongdd.entity;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Objects;
-
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name = "pinsolarproductentity")
 @Entity
 @Table(name = "PinSolarProduct", schema = "dbo", catalog = "PinSolarSuggestions")
 @NamedQueries({
@@ -14,6 +18,8 @@ public class PinSolarProductEntity {
     private String pricePinSolar;
     private double capacityPinSolar;
     private String imagePinSolar;
+    private int idCategoryPinSolar;
+    private CategoryPinSolarEntity categoryPinSolarByIdCategoryPinSolar;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -81,5 +87,25 @@ public class PinSolarProductEntity {
     @Override
     public int hashCode() {
         return Objects.hash(idPinSolar, namePinSolar, pricePinSolar, capacityPinSolar, imagePinSolar);
+    }
+
+    @Basic
+    @Column(name = "idCategoryPinSolar", nullable = false)
+    public int getIdCategoryPinSolar() {
+        return idCategoryPinSolar;
+    }
+
+    public void setIdCategoryPinSolar(int idCategoryPinSolar) {
+        this.idCategoryPinSolar = idCategoryPinSolar;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "idCategoryPinSolar", referencedColumnName = "idCategoryPinSolar", nullable = false, insertable = false, updatable = false)
+    public CategoryPinSolarEntity getCategoryPinSolarByIdCategoryPinSolar() {
+        return categoryPinSolarByIdCategoryPinSolar;
+    }
+
+    public void setCategoryPinSolarByIdCategoryPinSolar(CategoryPinSolarEntity categoryPinSolarByIdCategoryPinSolar) {
+        this.categoryPinSolarByIdCategoryPinSolar = categoryPinSolarByIdCategoryPinSolar;
     }
 }

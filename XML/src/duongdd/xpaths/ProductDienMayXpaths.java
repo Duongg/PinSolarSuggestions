@@ -95,7 +95,7 @@ public class ProductDienMayXpaths {
                 if (!capacity.equals("")) {
                     capa = validate.convertStringCapacity(capacity);
                     capacityProduct = validate.parseStrCapaToDouble(capa);
-                    if (capacityProduct != 0.0) {
+                    if (capacityProduct > 20.0) {
                         dto.setProductName(nameProduct);
                         dto.setProductCapacity(capacityProduct);
                         dto.setProductCategory(nameCategory);

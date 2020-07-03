@@ -8,6 +8,7 @@
         <class>duongdd.entity.CategoryProductEntity</class>
         <class>duongdd.entity.ElectricProductEntity</class>
         <class>duongdd.entity.PinSolarProductEntity</class>
+        <class>duongdd.entity.CategoryPinSolarEntity</class>
 
         <properties>
             <property name="eclipselink.jdbc.url" value="jdbc:sqlserver://localhost:1433;database=PinSolarSuggestions"/>

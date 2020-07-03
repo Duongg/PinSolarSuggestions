@@ -127,7 +127,6 @@ public class MenuDienMayCrawlers {
                         //url 1 detail product
                         String urlDetailProduct = listUrlDetailProduct.get(k);
                         dto = productDienMayCrawlers.crawlDetailProduct(nameCategory, urlDetailProduct);
-
                         insertProduct(dto);
 
                     }//end for crawl detail

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<xsd:schema version="1.0"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            elementFormDefault="qualified">
+    <xsd:element name="pinsolarproductentity">
+        <xsd:complexType>
+            <xsd:all>
+                <xsd:element type="xsd:int" name="idPinSolar"/>
+                <xsd:element type="xsd:string" name="namePinSolar"/>
+                <xsd:element type="xsd:string" name="pricePinSolar"/>
+                <xsd:element type="xsd:double" name="capacityPinSolar"/>
+                <xsd:element type="xsd:string" name="imagePinSolar"/>
+                <xsd:element type="xsd:int" name="idCategoryPinSolar"/>
+            </xsd:all>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>
