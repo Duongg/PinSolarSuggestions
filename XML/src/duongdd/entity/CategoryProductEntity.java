@@ -1,9 +1,13 @@
 package duongdd.entity;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Collection;
 import java.util.Objects;
-
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement
 @Entity
 @Table(name = "CategoryProduct", schema = "dbo", catalog = "PinSolarSuggestions")
 @NamedQueries({

@@ -35,6 +35,8 @@ public class PinsolarProductDAO implements Serializable {
                 pinSolarProductEntity.setCapacityPinSolar(pinSolar.getCapacityPinSolar());
                 pinSolarProductEntity.setPricePinSolar(pinSolar.getPricePinSolar());
                 pinSolarProductEntity.setImagePinSolar(pinSolar.getImagePinSolar());
+                pinSolarProductEntity.setIdCategoryPinSolar(pinSolar.getIdCategoryPinSolar());
+
                 em.getTransaction().begin();
                 em.persist(pinSolarProductEntity);
                 em.getTransaction().commit();

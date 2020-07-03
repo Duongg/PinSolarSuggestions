@@ -156,16 +156,13 @@ public class NTProductXpaths {
                 }
                 if(!capacity.equals("")){
                     strCapacity = validate.convertStringDetail(capacity.toLowerCase());
-
                     capacityProduct = validate.convertKwhPerDayToWatt(strCapacity.trim());
-                    if(capacityProduct != 0.0){
+                    if(capacityProduct > 20.0){
                         dto.setProductName(nameProduct);
                         dto.setProductCapacity(capacityProduct);
                         dto.setProductCategory(nameCate);
                     }
                 }
-
-
                 return dto;
             }
         } catch (ParserConfigurationException e) {

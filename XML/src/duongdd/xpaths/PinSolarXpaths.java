@@ -16,26 +16,36 @@ import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpressionException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class PinSolarXpaths {
-    public List xpathMenuPinSolar(String content) {
-        List<String> listUrl = new ArrayList<>();
+    public Map<String, String> xpathMenuPinSolar(String content) {
+        Map<String, String> categoryMap = new HashMap<>();
+        String nameCategory = "";
         String urlTemp = "";
         String urlMenu = "";
         try {
             Document doc = XMLUtils.parseToDom(content.trim());
             if (doc != null) {
                 XPath xPath = XMLUtils.createXpath();
-                String expUrl = "//ul[@class='ls menu-hori-1']/li/a[@title=\"Năng lượng mặt trời\" or @title=\"Inverter  \" or @title=\"Bộ hòa lưới\"]";
+                String expUrl = "//ul[@class='ls menu-hori-1']/li/a[@title=\"Năng lượng mặt trời\" or @title=\"Inverter  \" or @title=\"Inverter 3 pha \" or @title=\"Inverter có sạc \" or @title=\" inverter - thông minh \" or @title=\"Bộ hòa lưới\"]";
                 NodeList urlNode = (NodeList) xPath.evaluate(expUrl, doc, XPathConstants.NODESET);
                 for (int i = 0; i < urlNode.getLength(); i++) {
+                    nameCategory = urlNode.item(i).getTextContent().trim().toUpperCase();
                     urlTemp = urlNode.item(i).getAttributes().getNamedItem("href").getNodeValue();
                     urlMenu = XMLSign.Pin_Solar_Domain + urlTemp;
-                    listUrl.add(urlMenu);
+                    if(nameCategory.equals("NĂNG LƯỢNG MẶT TRỜINĂNG LƯỢNG MẶT TRỜI")){
+                        nameCategory = "NĂNG LƯỢNG MẶT TRỜI";
+                        categoryMap.put(nameCategory, urlMenu);
+                    }else {
+                        categoryMap.put(nameCategory, urlMenu);
+                    }
+
                 }
             }
-            return listUrl;
+            return categoryMap;
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -48,7 +58,7 @@ public class PinSolarXpaths {
         return null;
     }
 
-    public List xpathProductPinSolar(String content) {
+    public List xpathProductPinSolar(String nameCate,String content) {
 
         String urlProduct = "";
         String urlTemp = "";
@@ -80,8 +90,8 @@ public class PinSolarXpaths {
         return null;
     }
 
-    public PinSolarProductEntity xpathDetailPinSolar(String content) {
-        PinSolarProductEntity pinSolarProductEntity = new PinSolarProductEntity();
+    public PinSolarDTO xpathDetailPinSolar(String nameCate,String content) {
+        PinSolarDTO dto = new PinSolarDTO();
         XMLValidate validate = new XMLValidate();
         String capacity ="";
         float capacityProduct = 0;
@@ -108,7 +118,16 @@ public class PinSolarXpaths {
                 Node nodeCap_04 = (Node) xPath.evaluate(expCap_04, doc, XPathConstants.NODE);
                 Node nodeCap_05 = (Node) xPath.evaluate(expCap_05, doc, XPathConstants.NODE);
                 String pinName = nodeName.getTextContent();
-                String pinPrice = nodePrice.getTextContent();
+                String price = nodePrice.getTextContent();
+                String pinPrice = "";
+                if(price.contains(" ₫ / tấm")){
+                    price = price.replace(" ₫ / tấm"," ₫");
+                    int pos = price.indexOf(" ₫");
+                    pinPrice = price.substring(0, pos);
+                }else if(price.contains(" ₫")){
+                    int pos = price.indexOf(" ₫");
+                    pinPrice = price.substring(0, pos);
+                }
                 String pinImage = nodeImage.getAttributes().getNamedItem("href").getNodeValue();
 
                 if(capacity.equals("") && nodeCap != null){
@@ -125,18 +144,16 @@ public class PinSolarXpaths {
                     capacity = validate.cutStringCapacityPinSolar(pinName);
                 }
                     if(!capacity.equals("")){
-                        capacityProduct = validate.parseToFloat(capacity);
+                        capacityProduct = validate.parseToFloat(capacity.trim());
                         if(capacityProduct != 0.0) {
-                            pinSolarProductEntity.setNamePinSolar(pinName);
-                            pinSolarProductEntity.setCapacityPinSolar(capacityProduct);
-                            pinSolarProductEntity.setPricePinSolar(pinPrice);
-                            pinSolarProductEntity.setImagePinSolar(pinImage);
+                            dto.setPinName(pinName.trim());
+                            dto.setPinCapacity(capacityProduct);
+                            dto.setPinPrice(pinPrice.trim());
+                            dto.setPinImage(pinImage);
+                            dto.setPinCategory(nameCate.trim().toUpperCase());
                         }
                     }
-
-
-
-                return pinSolarProductEntity;
+                return dto;
             }
 
         } catch (ParserConfigurationException e) {

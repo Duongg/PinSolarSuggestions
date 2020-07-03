@@ -37,8 +37,9 @@ public class ElectrictProductDAO implements Serializable {
                 ElectricProductEntity electricProductEntity = new ElectricProductEntity();
                 electricProductEntity.setProductName(productEntity.getProductName());
                 electricProductEntity.setProductCapacity(productEntity.getProductCapacity());
-                electricProductEntity.setIdBrand(productEntity.getIdBrand());
                 electricProductEntity.setIdCategory(productEntity.getIdCategory());
+                electricProductEntity.setIdBrand(productEntity.getIdBrand());
+
                 em.getTransaction().begin();
                 em.persist(electricProductEntity);
                 em.getTransaction().commit();
