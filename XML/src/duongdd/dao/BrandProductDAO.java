@@ -56,4 +56,20 @@ public class BrandProductDAO {
             }
         }
     }
+    public List<BrandProductEntity> getAllNameBrand(){
+        EntityManager em = DBUtils.getEntityManager();
+        try{
+            String  nameQueryString = "BrandProductEntity.findAllName";
+            Query query = em.createNamedQuery(nameQueryString);
+            List<BrandProductEntity> result = query.getResultList();
+            return result;
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+            return null;
+        }finally {
+            if(em != null){
+                em.close();
+            }
+        }
+    }
 }

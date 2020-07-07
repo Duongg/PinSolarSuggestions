@@ -3,6 +3,7 @@ package duongdd.dtos;
 import java.io.Serializable;
 
 public class ProductDTO implements Serializable {
+    private int idProduct;
     private String productName;
     private double productCapacity;
     private String productBrand;
@@ -10,11 +11,27 @@ public class ProductDTO implements Serializable {
     public ProductDTO() {
     }
 
+    public ProductDTO(int idProduct, String productName, double productCapacity, String productBrand, String productCategory) {
+        this.idProduct = idProduct;
+        this.productName = productName;
+        this.productCapacity = productCapacity;
+        this.productBrand = productBrand;
+        this.productCategory = productCategory;
+    }
+
     public ProductDTO(String productName, double productCapacity, String productBrand, String productCategory) {
         this.productName = productName;
         this.productCapacity = productCapacity;
         this.productBrand = productBrand;
         this.productCategory = productCategory;
+    }
+
+    public int getIdProduct() {
+        return idProduct;
+    }
+
+    public void setIdProduct(int idProduct) {
+        this.idProduct = idProduct;
     }
 
     public String getProductName() {
