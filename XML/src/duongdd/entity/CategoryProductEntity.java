@@ -12,7 +12,8 @@ import java.util.Objects;
 @Table(name = "CategoryProduct", schema = "dbo", catalog = "PinSolarSuggestions")
 @NamedQueries({
         @NamedQuery(name="CategoryProductEntity.findByName",query = "SELECT C FROM CategoryProductEntity C WHERE C.nameCategory = :nameCategory"),
-        @NamedQuery(name="CategoryProductEntity.findAll", query = "SELECT C FROM CategoryProductEntity C")
+        @NamedQuery(name="CategoryProductEntity.findAll", query = "SELECT C FROM CategoryProductEntity C"),
+        @NamedQuery(name="CategoryProductEntity.findAllCategory", query = "SELECT C.nameCategory FROM CategoryProductEntity C")
 })
 public class CategoryProductEntity {
     private int idCategory;

@@ -60,4 +60,19 @@ public class CategoryProductDAO implements Serializable {
             }
         }
     }
+    public List<CategoryProductEntity> getAllNameCategory(){
+        EntityManager em = DBUtils.getEntityManager();
+        try{
+            String nameQueryString = "CategoryProductEntity.findAllCategory";
+            Query query = em.createNamedQuery(nameQueryString);
+            List<CategoryProductEntity> result = query.getResultList();
+            return result;
+        }catch (Exception e){
+            return null;
+        }finally {
+            if(em != null){
+                em.close();
+            }
+        }
+    }
 }

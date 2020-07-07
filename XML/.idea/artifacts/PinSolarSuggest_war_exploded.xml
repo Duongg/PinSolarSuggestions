@@ -7,7 +7,12 @@
         <element id="directory" name="classes">
           <element id="module-output" name="PinSolarSuggest" />
         </element>
-        <element id="directory" name="lib" />
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="javax.servlet.jsp.jstl:javax.servlet.jsp.jstl-api:1.2.1" />
+          <element id="library" level="project" name="eclipselink-2.7.6" />
+          <element id="library" level="project" name="org.eclipse.persistence:javax.persistence:2.0.0" />
+          <element id="library" level="project" name="sqljdbc4" />
+        </element>
       </element>
     </root>
   </artifact>
