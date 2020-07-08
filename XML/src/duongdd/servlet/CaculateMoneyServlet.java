@@ -35,7 +35,7 @@ public class CaculateMoneyServlet extends HttpServlet {
             float time = Float.parseFloat(strHour);
             int totalMoney = 0;
             float useCapacity = 0;
-            float capacity = 0;
+            int capacity = 0;
             String strCapacity = "";
             String strTotalMoney = "";
             if(cart != null){
@@ -44,16 +44,14 @@ public class CaculateMoneyServlet extends HttpServlet {
                     for(Map.Entry<Integer, ElectricProductEntity> entry : items.entrySet()){
                         ElectricProductEntity value = entry.getValue();
                         useCapacity += (float) (value.getProductCapacity() * quantity * time);
-                        capacity = useCapacity * 30;
+                        capacity = (int) (useCapacity * 30);
                         totalMoney = (int) cart.caculateElectric(id, capacity);
                         strTotalMoney = String.format("%,d",totalMoney);
-                        strCapacity = String.format("%,d",strCapacity);
+                        strCapacity = String.format("%,d",capacity);
                     }
                 }
-            }else {
-                totalMoney = 0;
             }
-            System.out.println(totalMoney);
+            System.out.println(strTotalMoney);
             session.setAttribute("CAPA", strCapacity);
            session.setAttribute("MONEY", strTotalMoney);
        }catch (Exception e){
