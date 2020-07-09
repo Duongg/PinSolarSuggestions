@@ -23,6 +23,10 @@
         <servlet-name>RemoveItemServlet</servlet-name>
         <servlet-class>duongdd.servlet.RemoveItemServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SearchServlet</servlet-name>
+        <servlet-class>duongdd.servlet.SearchServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>DispatcherServlet</servlet-name>
         <url-pattern>/DispatcherServlet</url-pattern>
@@ -42,6 +46,10 @@
     <servlet-mapping>
         <servlet-name>RemoveItemServlet</servlet-name>
         <url-pattern>/RemoveItemServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchServlet</servlet-name>
+        <url-pattern>/SearchServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

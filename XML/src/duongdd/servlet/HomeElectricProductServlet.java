@@ -27,24 +27,32 @@ public class HomeElectricProductServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ElectrictProductDAO electrictProductDAO = new ElectrictProductDAO();
-        BrandProductDAO brandProductDAO = new BrandProductDAO();
         CategoryProductDAO categoryProductDAO = new CategoryProductDAO();
         List<ElectricProductEntity> listElectricProduct = new ArrayList<>();
-        List<ProductDTO> listProducByBrand = new ArrayList<>();
-        List<BrandProductEntity> listBrand = new ArrayList<>();
         List<CategoryProductEntity> listCategory = new ArrayList<>();
+        List<ElectricProductEntity> listProductByCatogory = new ArrayList<>();
         String url = ERROR;
 
         try {
-            // get all product from DB
-            listElectricProduct = electrictProductDAO.getAllElectricProduct();
-//            String idBrand = request.getParameter("txtIdBrand");
-//            int id = Integer.parseInt(idBrand);
+
+
+            // get list category
+            listCategory = categoryProductDAO.getAllNameCategory();
+            //search product by category
+            String nameCategory = request.getParameter("nameCategory");
+            if(nameCategory != null && !nameCategory.equals("")){
+                listElectricProduct = electrictProductDAO.searchProductByBrand(nameCategory);
+            }else{
+                // get all product from DB
+                listElectricProduct = electrictProductDAO.getAllElectricProduct();
+            }
+
+
 
             // get url 1 page
-            HttpSession  session= request.getSession();
-            if(request.getQueryString() == null || !request.getQueryString().contains("pageNumber")){
-                String queryString = "DispatcherServlet?";
+            HttpSession session = request.getSession();
+            if (request.getQueryString() != null && !request.getQueryString().contains("pageNumber")) {
+                String queryString = "DispatcherServlet?" + request.getQueryString();
                 session.setAttribute("QUERYSTRING", queryString);
             }
             // paging
@@ -75,13 +83,8 @@ public class HomeElectricProductServlet extends HttpServlet {
                     }
                 }
             }
-            // search by brand
-            // get list brand
-            listBrand = brandProductDAO.getAllNameBrand();
-            listCategory = categoryProductDAO.getAllNameCategory();
-//            listProducByBrand = electrictProductDAO.searchProductByBrand(id);
+
             request.setAttribute("LISTCATE", listCategory);
-            request.setAttribute("LISTBRAND", listBrand);
             request.setAttribute("LISTELECTRICPRODUCT",resultPage);
             request.setAttribute("MAXPAGE",maxPage);
             request.setAttribute("PAGENUMBER",pageNumber);
