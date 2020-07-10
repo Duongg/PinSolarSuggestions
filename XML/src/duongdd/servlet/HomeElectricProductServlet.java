@@ -34,8 +34,6 @@ public class HomeElectricProductServlet extends HttpServlet {
         String url = ERROR;
 
         try {
-
-
             // get list category
             listCategory = categoryProductDAO.getAllNameCategory();
             //search product by category
@@ -46,8 +44,6 @@ public class HomeElectricProductServlet extends HttpServlet {
                 // get all product from DB
                 listElectricProduct = electrictProductDAO.getAllElectricProduct();
             }
-
-
 
             // get url 1 page
             HttpSession session = request.getSession();

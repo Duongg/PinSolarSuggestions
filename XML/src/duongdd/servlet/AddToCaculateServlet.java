@@ -30,7 +30,7 @@ public class AddToCaculateServlet extends HttpServlet {
             String id = request.getParameter("idProduct");
             int idProduct = Integer.parseInt(id);
             cart.addItemsToCaculate(idProduct);
-            System.out.println(cart.getItems().size());
+
             session.setAttribute("CART", cart);
             url = HOMEELECTRICPRODUCT;
         }catch (Exception e){

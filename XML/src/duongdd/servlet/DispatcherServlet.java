@@ -15,6 +15,8 @@ public class DispatcherServlet extends HttpServlet {
     private static final String CACULATE = "CaculateMoneyServlet";
     private static final String REMOVEITEM = "RemoveItemServlet";
     private static final String SEARCH = "SearchServlet";
+    private static final String SHOWFORMADD ="ShowAddFormServlet";
+    private static final String ADDNEWPRODUCT = "AddNewProductServlet";
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
@@ -33,6 +35,10 @@ public class DispatcherServlet extends HttpServlet {
                 url = REMOVEITEM;
             }else if(action.equals("Search")){
                 url = HOMEELECTRICPRODCUT;
+            }else if(action.equals("Add New Product")){
+                url = SHOWFORMADD;
+            }else if(action.equals("Add New")){
+                url = ADDNEWPRODUCT;
             }
         }catch (Exception e){
             e.printStackTrace();
