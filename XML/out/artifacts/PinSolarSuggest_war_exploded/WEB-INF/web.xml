@@ -24,8 +24,12 @@
         <servlet-class>duongdd.servlet.RemoveItemServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>SearchServlet</servlet-name>
-        <servlet-class>duongdd.servlet.SearchServlet</servlet-class>
+        <servlet-name>ShowAddFormServlet</servlet-name>
+        <servlet-class>duongdd.servlet.ShowAddFormServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddNewProductServlet</servlet-name>
+        <servlet-class>duongdd.servlet.AddNewProductServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>DispatcherServlet</servlet-name>
@@ -48,8 +52,12 @@
         <url-pattern>/RemoveItemServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>SearchServlet</servlet-name>
-        <url-pattern>/SearchServlet</url-pattern>
+        <servlet-name>ShowAddFormServlet</servlet-name>
+        <url-pattern>/ShowAddFormServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddNewProductServlet</servlet-name>
+        <url-pattern>/AddNewProductServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

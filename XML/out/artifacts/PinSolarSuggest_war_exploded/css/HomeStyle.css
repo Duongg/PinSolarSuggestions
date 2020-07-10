@@ -5,6 +5,14 @@
     margin-left: 20%;
     text-align: center;
 }
+.container-addnew{
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+    margin-left: 50px;
+    text-align: center;
+    background-color: red;
+}
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -41,20 +49,32 @@ tr:nth-child(even) {
 .box-search{
     float: left;
     position: relative;
-    margin-left: 100px;
+    margin-left: 50px;
     width: 500px;
     height: 50px;
     border: 1px solid black;
 }
+.button-add-product{
+    float: left;
+    width: 150px;
+    height: 50px;
+    margin-left: 50px;
+    background-color: lightgray;
+    text-align: center;
+    color: black;
+    padding: 14px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px 5px 5px 5px;
+}
 .select-brand{
     float: left;
-    position: relative;
     background-color: lightgray;
     margin-bottom: 10px;
     font-size: 14px;
-    width: 70%;
-    height: 50px;
-    padding: 13px 16px;
+    width: 40px;
+    height: 20px;
+    padding: 8px 10px;
     font-size: 14px;
     border: 1px solid #ddd;
     color: black;
@@ -64,7 +84,7 @@ tr:nth-child(even) {
     float: left;
     width: 150px;
     height: 50px;
-    background-color: deepskyblue;
+    background-color: lightgray;
     color: black;
     padding: 14px 16px;
     font-size: 14px;
@@ -75,7 +95,7 @@ tr:nth-child(even) {
     float: left;
     width: 100px;
     height: 40px;
-    background-color: green;
+    background-color: lightgray;
     text-align: center;
     color: black;
     padding: 10px 12px;
@@ -87,7 +107,7 @@ tr:nth-child(even) {
     float: left;
     width: 100px;
     height: 40px;
-    background-color: red;
+    background-color: lightgray;
     text-align: center;
     color: black;
     padding: 10px 12px;

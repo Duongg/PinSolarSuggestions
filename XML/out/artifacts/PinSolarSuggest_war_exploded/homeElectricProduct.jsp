@@ -16,7 +16,6 @@
 
 <div class="container">
     <c:set var="result" value="${requestScope.LISTELECTRICPRODUCT}"/>
-    <%--    <c:set var="resultCate" value="${requestScope.LISTCATEGORY}"/>--%>
     <h2>
         <a href="DispatcherServlet">Electric Product</a>
     </h2>
@@ -31,38 +30,9 @@
             <input type="submit" class="buttonsearch" name="btAction" value="Search">
         </div>
     </form>
-    <%--    <c:if test="${not empty resultCate}">--%>
-    <%--        <table>--%>
-    <%--            <thead>--%>
-    <%--            <th>STT</th>--%>
-    <%--            <th>Electric Product Name</th>--%>
-    <%--            <th>Electric Product Capacity (W)</th>--%>
-    <%--            <th>Action</th>--%>
-    <%--            </thead>--%>
-    <%--            <tbody>--%>
-    <%--            <c:forEach var="dto" items="${resultCate}" varStatus="counter">--%>
-    <%--                <form action="DispatcherServlet">--%>
-    <%--                    <tr>--%>
-    <%--                        <td>${counter.count}</td>--%>
-    <%--                        <td>${dto.productName}--%>
-    <%--                            <input type="hidden" name="idProduct" value="${dto.idProduct}">--%>
-    <%--                        </td>--%>
-    <%--                        <td>${dto.productCapacity}</td>--%>
-    <%--                        <td>--%>
-    <%--                            <input type="submit" value="Add" name="btAction">--%>
-    <%--                        </td>--%>
-    <%--                    </tr>--%>
-    <%--                    <tr>--%>
-    <%--                    </tr>--%>
-    <%--                </form>--%>
-    <%--            </c:forEach>--%>
-    <%--            </tbody>--%>
-    <%--        </table>--%>
-    <%--        <br/>--%>
-    <%--    </c:if>--%>
-    <%--    <c:if test="${empty resultCate}">--%>
-    <%--        <h3>No records</h3>--%>
-    <%--    </c:if>--%>
+    <form action="DispatcherServlet">
+        <input type="submit" class="button-add-product" name="btAction" value="Add New Product"/>
+    </form>
     <c:if test="${not empty result}">
         <table>
             <thead>
@@ -145,10 +115,10 @@
                             <input type="hidden" name="capacityProduct" value="${dto.value.productCapacity}">
                         </td>
                         <td>
-                            <input type="text" name="txtQuantity" value="">
+                            <input type="text" name="txtQuantity" value="" required>
                         </td>
                         <td>
-                            <input type="text" name="txtTime" value="">
+                            <input type="text" name="txtTime" value="" required>
                         </td>
                         <td><input type="submit" value="Remove" class="buttonremove" name="btAction"></td>
                     </tr>
@@ -165,7 +135,6 @@
             <c:if test="${not empty money}">
                 <h3>Tiền điện phải trả 1 tháng: ${money} VND</h3>
             </c:if>
-
             <c:if test="${empty money}">
                 <h4>No money</h4>
             </c:if>

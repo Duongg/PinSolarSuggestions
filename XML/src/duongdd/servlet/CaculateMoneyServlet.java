@@ -49,9 +49,12 @@ public class CaculateMoneyServlet extends HttpServlet {
                         strTotalMoney = String.format("%,d",totalMoney);
                         strCapacity = String.format("%,d",capacity);
                     }
+                }else {
+                    strTotalMoney = "0";
+                    strCapacity = "0";
                 }
             }
-            System.out.println(strTotalMoney);
+
             session.setAttribute("CAPA", strCapacity);
            session.setAttribute("MONEY", strTotalMoney);
        }catch (Exception e){
