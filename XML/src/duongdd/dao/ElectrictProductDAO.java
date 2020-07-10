@@ -89,22 +89,23 @@ public class ElectrictProductDAO implements Serializable {
         }
         return null;
     }
-    public List<ProductDTO> searchProductByBrand(int brandId){
+    public List<ElectricProductEntity> searchProductByBrand(String categoryName){
         EntityManager em = DBUtils.getEntityManager();
         try{
-            String sql = "SELECT e.idProduct, e.productName, e.productCapacity, b.nameBrand, c.nameCategory\n" +
-                    "FROM ((ElectricProduct e INNER JOIN BrandProduct b ON E.idBrand = b.idBrandProduct)\n" +
-                    "INNER JOIN CategoryProduct c ON e.idCategory = c.idCategory) WHERE b.idBrandProduct = '"+ brandId +"'";
-            List<Object[]> result = em.createQuery(sql).getResultList();
+            String sql = "SELECT E.idProduct, E.productName, E.productCapacity, B.idBrandProduct, C.idCategory " +
+                    "FROM ((ElectricProduct E INNER JOIN BrandProduct B ON E.idBrand = B.idBrandProduct) " +
+                    "INNER JOIN CategoryProduct C ON E.idCategory = C.idCategory) " +
+                    "WHERE C.nameCategory = N'"+ categoryName + "'";
+            List<Object[]> result = em.createNativeQuery(sql).getResultList();
 
-            List<ProductDTO> productDTOList = new ArrayList<>();
-            for(Object[] rs : result){
-                ProductDTO dto = new ProductDTO();
-                dto.setIdProduct((Integer) rs[0]);
-                dto.setProductName((String) rs[1]);
-                dto.setProductCapacity((Double) rs[2]);
-                dto.setProductCategory((String) rs[3]);
-                dto.setProductBrand((String) rs[4]);
+            List<ElectricProductEntity> productDTOList = new ArrayList<>();
+            for(Object[] object : result){
+                ElectricProductEntity dto = new ElectricProductEntity();
+                dto.setIdProduct((Integer) object[0]);
+                dto.setProductName((String) object[1]);
+                dto.setProductCapacity((Double) object[2]);
+                dto.setIdCategory((Integer) object[3]);
+                dto.setIdBrand((Integer) object[4]);
                 productDTOList.add(dto);
             }
             return productDTOList;
