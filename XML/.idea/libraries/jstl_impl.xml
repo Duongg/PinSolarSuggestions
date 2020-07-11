@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="jstl-impl">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../../../Downloads/Download Data/jstl-impl.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../../Downloads/Download Data/jstl-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../Downloads/Download Data/jstl-impl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../Downloads/Download Data/jstl-api.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
