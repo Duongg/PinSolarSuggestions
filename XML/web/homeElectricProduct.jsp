@@ -115,10 +115,10 @@
                             <input type="hidden" name="capacityProduct" value="${dto.value.productCapacity}">
                         </td>
                         <td>
-                            <input type="text" name="txtQuantity" value="" required>
+                            <input type="text" name="txtQuantity" value="">
                         </td>
                         <td>
-                            <input type="text" name="txtTime" value="" required>
+                            <input type="text" name="txtTime" value="">
                         </td>
                         <td><input type="submit" value="Remove" class="buttonremove" name="btAction"></td>
                     </tr>
@@ -128,12 +128,18 @@
             </table>
             <c:set var="money" value="${sessionScope.MONEY}"/>
             <c:set var="capa" value="${sessionScope.CAPA}"/>
-            <input type="Submit" value="Caculate Electric Money" name="btAction">
+            <br/>
+            <input type="Submit" class="button-caculate" value="Caculate Electric Money" name="btAction">
             <c:if test="${not empty capa}">
-                <h3>Công suất tiêu thụ 1 tháng: ${capa} W</h3>
+                <input type="submit" class="button-add-product" name="btAction" value="Pin Solar Suggest"/>
+                <br/>
+                <br/>
+                <h3>Used Capacity 1 month: ${capa} W</h3>
+                <input type="hidden" name="totalCapacity" value="${capa}">
             </c:if>
             <c:if test="${not empty money}">
-                <h3>Tiền điện phải trả 1 tháng: ${money} VND</h3>
+                <h3>Your electric money (1 month) is : ${money} VND</h3>
+                <input type="hidden" name="totalMoney" value="${money}">
             </c:if>
             <c:if test="${empty money}">
                 <h4>No money</h4>

@@ -41,14 +41,16 @@ public class CaculateMoneyServlet extends HttpServlet {
             if(cart != null){
                 Map<Integer, ElectricProductEntity> items = cart.getItems();
                 if(items != null){
+                    float totalCapacityOneDay = 0;
                     for(Map.Entry<Integer, ElectricProductEntity> entry : items.entrySet()){
                         ElectricProductEntity value = entry.getValue();
-                        useCapacity += (float) (value.getProductCapacity() * quantity * time);
-                        capacity = (int) (useCapacity * 30);
-                        totalMoney = (int) cart.caculateElectric(id, capacity);
-                        strTotalMoney = String.format("%,d",totalMoney);
-                        strCapacity = String.format("%,d",capacity);
+                        useCapacity = (float) (value.getProductCapacity() * quantity * time);
+                        totalCapacityOneDay = totalCapacityOneDay + useCapacity;
                     }
+                    capacity = (int) (totalCapacityOneDay*30);
+                    totalMoney = (int) cart.caculateElectric(id, capacity);
+                    strTotalMoney = String.format("%d",totalMoney);
+                    strCapacity = String.format("%d",capacity);
                 }else {
                     strTotalMoney = "0";
                     strCapacity = "0";
