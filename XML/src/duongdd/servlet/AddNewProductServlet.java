@@ -19,6 +19,7 @@ import java.util.List;
 public class AddNewProductServlet extends HttpServlet {
     private static final String ADDNEWPRODUCT = "AddNewProductServlet";
     private static final String HOMESERVLET = "HomeElectricProductServlet";
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
@@ -49,26 +50,25 @@ public class AddNewProductServlet extends HttpServlet {
 
             productEntity.setProductName(nameProduct);
             productEntity.setProductCapacity(capacity);
-            if(brandName == null && categoryName == null){
-                for (int i = 0; i < listCategory.size(); i++) {
-                    if (categoryName.equals(listCategory.get(i).getNameCategory())) {
-                        productEntity.setIdCategory(listCategory.get(i).getIdCategory());
-                    }
+
+            for (int i = 0; i < listCategory.size(); i++) {
+                if (categoryName.equals(listCategory.get(i).getNameCategory())) {
+                    productEntity.setIdCategory(listCategory.get(i).getIdCategory());
                 }
-                for (int j = 0; j < listBrand.size(); j++) {
-                    if (brandName.equals(listBrand.get(j).getNameBrand())) {
-                        productEntity.setIdBrand(listBrand.get(j).getIdBrandProduct());
-                    }
+            }
+            for (int j = 0; j < listBrand.size(); j++) {
+                if (brandName.equals(listBrand.get(j).getNameBrand())) {
+                    productEntity.setIdBrand(listBrand.get(j).getIdBrandProduct());
                 }
             }
 
 
             electrictProductDAO.insertProduct(productEntity);
             url = HOMESERVLET;
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
-        }finally {
-            request.getRequestDispatcher(url).forward(request,response);
+        } finally {
+            request.getRequestDispatcher(url).forward(request, response);
         }
     }
 }

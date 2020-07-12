@@ -17,6 +17,8 @@ public class DispatcherServlet extends HttpServlet {
     private static final String SEARCH = "SearchServlet";
     private static final String SHOWFORMADD ="ShowAddFormServlet";
     private static final String ADDNEWPRODUCT = "AddNewProductServlet";
+    private static final String PINSOLAR ="PinSolarSuggestServlet";
+    private static final String CACULATEPINSOLAR = "CaculatePinSolarServlet";
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
@@ -39,6 +41,10 @@ public class DispatcherServlet extends HttpServlet {
                 url = SHOWFORMADD;
             }else if(action.equals("Add New")){
                 url = ADDNEWPRODUCT;
+            }else if(action.equals("Pin Solar Suggest")){
+                url = PINSOLAR;
+            }else if(action.equals("Add Pin")){
+                url = CACULATEPINSOLAR;
             }
         }catch (Exception e){
             e.printStackTrace();
