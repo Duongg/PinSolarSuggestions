@@ -64,7 +64,7 @@ public class PinsolarProductDAO implements Serializable {
                 dto.setIdPinSolar((Integer) rs[0]);
                 dto.setNamePinSolar((String) rs[1]);
                 dto.setPricePinSolar((String) rs[2]);
-                dto.setCapacityPinSolar((Double) rs[3]);
+                dto.setCapacityPinSolar((int)Math.round((Double) rs[3]));
                 dto.setImagePinSolar((String) rs[4]);
                 dto.setIdCategoryPinSolar((Integer) rs[5]);
                 listPin.add(dto);
@@ -79,13 +79,14 @@ public class PinsolarProductDAO implements Serializable {
             }
         }
     }
-    public List<PinSolarProductEntity> searchPinSolar(float totalCapacity){
+    public List<PinSolarProductEntity> searchInverter(int totalCapacity){
         EntityManager em = DBUtils.getEntityManager();
         List<PinSolarProductEntity> listPin = new ArrayList<>();
         try {
             String sql = "SELECT p.idPinSolar, p.namePinSolar, p.pricePinSolar, p.capacityPinSolar, p.imagePinSolar \n" +
-                    "FROM (PinSolarProduct p INNER JOIN CategoryPinSolar C ON P.idCategoryPinSolar = 10) \n" +
-                    "WHERE P.capacityPinSolar = '" + totalCapacity + "'";
+                    "FROM (PinSolarProduct p INNER JOIN CategoryPinSolar C \n" +
+                    "ON p.namePinSolar LIKE '%Inverter%' and P.idCategoryPinSolar = C.idCategoryPinSolar)\n" +
+                    "WHERE p.capacityPinSolar ='" + totalCapacity + "'";
             List<Object[]> result = em.createNativeQuery(sql).getResultList();
             for(Object[] rs : result){
                 PinSolarProductEntity dto = new PinSolarProductEntity();
@@ -117,7 +118,7 @@ public class PinsolarProductDAO implements Serializable {
             pinSolarProductEntity.setIdPinSolar((Integer) ob[0]);
             pinSolarProductEntity.setNamePinSolar((String) ob[1]);
             pinSolarProductEntity.setPricePinSolar((String) ob[2]);
-            pinSolarProductEntity.setCapacityPinSolar((Double) ob[3]);
+            pinSolarProductEntity.setCapacityPinSolar((int)Math.round((Double) ob[3]));
             pinSolarProductEntity.setImagePinSolar((String) ob[4]);
             return pinSolarProductEntity;
         }catch (Exception e){

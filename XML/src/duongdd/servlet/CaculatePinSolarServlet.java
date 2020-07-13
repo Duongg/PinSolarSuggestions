@@ -12,7 +12,7 @@ import java.io.IOException;
 
 
 public class CaculatePinSolarServlet extends HttpServlet {
-    private static String url = "detailPinsolar.jsp";
+    private static String url = "PinSolarSuggestServlet";
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

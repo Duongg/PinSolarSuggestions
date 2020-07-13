@@ -39,6 +39,10 @@
         <servlet-name>CaculatePinSolarServlet</servlet-name>
         <servlet-class>duongdd.servlet.CaculatePinSolarServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>InvertSuggestServlet</servlet-name>
+        <servlet-class>duongdd.servlet.InvertSuggestServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>DispatcherServlet</servlet-name>
         <url-pattern>/DispatcherServlet</url-pattern>
@@ -74,6 +78,10 @@
     <servlet-mapping>
         <servlet-name>CaculatePinSolarServlet</servlet-name>
         <url-pattern>/CaculatePinSolarServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InvertSuggestServlet</servlet-name>
+        <url-pattern>/InvertSuggestServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
