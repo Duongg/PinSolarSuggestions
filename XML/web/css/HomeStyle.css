@@ -12,6 +12,20 @@
     margin-left: 50px;
     text-align: center;
 }
+.container-addpin{
+    width: 400px;
+    height: 500px;
+    margin-left: 50px;
+    text-align: center;
+}
+.container-pin{
+    width: 500px;
+    height: 500px;
+    margin-top: 30px;
+    border: 1px solid black;
+    margin-left: 50px;
+    text-align: center;
+}
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -140,6 +154,18 @@ tr:nth-child(even) {
     border: none;
     border-radius: 5px 5px 5px 5px;
 }
+.button-find {
+    float: left;
+    width: 200px;
+    height: 50px;
+    margin-left: 60px;
+    background-color: lightgray;
+    color: black;
+    padding: 14px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px 5px 5px 5px;
+}
 .container-pin{
     width:90%;
     height: auto;
@@ -152,6 +178,14 @@ tr:nth-child(even) {
     width: 23%;
     padding: 10px;
     height: 420px;
+    border: 1px solid lightgray;
+}
+.column-invert {
+    float: left;
+    width: 80%;
+    margin-left: 30px;
+    padding: 10px;
+    height: 480px;
     border: 1px solid lightgray;
 }
 .row:after {
@@ -167,5 +201,29 @@ tr:nth-child(even) {
     text-align: center;
     background-color: #f1f1f1;
     border-radius: 3px 3px 3px 3px;
-
+}
+.card-pin{
+    height: 350px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 8px;
+    text-align: center;
+    background-color: #f1f1f1;
+    border-radius: 3px 3px 3px 3px;
+}
+.card-invert{
+    height: 400px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 8px;
+    text-align: center;
+    background-color: #f1f1f1;
+    border-radius: 3px 3px 3px 3px;
+}
+td > a:link, a:visited {
+    background-color: lightgray;
+    color: black;
+    padding: 12px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px 5px 5px 5px;
 }

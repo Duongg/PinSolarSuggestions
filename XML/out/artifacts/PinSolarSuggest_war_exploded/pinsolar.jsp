@@ -16,19 +16,21 @@
 <body>
 <c:set var="result" value="${requestScope.LISTPIN}"/>
 <c:set var="money" value="${requestScope.MONEY}"/>
+
 <c:if test="${not empty result}">
     <div class="container-pin">
         <h2>
             <a href="HomeElectricProductServlet">Electric Product</a>
         </h2>
-            <h2>Pin Solar</h2>
+        <h2>Pin Solar</h2>
         <font color="red" size="6">Your total electric bill: ${money} VND</font>
         <div class="row">
             <c:forEach var="dto" items="${result}">
                 <div class="column">
                     <form action="DispatcherServlet">
                         <div class="card">
-                            <img class="lazy" src="image/giphy.gif" data-src="${dto.imagePinSolar}" width="200px" height="200px">
+                            <img class="lazy" src="image/giphy.gif" data-src="${dto.imagePinSolar}" width="200px"
+                                 height="200px">
                             <h3>${dto.namePinSolar}
                                 <input type="hidden" value="${dto.idPinSolar}" name="idPinsolar">
                             </h3>
@@ -63,6 +65,40 @@
             </c:if>
         </div>
     </div>
+</c:if>
+<br/>
+<br/>
+
+<c:set var="dto" value="${requestScope.PRODUCTDETAIL}"/>
+<c:set var="pin" value="${requestScope.PINNUMBER}"/>
+<c:if test="${not empty dto}">
+    <c:if test="${not empty pin}">
+        <br/>
+        <br/>
+        <form action="DispatcherServlet">
+            <div class="container-addpin">
+                <div class="column-invert">
+                    <div class="card-pin">
+
+                        <img src="${dto.imagePinSolar}" width="200px" height="200px">
+                        <h3>${dto.namePinSolar}
+                            <input type="hidden" value="${dto.idPinSolar}" name="idPinsolar">
+                        </h3>
+                        <span> Price: <font color="red" size="3">${dto.pricePinSolar}</font> VND/ Panel</span>
+                        <h4>Pin Capacity:<font color="red" size="3"> ${dto.capacityPinSolar} W</font></h4>
+                        <h3>
+                            <font color="red">You need set up ${pin} panel</font>
+                        </h3>
+                        <input type="submit" class="button-find" name="btAction" value="Find Inverter">
+                        <input type="hidden" name="capacityPin" value="${dto.capacityPinSolar}"/>
+                        <input type="hidden" name="pinNumber" value="${pin}"/>
+
+                    </div>
+                </div>
+            </div>
+        </form>
+        <br/>
+    </c:if>
 </c:if>
 
 </body>

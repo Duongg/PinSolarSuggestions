@@ -109,7 +109,7 @@
                     <tr>
                         <td>${counter.count}</td>
                         <td>${dto.value.productName}
-                            <input type="hidden" name="idProduct" value="${dto.value.idProduct}">
+                            <input type="hidden" name="idProduct" value="${dto.value.idProduct}"/>
                         </td>
                         <td>${dto.value.productCapacity}
                             <input type="hidden" name="capacityProduct" value="${dto.value.productCapacity}">
@@ -120,7 +120,13 @@
                         <td>
                             <input type="text" name="txtTime" value="">
                         </td>
-                        <td><input type="submit" value="Remove" class="buttonremove" name="btAction"></td>
+                        <td>
+                            <c:url value="DispatcherServlet" var="localURL">
+                                <c:param name="btAction" value="Remove"/>
+                                <c:param name="idProduct" value="${dto.key}"/>
+                            </c:url>
+                            <a href="${localURL}">Remove</a>
+                        </td>
                     </tr>
 
                 </c:forEach>
