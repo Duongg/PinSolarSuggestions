@@ -66,6 +66,9 @@
         </div>
     </div>
 </c:if>
+<c:if test="${empty result}">
+    <h3>No records pin</h3>
+</c:if>
 <br/>
 <br/>
 
@@ -96,10 +99,33 @@
                     </div>
                 </div>
             </div>
+
         </form>
         <br/>
     </c:if>
 </c:if>
-
+<br/>
+<form action="DispatcherServlet">
+    <div class="container-inverter">
+        <c:set var="inverter" value="${requestScope.INVERTER}"/>
+        <c:if test="${not empty inverter}">
+            <c:forEach var="dto" items="${inverter}">
+                <div class="column">
+                    <div class="card-invert">
+                        <img src="${dto.imagePinSolar}" width="200px" height="200px">
+                        <h3>${dto.namePinSolar}
+                            <input type="hidden" value="${dto.idPinSolar}" name="idPinsolar">
+                        </h3>
+                        <span> Price: <font color="red" size="3">${dto.pricePinSolar}</font> VND/ Panel</span>
+                        <h4>Pin Capacity:<font color="red" size="3"> ${dto.capacityPinSolar} W</font></h4>
+                    </div>
+                </div>
+            </c:forEach>
+        </c:if>
+        <c:if test="${empty inverter}">
+            <h2>Inverter is not found</h2>
+        </c:if>
+    </div>
+</form>
 </body>
 </html>

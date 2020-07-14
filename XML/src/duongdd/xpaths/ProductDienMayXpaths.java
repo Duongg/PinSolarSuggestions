@@ -160,7 +160,7 @@ public class ProductDienMayXpaths {
             Document doc = XMLUtils.parseToDom(content.trim());
             if(doc != null){
                 XPath xPath = XMLUtils.createXpath();
-                String exp = "//div[@class='radio' and position() >1]//text()";
+                String exp = "//div[@class='form-check' and position() >1]//label//text()";
                 NodeList nodeList = (NodeList) xPath.evaluate(exp, doc, XPathConstants.NODESET);
                 if(nodeList != null){
                     for (int i = 0; i < nodeList.getLength(); i++){

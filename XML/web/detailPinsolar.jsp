@@ -14,10 +14,7 @@
 </head>
 <body>
 
-<div class="container-pin">
-    <h2>
-        <a href="CaculatePinSolarServlet">Pin Product</a>
-    </h2>
+<div class="container-inverter">
     <c:set var="inverter" value="${requestScope.INVERTER}"/>
     <c:if test="${not empty inverter}">
         <c:forEach var="dto" items="${inverter}">

@@ -40,7 +40,7 @@
         </select>
         <br/>
         <br/>
-        <input type="submit" class="buttonadd" name="btAction" value="Add New">
+        <input type="submit" class="button-add-new" name="btAction" value="Add New">
 
 </form>
 </div>

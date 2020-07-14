@@ -131,14 +131,14 @@ public class XMLValidate {
         return nameProduct;
     }
 
-    public Double convertKwhPerDayToWatt(String strCapacity) {
+    public int convertKwhPerDayToWatt(String strCapacity) {
         String strConvert = "";
         String cap1 = "";
         String cap2 = "";
         String capacity = "";
         double capacity1 = 0;
         double time = 0;
-        double capacityProduct = 0;
+        int capacityProduct = 0;
         strConvert = strCapacity.replaceAll("\\s+", "");
         try {
             if (strConvert.contains("kw/ngày")) {
@@ -150,20 +150,20 @@ public class XMLValidate {
                 cap2 = strConvert.substring(pos + 3, last);
                 capacity1 = Double.parseDouble(cap1.trim());
                 time = Double.parseDouble(cap2);
-                capacityProduct = capacity1 * 1000 * time;
+                capacityProduct = (int) Math.round((capacity1/time)*1000);
             } else if (strConvert.charAt(strCapacity.length() - 1) == 'w') {
                 int lastIndexCap = strConvert.indexOf("w");
                 capacity = strConvert.substring(0, lastIndexCap);
-                capacityProduct = Double.parseDouble(capacity.trim());
+                capacityProduct = (int) Double.parseDouble(capacity.trim());
             } else if (strConvert.contains("kw/h")) {
                 int pos = strConvert.indexOf("kw/h");
                 capacity = strConvert.substring(0, pos);
                 double capPro = Double.parseDouble(capacity);
-                capacityProduct = capPro * 1000;
+                capacityProduct = (int) (capPro * 1000);
             } else if (strConvert.contains("w/h")) {
                 int posi = strConvert.indexOf("w/h");
                 capacity = strConvert.substring(0, posi);
-                capacityProduct = Double.parseDouble(capacity.trim());
+                capacityProduct = (int) Double.parseDouble(capacity.trim());
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());

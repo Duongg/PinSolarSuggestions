@@ -28,6 +28,7 @@ public class MenuNTCrawlers {
     public List<CategoryProductEntity> listCategoryDB;
 
     public void crawlDienMayNT() throws ParserConfigurationException, SAXException, IOException {
+        System.out.println("----------------- Điện máy nhất tín -------------");
         crawlerMenuNT();
         crawlCategory();
         getBrand();
@@ -110,21 +111,25 @@ public class MenuNTCrawlers {
 
         if (dto != null) {
             ElectricProductEntity productEntity = new ElectricProductEntity();
-            productEntity.setProductName(dto.getProductName());
+            try {
+                productEntity.setProductName(dto.getProductName());
 
-            productEntity.setProductCapacity(dto.getProductCapacity());
+                productEntity.setProductCapacity(dto.getProductCapacity());
 
-            for (int i = 0; i < listBrandDB.size(); i++) {
-                if (dto.getProductName().toUpperCase().contains(listBrandDB.get(i).getNameBrand())) {
-                    productEntity.setIdBrand(listBrandDB.get(i).getIdBrandProduct());
-                    break;
+                for (int i = 0; i < listBrandDB.size(); i++) {
+                    if (dto.getProductName().toUpperCase().contains(listBrandDB.get(i).getNameBrand())) {
+                        productEntity.setIdBrand(listBrandDB.get(i).getIdBrandProduct());
+                        break;
+                    }
                 }
-            }
-            for (int j = 0; j < listCategoryDB.size(); j++) {
-                if (dto.getProductCategory().equals(listCategoryDB.get(j).getNameCategory())) {
-                    productEntity.setIdCategory(listCategoryDB.get(j).getIdCategory());
-                    break;
+                for (int j = 0; j < listCategoryDB.size(); j++) {
+                    if (dto.getProductCategory().equals(listCategoryDB.get(j).getNameCategory())) {
+                        productEntity.setIdCategory(listCategoryDB.get(j).getIdCategory());
+                        break;
+                    }
                 }
+            }catch (Exception e){
+                System.out.println(e.getMessage());
             }
             boolean validate = Jaxb.doubleCheckElectricProduct(XMLSign.FILE_PATH_ELECTRIC_PRODUCT, productEntity);
             if(validate){

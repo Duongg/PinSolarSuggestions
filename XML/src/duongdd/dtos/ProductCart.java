@@ -56,7 +56,7 @@ public class ProductCart {
         }
     }
 
-    public float caculateElectric(int idProduct, float capacity) {
+    public float caculateElectric(float capacity) {
 
         float totalMoney = 0;
         int f1 = 50, f2 = 50, f3 = 100, f4 = 100, f5 = 100, f6 = 0;

@@ -13,57 +13,67 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CaculateMoneyServlet extends HttpServlet {
-    private static String HOMEELECTRICPRODUCT = "HomeElectricProductServlet";
+    private static String HOMEELECTRICPRODUCT = "homeElectricProduct.jsp";
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-       String url = HOMEELECTRICPRODUCT;
+        String url = HOMEELECTRICPRODUCT;
         try {
 
             HttpSession session = request.getSession();
             ProductCart cart = (ProductCart) session.getAttribute("CART");
-            if(cart == null){
+            if (cart == null) {
                 cart = new ProductCart();
             }
-           String strQuantity = request.getParameter("txtQuantity");
-           String strHour = request.getParameter("txtTime");
-           String idProduct = request.getParameter("idProduct");
+            String[] strQuantity = request.getParameterValues("txtQuantity");
+            String[] strHour = request.getParameterValues("txtTime");
+
+            String idProduct = request.getParameter("idProduct");
             int id = Integer.parseInt(idProduct);
-            int quantity = Integer.parseInt(strQuantity);
-            float time = Float.parseFloat(strHour);
+
+
             int totalMoney = 0;
             float useCapacity = 0;
-            int capacity = 0;
+            int totalCapacity = 0;
+            int quantity = 0;
+            float time = 0;
             String strCapacity = "";
             String strTotalMoney = "";
-            if(cart != null){
+            if (cart != null) {
                 Map<Integer, ElectricProductEntity> items = cart.getItems();
-                if(items != null){
+                if (items != null) {
                     float totalCapacityOneDay = 0;
-                    for(Map.Entry<Integer, ElectricProductEntity> entry : items.entrySet()){
+                    int count = 0;
+                    for (Map.Entry<Integer, ElectricProductEntity> entry : items.entrySet()) {
+
+                        String quan = strQuantity[count];
+                        quantity = Integer.parseInt(quan);
+                        String hour = strHour[count];
+                        time = Float.parseFloat(hour);
+
                         ElectricProductEntity value = entry.getValue();
                         useCapacity = (float) (value.getProductCapacity() * quantity * time);
+
                         totalCapacityOneDay = totalCapacityOneDay + useCapacity;
+                        count++;
                     }
-                    capacity = (int) (totalCapacityOneDay*30);
-                    totalMoney = (int) cart.caculateElectric(id, capacity);
-                    strTotalMoney = String.format("%d",totalMoney);
-                    strCapacity = String.format("%d",capacity);
-                }else {
-                    strTotalMoney = "0";
-                    strCapacity = "0";
+                    totalCapacity = (int) (totalCapacityOneDay * 30);
+                    totalMoney = (int) cart.caculateElectric(totalCapacity);
+                    strTotalMoney = String.format("%d", totalMoney);
+                    strCapacity = String.format("%d", totalCapacity);
                 }
             }
 
             session.setAttribute("CAPA", strCapacity);
-           session.setAttribute("MONEY", strTotalMoney);
-       }catch (Exception e){
-           System.out.println(e.getMessage());
-       }finally {
-           request.getRequestDispatcher(url).forward(request, response);
-       }
+            session.setAttribute("MONEY", strTotalMoney);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+            request.getRequestDispatcher(url).forward(request, response);
+        }
 
 
     }

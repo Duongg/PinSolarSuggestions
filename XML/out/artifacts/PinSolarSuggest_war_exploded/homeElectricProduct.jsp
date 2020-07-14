@@ -15,7 +15,7 @@
 <body>
 
 <div class="container">
-    <c:set var="result" value="${requestScope.LISTELECTRICPRODUCT}"/>
+    <c:set var="result" value="${sessionScope.LISTELECTRICPRODUCT}"/>
     <h2>
         <a href="DispatcherServlet">Electric Product</a>
     </h2>
@@ -100,7 +100,7 @@
                 <th>Electric Product Name</th>
                 <th>Electric Product Capacity (W)</th>
                 <th>Quantity</th>
-                <th>Using Time</th>
+                <th>Using Time( Hour / Day)</th>
                 <th>Action</th>
                 </thead>
                 <tbody>
@@ -137,7 +137,7 @@
             <br/>
             <input type="Submit" class="button-caculate" value="Caculate Electric Money" name="btAction">
             <c:if test="${not empty capa}">
-                <input type="submit" class="button-add-product" name="btAction" value="Pin Solar Suggest"/>
+                <input type="submit" class="button-add-product" name="btAction" value="Find Pin Solar"/>
                 <br/>
                 <br/>
                 <h3>Used Capacity 1 month: ${capa} W</h3>
