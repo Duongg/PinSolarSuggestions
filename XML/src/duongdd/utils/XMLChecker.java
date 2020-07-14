@@ -260,6 +260,7 @@ public class XMLChecker {
                     .replace("$lt;p&","")
                     .replace("$lt;/p&gt","")
                     .replace("&amp;nbsp;","")
+                    .replace("checked","")
                     .replace("&gt","&gt;");
             builder.append(entry.getKey())
                     .append("=")

@@ -28,7 +28,7 @@ public class DispatcherServlet extends HttpServlet {
         String url = ERROR;
         try {
             String action = request.getParameter("btAction");
-            if (action == null) {
+            if (action == null || action.equals("Home")) {
                 url = HOMEELECTRICPRODCUT;
             }else if(action.equals("Add")){
                 url = ADDTOCACULATE;
@@ -37,12 +37,12 @@ public class DispatcherServlet extends HttpServlet {
             }else if(action.equals("Remove")){
                 url = REMOVEITEM;
             }else if(action.equals("Search")){
-                url = HOMEELECTRICPRODCUT;
+                url = SEARCH;
             }else if(action.equals("Add New Product")){
                 url = SHOWFORMADD;
             }else if(action.equals("Add New")){
                 url = ADDNEWPRODUCT;
-            }else if(action.equals("Pin Solar Suggest")){
+            }else if(action.equals("Find Pin Solar")){
                 url = PINSOLAR;
             }else if(action.equals("Add Pin")){
                 url = CACULATEPINSOLAR;

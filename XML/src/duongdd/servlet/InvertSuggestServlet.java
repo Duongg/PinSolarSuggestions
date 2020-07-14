@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class InvertSuggestServlet extends HttpServlet {
-    String url = "detailPinsolar.jsp";
+    String url = "CaculatePinSolarServlet";
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }

@@ -6,6 +6,7 @@ import duongdd.utils.XMLChecker;
 import duongdd.utils.XMLCrawler;
 import duongdd.utils.XMLSign;
 import duongdd.xpaths.ProductDienMayXpaths;
+import org.eclipse.persistence.annotations.CascadeOnDelete;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -43,15 +44,14 @@ public class ProductDienMayCrawlers {
         String contentCategory = "";
         contentCategory = XMLCrawler.crawlData(url, XMLSign.DM_Category_beginSign, XMLSign.DM_Category_endSign);
         contentCategory = XMLChecker.encodeContent(contentCategory);
-        contentCategory = XMLChecker.fixTagName(contentCategory);
-        contentCategory = XMLChecker.preParseDM(contentCategory);
+        contentCategory = XMLChecker.TagChecker("<document>" + contentCategory + "</document>");
         return contentCategory;
     }
     public String crawBrandDMProduct(String url) throws ParserConfigurationException, SAXException, IOException {
         String contentBrand = "";
         contentBrand = XMLCrawler.crawlData(url, XMLSign.DM_Brand_beginSign, XMLSign.DM_Brand_endSign);
         contentBrand = XMLChecker.encodeContent(contentBrand);
-        contentBrand = XMLChecker.fixTagName(contentBrand);
+        contentBrand = XMLChecker.TagChecker("<document>" + contentBrand + "</document>");
         return contentBrand;
     }
 }

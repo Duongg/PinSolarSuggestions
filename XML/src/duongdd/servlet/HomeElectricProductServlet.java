@@ -21,6 +21,7 @@ import java.util.List;
 public class HomeElectricProductServlet extends HttpServlet {
     private static final String HOME_ELECTRIC_PRODUCT = "homeElectricProduct.jsp";
     private static final String ERROR = "error.jsp";
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
@@ -30,7 +31,6 @@ public class HomeElectricProductServlet extends HttpServlet {
         CategoryProductDAO categoryProductDAO = new CategoryProductDAO();
         List<ElectricProductEntity> listElectricProduct = new ArrayList<>();
         List<CategoryProductEntity> listCategory = new ArrayList<>();
-        List<ElectricProductEntity> listProductByCatogory = new ArrayList<>();
         String url = ERROR;
 
         try {
@@ -38,56 +38,57 @@ public class HomeElectricProductServlet extends HttpServlet {
             listCategory = categoryProductDAO.getAllNameCategory();
             //search product by category
             String nameCategory = request.getParameter("nameCategory");
-            if(nameCategory != null && !nameCategory.equals("")){
+            if (nameCategory != null && !nameCategory.equals("")) {
                 listElectricProduct = electrictProductDAO.searchProductByBrand(nameCategory);
-            }else{
+            } else {
                 // get all product from DB
                 listElectricProduct = electrictProductDAO.getAllElectricProduct();
             }
 
             // get url 1 page
             HttpSession session = request.getSession();
-            if (request.getQueryString() != null && !request.getQueryString().contains("pageNumber")) {
-                String queryString = "DispatcherServlet?" + request.getQueryString();
-                session.setAttribute("QUERYSTRING", queryString);
-            }
+
+//            if (request.getQueryString() != null && !request.getQueryString().contains("pageNumber")) {
+//                String queryString = "DispatcherServlet?" + request.getQueryString();
+                session.setAttribute("QUERYSTRING", "DispatcherServlet?&btAction=Home");
+//            }
+
             // paging
             String pageNum = request.getParameter("pageNumber");
-            int pageNumber =1;
-            if(pageNum != null){
+            int pageNumber = 1;
+            if (pageNum != null) {
                 pageNumber = Integer.parseInt(pageNum);
-                System.out.println(pageNumber);
             }
             // divide 20 product per one page
             int numberItems = listElectricProduct.size();
             int maxPage = numberItems / 20;
-            if(numberItems % 20 != 0){
-                maxPage = maxPage +1;
+            if (numberItems % 20 != 0) {
+                maxPage = maxPage + 1;
             }
             List<ElectricProductEntity> resultPage = new ArrayList<>();
             // add product to one page
-            if(listElectricProduct != null){
-                int fromPage = (pageNumber * 20)-20;
+            if (listElectricProduct != null) {
+                int fromPage = (pageNumber * 20) - 20;
                 int endPage = fromPage + 20;
-                if(endPage < listElectricProduct.size()){
-                    for(int i = fromPage; i < endPage; i++){
+                if (endPage < listElectricProduct.size()) {
+                    for (int i = fromPage; i < endPage; i++) {
                         resultPage.add(listElectricProduct.get(i));
                     }
-                }else {
-                    for(int j = fromPage; j < listElectricProduct.size(); j++){
+                } else {
+                    for (int j = fromPage; j < listElectricProduct.size(); j++) {
                         resultPage.add(listElectricProduct.get(j));
                     }
                 }
             }
 
-            request.setAttribute("LISTCATE", listCategory);
-            request.setAttribute("LISTELECTRICPRODUCT",resultPage);
-            request.setAttribute("MAXPAGE",maxPage);
-            request.setAttribute("PAGENUMBER",pageNumber);
+            session.setAttribute("LISTCATE", listCategory);
+            session.setAttribute("LISTELECTRICPRODUCT", resultPage);
+            request.setAttribute("MAXPAGE", maxPage);
+            request.setAttribute("PAGENUMBER", pageNumber);
             url = HOME_ELECTRIC_PRODUCT;
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
-        }finally {
+        } finally {
             request.getRequestDispatcher(url).forward(request, response);
         }
 

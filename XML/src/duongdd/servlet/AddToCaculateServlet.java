@@ -29,10 +29,9 @@ public class AddToCaculateServlet extends HttpServlet {
             }
             String id = request.getParameter("idProduct");
             int idProduct = Integer.parseInt(id);
-            cart.addItemsToCaculate(idProduct);
 
+            cart.addItemsToCaculate(idProduct);
             session.setAttribute("CART", cart);
-            url = HOMEELECTRICPRODUCT;
         }catch (Exception e){
             System.out.println(e.getMessage());
         }finally {

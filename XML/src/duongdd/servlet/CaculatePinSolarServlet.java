@@ -29,12 +29,10 @@ public class CaculatePinSolarServlet extends HttpServlet {
             float totalWp = 0;
             float capacityPV = 0;
             int pinNumber = 0;
-            float capacityPinKw = 0;
 
             String strIdPinSolar = request.getParameter("idPinsolar");
             String strMoney = request.getParameter("totalMoney");
             String strCapacity = request.getParameter("txtCapacity");
-            System.out.println(strCapacity);
             if (strMoney != null && !strMoney.equals("")) {
                 money = Float.parseFloat(strMoney);
             }

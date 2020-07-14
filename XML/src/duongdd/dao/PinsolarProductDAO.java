@@ -56,8 +56,9 @@ public class PinsolarProductDAO implements Serializable {
         EntityManager em = DBUtils.getEntityManager();
         List<PinSolarProductEntity> listPin = new ArrayList<>();
         try{
-            String sql = "SELECT p.idPinSolar, p.namePinSolar, p.pricePinSolar, p.capacityPinSolar, p.imagePinSolar, p.idCategoryPinSolar \n" +
-                    "FROM (PinSolarProduct p INNER JOIN CategoryPinSolar C ON P.idCategoryPinSolar = 10 AND P.idCategoryPinSolar = C.idCategoryPinSolar)";
+            String sql = "SELECT p.idPinSolar, p.namePinSolar, p.pricePinSolar, p.capacityPinSolar, p.imagePinSolar, p.idCategoryPinSolar\n" +
+                    "FROM (PinSolarProduct p INNER JOIN CategoryPinSolar C ON P.idCategoryPinSolar = C.idCategoryPinSolar)\n" +
+                    "WHERE C.nameCategoryPinSolar LIKE N'NĂNG LƯỢNG MẶT TRỜI'";
             List<Object[]> result = em.createNativeQuery(sql).getResultList();
             for(Object[] rs : result){
                 PinSolarProductEntity dto = new PinSolarProductEntity();

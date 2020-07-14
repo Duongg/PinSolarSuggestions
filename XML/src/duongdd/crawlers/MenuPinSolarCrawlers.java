@@ -99,21 +99,25 @@ public class MenuPinSolarCrawlers {
         PinsolarProductDAO dao = new PinsolarProductDAO();
         if (dto.getPinName() != null && dto.getPinCapacity() != 0.0 && dto.getPinPrice() != null && dto.getPinImage() != null && dto.getPinCategory() != null) {
             PinSolarProductEntity productEntity = new PinSolarProductEntity();
-            productEntity.setNamePinSolar(dto.getPinName());
+            try {
+                productEntity.setNamePinSolar(dto.getPinName());
 
-            productEntity.setCapacityPinSolar(dto.getPinCapacity());
+                productEntity.setCapacityPinSolar(dto.getPinCapacity());
 
-            productEntity.setPricePinSolar(dto.getPinPrice());
+                productEntity.setPricePinSolar(dto.getPinPrice());
 
-            productEntity.setImagePinSolar(dto.getPinImage());
+                productEntity.setImagePinSolar(dto.getPinImage());
 
-            for (int i = 0; i < listCategoryDB.size(); i++) {
-                if(dto.getPinCategory() != null) {
-                    if (dto.getPinCategory().equals(listCategoryDB.get(i).getNameCategoryPinSolar())) {
-                        productEntity.setIdCategoryPinSolar(listCategoryDB.get(i).getIdCategoryPinSolar());
-                        break;
+                for (int i = 0; i < listCategoryDB.size(); i++) {
+                    if (dto.getPinCategory() != null) {
+                        if (dto.getPinCategory().equals(listCategoryDB.get(i).getNameCategoryPinSolar())) {
+                            productEntity.setIdCategoryPinSolar(listCategoryDB.get(i).getIdCategoryPinSolar());
+                            break;
+                        }
                     }
                 }
+            }catch (Exception e){
+                System.out.println(e.getMessage());
             }
             boolean validate = Jaxb.doubleCheckPinSolarProduct(XMLSign.FILE_PATH_PIN_SOLAR_PRODUCT, productEntity);
             if(validate){
