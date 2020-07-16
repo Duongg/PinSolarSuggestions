@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 
@@ -29,7 +30,7 @@ public class CaculatePinSolarServlet extends HttpServlet {
             float totalWp = 0;
             float capacityPV = 0;
             int pinNumber = 0;
-
+            HttpSession session = request.getSession();
             String strIdPinSolar = request.getParameter("idPinsolar");
             String strMoney = request.getParameter("totalMoney");
             String strCapacity = request.getParameter("txtCapacity");
@@ -53,8 +54,8 @@ public class CaculatePinSolarServlet extends HttpServlet {
             if((totalWp % capacityPV)>0){
                 pinNumber = pinNumber + 1;
             }
-            request.setAttribute("PRODUCTDETAIL",pinSolarProductEntity);
-            request.setAttribute("PINNUMBER", pinNumber);
+            session.setAttribute("PRODUCTDETAIL",pinSolarProductEntity);
+            session.setAttribute("PINNUMBER", pinNumber);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         } finally {

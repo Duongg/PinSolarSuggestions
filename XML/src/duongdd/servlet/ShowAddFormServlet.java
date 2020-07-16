@@ -42,9 +42,6 @@ public class ShowAddFormServlet extends HttpServlet {
             request.setAttribute("LISTCATEGORY", listCategory);
             request.setAttribute("LISTBRAND", listBrand);
 
-
-
-
         } catch (Exception e) {
             System.out.println(e.getMessage());
         } finally {

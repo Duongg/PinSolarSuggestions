@@ -20,6 +20,9 @@ public class DispatcherServlet extends HttpServlet {
     private static final String PINSOLAR ="PinSolarSuggestServlet";
     private static final String CACULATEPINSOLAR = "CaculatePinSolarServlet";
     private static final String INVERTER = "InvertSuggestServlet";
+    private static final String CARTPIN = "AddPinToCartServlet";
+    private static final String VIEWCART = "detailPinsolar.jsp";
+    private static final String REMOVEPIN = "RemovePinServlet";
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
@@ -48,6 +51,12 @@ public class DispatcherServlet extends HttpServlet {
                 url = CACULATEPINSOLAR;
             }else if(action.equals("Find Inverter")){
                 url = INVERTER;
+            }else if(action.equals("Add To Cart")){
+                url = CARTPIN;
+            }else if(action.equals("View Cart")){
+                url = VIEWCART;
+            }else if(action.equals("Remove Item")){
+                url = REMOVEPIN;
             }
         }catch (Exception e){
             e.printStackTrace();

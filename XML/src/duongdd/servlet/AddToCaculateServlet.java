@@ -21,21 +21,34 @@ public class AddToCaculateServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = HOMEELECTRICPRODUCT;
-        try{
+        try {
             HttpSession session = request.getSession();
             ProductCart cart = (ProductCart) session.getAttribute("CART");
-            if(cart == null){
+            if (cart == null) {
                 cart = new ProductCart();
             }
             String id = request.getParameter("idProduct");
-            int idProduct = Integer.parseInt(id);
+            String nameCate = request.getParameter("nameCategory");
 
+            String pageNumber = request.getParameter("pageNumber");
+            int idProduct = Integer.parseInt(id);
+            if (request.getQueryString() != null
+                    && nameCate != null
+                    && !nameCate.equals("")
+                    && !request.getQueryString().contains("pageNumber")
+                    && !nameCate.contains(" ")
+                    && !nameCate.equals("")
+            ) {
+                url = "DispatcherServlet?nameCategory=" + nameCate + "&btAction=Search&pageNumber=" + pageNumber;
+
+            }
             cart.addItemsToCaculate(idProduct);
             session.setAttribute("CART", cart);
-        }catch (Exception e){
+            session.setAttribute("QUERYSTRING", url);
+        } catch (Exception e) {
             System.out.println(e.getMessage());
-        }finally {
-            request.getRequestDispatcher(url).forward(request,response);
+        } finally {
+            request.getRequestDispatcher(url).forward(request, response);
         }
     }
 }

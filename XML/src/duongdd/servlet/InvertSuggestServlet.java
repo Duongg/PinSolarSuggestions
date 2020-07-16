@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +27,7 @@ public class InvertSuggestServlet extends HttpServlet {
                 int capacityPin = 0;
                 int totalInverter = 0;
                 float capacity = 0;
+                HttpSession session = request.getSession();
                 String pinNumber = request.getParameter("pinNumber");
                 String strPinCapacity = request.getParameter("capacityPin");
                 int pos = strPinCapacity.indexOf(".0");
@@ -42,7 +44,7 @@ public class InvertSuggestServlet extends HttpServlet {
                     totalInverter = totalInverter + 1;
                 }
                 listInverter = pinsolarProductDAO.searchInverter(totalInverter*1000);
-                request.setAttribute("INVERTER", listInverter);
+                session.setAttribute("INVERTER", listInverter);
             }catch (Exception e){
                 System.out.println(e.getMessage());
             }finally {

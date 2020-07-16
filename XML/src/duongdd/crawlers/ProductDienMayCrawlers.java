@@ -29,9 +29,8 @@ public class ProductDienMayCrawlers {
         try {
             contentDetail = XMLCrawler.crawlData(urlDetail, XMLSign.DM_Detail_Product_beginSign, XMLSign.DM_Detail_Product_endSign);
             contentDetail = XMLChecker.encodeContent(contentDetail);
-            contentDetail = XMLChecker.fixTagName(contentDetail);
-            contentDetail = XMLChecker.preParseDM(contentDetail);
-            dto = productDienMayXpaths.xpathProduct(namecate,contentDetail);
+            contentDetail = XMLChecker.TagChecker("<document>" + contentDetail + "</document>");
+           dto = productDienMayXpaths.xpathProduct(namecate,contentDetail);
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
         } catch (Exception e) {

@@ -18,11 +18,11 @@
 
         <h2>Add new Product</h2>
 
-        Name Product: <br/>
-        <input type="text" name="productName" required></br>
-        Capacity Product: <br/>
-        <input type="text" name="capacityProduct" required></br>
-        Brand Name: <br/>
+        <label><b>Product Name</b></label>
+        <input type="text" name="productName" placeholder="Name Product" required></br>
+    <label><b>Product Capacity</b></label>
+        <input type="text" name="capacityProduct" placeholder="Capacity Product" required></br>
+    <label><b>Brand Name</b></label>
         <select value="${LISTBRAND}" name="brandProduct" required>
                         <option value="0">-- Brand --</option>
                         <c:forEach var="brand" items="${LISTBRAND}">
@@ -31,7 +31,7 @@
                     </select>
         <br/>
         <br/>
-        Category Name:<br/>
+    <label><b>Category Name</b></label>
         <select value="${LISTCATEGORY}" name="nameCategory" required>
                         <option value="0">-- Category --</option>
                         <c:forEach var="cate" items="${LISTCATEGORY}">
@@ -40,7 +40,7 @@
         </select>
         <br/>
         <br/>
-        <input type="submit" class="button-add-new" name="btAction" value="Add New">
+        <input type="submit" class="addnewbtn" name="btAction" value="Add New">
 
 </form>
 </div>
