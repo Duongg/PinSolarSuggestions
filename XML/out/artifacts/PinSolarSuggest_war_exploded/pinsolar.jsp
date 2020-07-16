@@ -15,15 +15,21 @@
 </head>
 <body>
 <c:set var="result" value="${requestScope.LISTPIN}"/>
-<c:set var="money" value="${requestScope.MONEY}"/>
+<c:set var="money" value="${sessionScope.MONEY}"/>
 
 <c:if test="${not empty result}">
     <div class="container-pin">
         <h2>
             <a href="HomeElectricProductServlet">Electric Product</a>
         </h2>
-        <h2>Pin Solar</h2>
         <font color="red" size="6">Your total electric bill: ${money} VND</font>
+        <c:url value="DispatcherServlet" var="URLCart">
+            <c:param name="btAction" value="View Cart"/>
+            <c:param name="pinNumber" value="${pin}"/>
+            <c:param name="idPinSolar" value="${dto.idPinSolar}"/>
+        </c:url>
+        <a href="${URLCart}" class="button-view-cart">View Cart</a>
+        <h2>Pin Solar</h2>
         <div class="row">
             <c:forEach var="dto" items="${result}">
                 <div class="column">
@@ -42,6 +48,14 @@
 
                         </div>
                         <input type="submit" class="button-add-pin" name="btAction" value="Add Pin">
+                        <input type="hidden" value="${dto.idPinSolar}" name="idPinsolar">
+                        <input type="hidden" value="${requestScope.PAGENUMBER}" name="pageNumber">
+<%--                        <c:url value="DispatcherServlet" var="URLAddPin">--%>
+<%--                            <c:param name="btAction" value="Add Pin"/>--%>
+<%--                            <c:param name="idPinSolar" value="${dto.idPinSolar}"/>--%>
+<%--                            <c:param name="pageNumber" value="${requestScope.PAGENUMBER}"/>--%>
+<%--                        </c:url>--%>
+<%--                        <a href="${URLAddPin}" class="button-add-pin">Add Pin</a>--%>
                     </form>
                 </div>
             </c:forEach>
@@ -72,8 +86,8 @@
 <br/>
 <br/>
 
-<c:set var="dto" value="${requestScope.PRODUCTDETAIL}"/>
-<c:set var="pin" value="${requestScope.PINNUMBER}"/>
+<c:set var="dto" value="${sessionScope.PRODUCTDETAIL}"/>
+<c:set var="pin" value="${sessionScope.PINNUMBER}"/>
 <c:if test="${not empty dto}">
     <c:if test="${not empty pin}">
         <br/>
@@ -81,7 +95,7 @@
         <form action="DispatcherServlet">
             <div class="container-addpin">
                 <div class="column-invert">
-                    <div class="card-pin">
+                    <div class="card-pin-add">
 
                         <img src="${dto.imagePinSolar}" width="200px" height="200px">
                         <h3>${dto.namePinSolar}
@@ -92,11 +106,24 @@
                         <h3>
                             <font color="red">You need set up ${pin} panel</font>
                         </h3>
-                        <input type="submit" class="button-find" name="btAction" value="Find Inverter">
-                        <input type="hidden" name="capacityPin" value="${dto.capacityPinSolar}"/>
-                        <input type="hidden" name="pinNumber" value="${pin}"/>
-
+                        <c:url value="DispatcherServlet" var="URLAddToCart">
+                            <c:param name="btAction" value="Add To Cart"/>
+                            <c:param name="idPinSolar" value="${dto.idPinSolar}"/>
+                            <c:param name="pinNumber" value="${pin}"/>
+                            <c:param name="pageNumber" value="${requestScope.PAGENUMBER}"/>
+                        </c:url>
+                        <a href="${URLAddToCart}" class="button-add-tocart">Add To Cart</a>
+                            <%--                        <input type="submit" class="button-find" name="btAction" value="Find Inverter">--%>
+                            <%--                        <input type="hidden" name="capacityPin" value="${dto.capacityPinSolar}"/>--%>
+                            <%--                        <input type="hidden" name="pinNumber" value="${pin}"/>--%>
+                        <c:url value="DispatcherServlet" var="UrlInverter">
+                            <c:param name="btAction" value="Find Inverter"/>
+                            <c:param name="pinNumber" value="${pin}"/>
+                            <c:param name="capacityPin" value="${dto.capacityPinSolar}"/>
+                        </c:url>
+                        <a href="${UrlInverter}" class="button-add-tocart">Find Inverter</a>
                     </div>
+
                 </div>
             </div>
 
@@ -107,7 +134,7 @@
 <br/>
 <form action="DispatcherServlet">
     <div class="container-inverter">
-        <c:set var="inverter" value="${requestScope.INVERTER}"/>
+        <c:set var="inverter" value="${sessionScope.INVERTER}"/>
         <c:if test="${not empty inverter}">
             <c:forEach var="dto" items="${inverter}">
                 <div class="column">
@@ -119,6 +146,12 @@
                         <span> Price: <font color="red" size="3">${dto.pricePinSolar}</font> VND/ Panel</span>
                         <h4>Pin Capacity:<font color="red" size="3"> ${dto.capacityPinSolar} W</font></h4>
                     </div>
+                    <c:url value="DispatcherServlet" var="URLAdd">
+                        <c:param name="btAction" value="Add To Cart"/>
+                        <c:param name="idPinSolar" value="${dto.idPinSolar}"/>
+                        <c:param name="pageNumber" value="${requestScope.PAGENUMBER}"/>
+                    </c:url>
+                    <a href="${URLAdd}" class="button-find">Add To Cart</a>
                 </div>
             </c:forEach>
         </c:if>

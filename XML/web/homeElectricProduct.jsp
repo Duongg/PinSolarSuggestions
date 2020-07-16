@@ -51,7 +51,15 @@
                         </td>
                         <td>${dto.productCapacity}</td>
                         <td>
-                            <input type="submit" class="buttonadd" value="Add" name="btAction">
+                                <%--                            <input type="submit" class="buttonadd" value="Add" name="btAction">--%>
+                                <%--                            <input type="hidden" name="nameCategory" value="${param.nameCategory}"/>--%>
+                            <c:url value="DispatcherServlet" var="URLAdd">
+                                <c:param name="btAction" value="Add"/>
+                                <c:param name="idProduct" value="${dto.idProduct}"/>
+                                <c:param name="nameCategory" value="${param.nameCategory}"/>
+                                <c:param name="pageNumber" value="${requestScope.PAGENUMBER}"/>
+                            </c:url>
+                            <a href="${URLAdd}"> Add </a>
                         </td>
                     </tr>
                     <tr>
@@ -136,8 +144,14 @@
             <c:set var="capa" value="${sessionScope.CAPA}"/>
             <br/>
             <input type="Submit" class="button-caculate" value="Caculate Electric Money" name="btAction">
+
             <c:if test="${not empty capa}">
-                <input type="submit" class="button-add-product" name="btAction" value="Find Pin Solar"/>
+<%--                                <input type="submit" class="button-add-product" name="btAction" value="Find Pin Solar"/>--%>
+                <c:url value="DispatcherServlet" var="URLfind">
+                    <c:param name="btAction" value="Find Pin Solar"/>
+                    <c:param name="money" value="${sessionScope.MONEY}"/>
+                </c:url>
+                <a href="${URLfind}" class="button-find-pin">Find Pin Solar</a>
                 <br/>
                 <br/>
                 <h3>Used Capacity 1 month: ${capa} W</h3>

@@ -3,9 +3,7 @@ package duongdd.dtos;
 import duongdd.dao.ElectrictProductDAO;
 import duongdd.entity.ElectricProductEntity;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class ProductCart {

@@ -15,23 +15,32 @@
 <body>
 
 <div class="container-inverter">
-    <c:set var="inverter" value="${requestScope.INVERTER}"/>
-    <c:if test="${not empty inverter}">
-        <c:forEach var="dto" items="${inverter}">
+    <h2>Pin and Inverter You choosed</h2>
+    <h2>
+        <a href="PinSolarSuggestServlet">Pin Solar</a>
+    </h2>
+    <c:set var="listItems" value="${sessionScope.CARTPIN}"/>
+    <c:if test="${not empty listItems}">
+        <c:forEach var="dto" items="${listItems.items}">
             <div class="column">
                 <div class="card-invert">
-                    <img src="${dto.imagePinSolar}" width="200px" height="200px">
-                    <h3>${dto.namePinSolar}
-                        <input type="hidden" value="${dto.idPinSolar}" name="idPinsolar">
+                    <img src="${dto.value.imagePinSolar}" width="200px" height="200px">
+                    <h3>${dto.value.namePinSolar}
+                        <input type="hidden" value="${dto.value.idPinSolar}" name="idPinsolar">
                     </h3>
-                    <span> Price: <font color="red" size="3">${dto.pricePinSolar}</font> VND/ Panel</span>
-                    <h4>Pin Capacity:<font color="red" size="3"> ${dto.capacityPinSolar} W</font></h4>
+                    <span> Price: <font color="red" size="3">${dto.value.pricePinSolar}</font> VND/ Panel</span>
+                    <h4>Pin Capacity:<font color="red" size="3"> ${dto.value.capacityPinSolar} W</font></h4>
                 </div>
+                <c:url value="DispatcherServlet" var="URLRemove">
+                    <c:param name="btAction" value="Remove Item"/>
+                    <c:param name="idPinsolar" value="${dto.key}"/>
+                </c:url>
+                <a href="${URLRemove}" class="buttonremov-pin">Remove</a>
             </div>
         </c:forEach>
     </c:if>
-    <c:if test="${empty inverter}">
-        <h2>Inverter not found</h2>
+    <c:if test="${empty listItems}">
+        <h2>No records in here</h2>
     </c:if>
 </div>
 </body>

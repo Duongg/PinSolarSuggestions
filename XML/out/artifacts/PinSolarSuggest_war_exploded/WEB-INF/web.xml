@@ -47,6 +47,14 @@
         <servlet-name>InvertSuggestServlet</servlet-name>
         <servlet-class>duongdd.servlet.InvertSuggestServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddPinToCartServlet</servlet-name>
+        <servlet-class>duongdd.servlet.AddPinToCartServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RemovePinServlet</servlet-name>
+        <servlet-class>duongdd.servlet.RemovePinServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>DispatcherServlet</servlet-name>
         <url-pattern>/DispatcherServlet</url-pattern>
@@ -90,6 +98,14 @@
     <servlet-mapping>
         <servlet-name>InvertSuggestServlet</servlet-name>
         <url-pattern>/InvertSuggestServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddPinToCartServlet</servlet-name>
+        <url-pattern>/AddPinToCartServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RemovePinServlet</servlet-name>
+        <url-pattern>/RemovePinServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
